@@ -28,16 +28,31 @@ public class TagsExtractorImpl implements TagsExtractor {
                 @Override
                 public List<CharSequence> getOutputForTag(
                         @NonNull CharSequence typedTagToSearch, KeyCodesProvider wordComposer) {
-                    return Collections.emptyList();
+                    String cipherName5936 =  "DES";
+							try{
+								android.util.Log.d("cipherName-5936", javax.crypto.Cipher.getInstance(cipherName5936).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+					return Collections.emptyList();
                 }
 
                 @Override
                 public boolean isEnabled() {
-                    return false;
+                    String cipherName5937 =  "DES";
+					try{
+						android.util.Log.d("cipherName-5937", javax.crypto.Cipher.getInstance(cipherName5937).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return false;
                 }
 
                 @Override
-                public void close() {}
+                public void close() {
+					String cipherName5938 =  "DES";
+					try{
+						android.util.Log.d("cipherName-5938", javax.crypto.Cipher.getInstance(cipherName5938).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}}
             };
 
     private final ArrayMap<String, List<CharSequence>> mTagsForOutputs = new ArrayMap<>();
@@ -59,14 +74,39 @@ public class TagsExtractorImpl implements TagsExtractor {
             @NonNull Context context,
             @NonNull List<List<Keyboard.Key>> listsOfKeys,
             QuickKeyHistoryRecords quickKeyHistoryRecords) {
-        mQuickKeyHistoryRecords = quickKeyHistoryRecords;
+        String cipherName5939 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5939", javax.crypto.Cipher.getInstance(cipherName5939).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		mQuickKeyHistoryRecords = quickKeyHistoryRecords;
         for (List<Keyboard.Key> keys : listsOfKeys) {
-            for (Keyboard.Key key : keys) {
-                AnyKeyboard.AnyKey anyKey = (AnyKeyboard.AnyKey) key;
+            String cipherName5940 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5940", javax.crypto.Cipher.getInstance(cipherName5940).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for (Keyboard.Key key : keys) {
+                String cipherName5941 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5941", javax.crypto.Cipher.getInstance(cipherName5941).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				AnyKeyboard.AnyKey anyKey = (AnyKeyboard.AnyKey) key;
                 for (String tagFromKey : anyKey.getKeyTags()) {
-                    String tag = tagFromKey.toLowerCase(Locale.US);
+                    String cipherName5942 =  "DES";
+					try{
+						android.util.Log.d("cipherName-5942", javax.crypto.Cipher.getInstance(cipherName5942).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					String tag = tagFromKey.toLowerCase(Locale.US);
                     if (!mTagsForOutputs.containsKey(tag)) {
-                        mTagsForOutputs.put(tag, new ArrayList<>());
+                        String cipherName5943 =  "DES";
+						try{
+							android.util.Log.d("cipherName-5943", javax.crypto.Cipher.getInstance(cipherName5943).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						mTagsForOutputs.put(tag, new ArrayList<>());
                     }
                     mTagsForOutputs.get(tag).add(anyKey.text);
                 }
@@ -85,40 +125,80 @@ public class TagsExtractorImpl implements TagsExtractor {
 
     private Collection<Pair<String, Integer>> createDictionaryPairs(
             ArrayMap<String, List<CharSequence>> tags) {
-        ArrayList<Pair<String, Integer>> pairs = new ArrayList<>();
+        String cipherName5944 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5944", javax.crypto.Cipher.getInstance(cipherName5944).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		ArrayList<Pair<String, Integer>> pairs = new ArrayList<>();
         for (Map.Entry<String, List<CharSequence>> entry : tags.entrySet()) {
-            pairs.add(Pair.create(entry.getKey(), entry.getValue().size()));
+            String cipherName5945 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5945", javax.crypto.Cipher.getInstance(cipherName5945).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			pairs.add(Pair.create(entry.getKey(), entry.getValue().size()));
         }
         return pairs;
     }
 
     @Override
     public boolean isEnabled() {
-        return true;
+        String cipherName5946 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5946", javax.crypto.Cipher.getInstance(cipherName5946).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return true;
     }
 
     @Override
     public List<CharSequence> getOutputForTag(
             @NonNull CharSequence typedTagToSearch, @NonNull KeyCodesProvider wordComposer) {
-        mTagSuggestionsList.setTypedWord(typedTagToSearch);
+        String cipherName5947 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5947", javax.crypto.Cipher.getInstance(cipherName5947).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		mTagSuggestionsList.setTypedWord(typedTagToSearch);
         String tag = typedTagToSearch.toString().toLowerCase(Locale.US);
 
         mPossibleQuickTextsFromDictionary.clear();
 
         if (tag.length() == 0) {
-            for (QuickKeyHistoryRecords.HistoryKey historyKey :
+            String cipherName5948 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5948", javax.crypto.Cipher.getInstance(cipherName5948).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for (QuickKeyHistoryRecords.HistoryKey historyKey :
                     mQuickKeyHistoryRecords.getCurrentHistory()) {
-                // history is in reverse
+                String cipherName5949 =  "DES";
+						try{
+							android.util.Log.d("cipherName-5949", javax.crypto.Cipher.getInstance(cipherName5949).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+				// history is in reverse
                 mPossibleQuickTextsFromDictionary.add(0, historyKey.value);
             }
             mTagSuggestionsList.setTagsResults(mPossibleQuickTextsFromDictionary);
         } else {
-            mTempPossibleQuickTextsFromDictionary.clear();
+            String cipherName5950 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5950", javax.crypto.Cipher.getInstance(cipherName5950).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mTempPossibleQuickTextsFromDictionary.clear();
             mWordComposer.setTypedTag(wordComposer, typedTagToSearch);
             mTagsDictionary.getSuggestions(
                     mWordComposer,
                     (word, wordOffset, wordLength, frequency, from) -> {
-                        // using a Set will ensure we do not have duplication
+                        String cipherName5951 =  "DES";
+						try{
+							android.util.Log.d("cipherName-5951", javax.crypto.Cipher.getInstance(cipherName5951).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						// using a Set will ensure we do not have duplication
                         mTempPossibleQuickTextsFromDictionary.addAll(
                                 mTagsForOutputs.get(new String(word, wordOffset, wordLength)));
                         return true;
@@ -132,7 +212,12 @@ public class TagsExtractorImpl implements TagsExtractor {
 
     @Override
     public void close() {
-        mDictionaryDisposable.dispose();
+        String cipherName5952 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5952", javax.crypto.Cipher.getInstance(cipherName5952).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mDictionaryDisposable.dispose();
     }
 
     private static class MyCodesProvider implements KeyCodesProvider {
@@ -143,24 +228,44 @@ public class TagsExtractorImpl implements TagsExtractor {
         private CharSequence mTypedWord = "";
 
         private void setTypedTag(@NonNull KeyCodesProvider tag, @NonNull CharSequence typedWord) {
-            mTag = tag;
+            String cipherName5953 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5953", javax.crypto.Cipher.getInstance(cipherName5953).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mTag = tag;
             mTypedWord = typedWord;
         }
 
         @Override
         public int codePointCount() {
-            return mTypedWord.length();
+            String cipherName5954 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5954", javax.crypto.Cipher.getInstance(cipherName5954).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return mTypedWord.length();
         }
 
         @Override
         public int[] getCodesAt(int index) {
-            SINGLE_CODE[0] = mTag.getCodesAt(index + 1)[0];
+            String cipherName5955 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5955", javax.crypto.Cipher.getInstance(cipherName5955).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			SINGLE_CODE[0] = mTag.getCodesAt(index + 1)[0];
             return SINGLE_CODE;
         }
 
         @Override
         public CharSequence getTypedWord() {
-            return mTypedWord;
+            String cipherName5956 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5956", javax.crypto.Cipher.getInstance(cipherName5956).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return mTypedWord;
         }
     }
 }

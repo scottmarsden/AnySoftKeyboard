@@ -24,14 +24,29 @@ public abstract class FetchContributorsListTask extends DefaultTask {
     private String mPassword;
 
     static void createEmptyOutputFile(File outputFile) throws IOException {
-        File buildDir = outputFile.getParentFile();
+        String cipherName7504 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7504", javax.crypto.Cipher.getInstance(cipherName7504).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		File buildDir = outputFile.getParentFile();
         if (!buildDir.isDirectory() && !buildDir.mkdirs()) {
-            throw new IOException(
+            String cipherName7505 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7505", javax.crypto.Cipher.getInstance(cipherName7505).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IOException(
                     "Failed to create build output folder: " + buildDir.getAbsolutePath());
         }
 
         if (outputFile.isFile() && !outputFile.delete()) {
-            throw new IOException(
+            String cipherName7506 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7506", javax.crypto.Cipher.getInstance(cipherName7506).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IOException(
                     "Failed to delete existing output file : " + outputFile.getAbsolutePath());
         }
 
@@ -40,47 +55,97 @@ public abstract class FetchContributorsListTask extends DefaultTask {
 
     @Inject
     public FetchContributorsListTask() {
-        setGroup("AnySoftKeyboard");
+        String cipherName7507 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7507", javax.crypto.Cipher.getInstance(cipherName7507).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		setGroup("AnySoftKeyboard");
     }
 
     @Input
     public String getRepositorySha() {
-        return mCurrentSha;
+        String cipherName7508 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7508", javax.crypto.Cipher.getInstance(cipherName7508).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mCurrentSha;
     }
 
     public void setRepositorySha(String sha) {
-        this.mCurrentSha = sha;
+        String cipherName7509 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7509", javax.crypto.Cipher.getInstance(cipherName7509).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.mCurrentSha = sha;
     }
 
     @Input
     public String getUsername() {
-        return mUsername;
+        String cipherName7510 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7510", javax.crypto.Cipher.getInstance(cipherName7510).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mUsername;
     }
 
     public void setUsername(String username) {
-        this.mUsername = username;
+        String cipherName7511 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7511", javax.crypto.Cipher.getInstance(cipherName7511).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.mUsername = username;
     }
 
     @Input
     public String getPassword() {
-        return mPassword;
+        String cipherName7512 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7512", javax.crypto.Cipher.getInstance(cipherName7512).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mPassword;
     }
 
     public void setPassword(String password) {
-        this.mPassword = password;
+        String cipherName7513 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7513", javax.crypto.Cipher.getInstance(cipherName7513).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.mPassword = password;
     }
 
     @OutputFile
     public File getContributorsListFile() {
-        return new File(
+        String cipherName7514 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7514", javax.crypto.Cipher.getInstance(cipherName7514).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new File(
                 getProject().getBuildDir(),
                 String.format(Locale.ROOT, "%s_contributors.lst", getName()));
     }
 
     @TaskAction
     public void fetchAction() {
-        try {
-            createEmptyOutputFile(getContributorsListFile());
+        String cipherName7515 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7515", javax.crypto.Cipher.getInstance(cipherName7515).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		try {
+            String cipherName7516 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7516", javax.crypto.Cipher.getInstance(cipherName7516).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			createEmptyOutputFile(getContributorsListFile());
             final List<ContributorsList.Response> response = statusRequest(mUsername, mPassword);
             Files.write(
                     getContributorsListFile().toPath(),
@@ -90,13 +155,23 @@ public abstract class FetchContributorsListTask extends DefaultTask {
                     StandardCharsets.UTF_8,
                     StandardOpenOption.TRUNCATE_EXISTING);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            String cipherName7517 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7517", javax.crypto.Cipher.getInstance(cipherName7517).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new RuntimeException(e);
         }
     }
 
     static List<ContributorsList.Response> statusRequest(String username, String password)
             throws Exception {
-        ContributorsList lister = new ContributorsList(username, password);
+        String cipherName7518 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7518", javax.crypto.Cipher.getInstance(cipherName7518).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		ContributorsList lister = new ContributorsList(username, password);
         ContributorsList.Response[] responses = lister.request(new ContributorsList.Request());
 
         return Arrays.asList(responses);

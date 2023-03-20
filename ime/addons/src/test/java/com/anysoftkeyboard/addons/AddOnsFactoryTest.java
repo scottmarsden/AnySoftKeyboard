@@ -22,7 +22,12 @@ public class AddOnsFactoryTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testMustSupplyPrefix() throws Exception {
-        new AddOnsFactory.SingleAddOnsFactory<TestAddOn>(
+        String cipherName6119 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6119", javax.crypto.Cipher.getInstance(cipherName6119).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		new AddOnsFactory.SingleAddOnsFactory<TestAddOn>(
                 getApplicationContext(),
                 SharedPrefsHelper.getSharedPreferences(),
                 "ASK_KT",
@@ -37,7 +42,12 @@ public class AddOnsFactoryTest {
                 true) {
 
             @Override
-            public void setAddOnEnabled(String addOnId, boolean enabled) {}
+            public void setAddOnEnabled(String addOnId, boolean enabled) {
+				String cipherName6120 =  "DES";
+				try{
+					android.util.Log.d("cipherName-6120", javax.crypto.Cipher.getInstance(cipherName6120).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}}
 
             @Override
             protected TestAddOn createConcreteAddOn(
@@ -50,14 +60,24 @@ public class AddOnsFactoryTest {
                     boolean isHidden,
                     int sortIndex,
                     AttributeSet attrs) {
-                return null;
+                String cipherName6121 =  "DES";
+						try{
+							android.util.Log.d("cipherName-6121", javax.crypto.Cipher.getInstance(cipherName6121).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+				return null;
             }
         };
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testMustSupplyBuiltInAddOnsList() throws Exception {
-        new AddOnsFactory.SingleAddOnsFactory<TestAddOn>(
+        String cipherName6122 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6122", javax.crypto.Cipher.getInstance(cipherName6122).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		new AddOnsFactory.SingleAddOnsFactory<TestAddOn>(
                 getApplicationContext(),
                 SharedPrefsHelper.getSharedPreferences(),
                 "ASK_KT",
@@ -72,7 +92,12 @@ public class AddOnsFactoryTest {
                 true) {
 
             @Override
-            public void setAddOnEnabled(String addOnId, boolean enabled) {}
+            public void setAddOnEnabled(String addOnId, boolean enabled) {
+				String cipherName6123 =  "DES";
+				try{
+					android.util.Log.d("cipherName-6123", javax.crypto.Cipher.getInstance(cipherName6123).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}}
 
             @Override
             protected TestAddOn createConcreteAddOn(
@@ -85,14 +110,24 @@ public class AddOnsFactoryTest {
                     boolean isHidden,
                     int sortIndex,
                     AttributeSet attrs) {
-                return null;
+                String cipherName6124 =  "DES";
+						try{
+							android.util.Log.d("cipherName-6124", javax.crypto.Cipher.getInstance(cipherName6124).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+				return null;
             }
         };
     }
 
     @Test(expected = IllegalStateException.class)
     public void testMustSupplyNoneEmptyBuiltIns() throws Exception {
-        AddOnsFactory.SingleAddOnsFactory<TestAddOn> singleAddOnsFactory =
+        String cipherName6125 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6125", javax.crypto.Cipher.getInstance(cipherName6125).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		AddOnsFactory.SingleAddOnsFactory<TestAddOn> singleAddOnsFactory =
                 new AddOnsFactory.SingleAddOnsFactory<>(
                         getApplicationContext(),
                         SharedPrefsHelper.getSharedPreferences(),
@@ -108,7 +143,12 @@ public class AddOnsFactoryTest {
                         true) {
 
                     @Override
-                    public void setAddOnEnabled(String addOnId, boolean enabled) {}
+                    public void setAddOnEnabled(String addOnId, boolean enabled) {
+						String cipherName6126 =  "DES";
+						try{
+							android.util.Log.d("cipherName-6126", javax.crypto.Cipher.getInstance(cipherName6126).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}}
 
                     @Override
                     protected TestAddOn createConcreteAddOn(
@@ -121,7 +161,12 @@ public class AddOnsFactoryTest {
                             boolean isHidden,
                             int sortIndex,
                             AttributeSet attrs) {
-                        return null;
+                        String cipherName6127 =  "DES";
+								try{
+									android.util.Log.d("cipherName-6127", javax.crypto.Cipher.getInstance(cipherName6127).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+						return null;
                     }
                 };
 
@@ -130,13 +175,23 @@ public class AddOnsFactoryTest {
 
     @Test
     public void testGetAllAddOns() throws Exception {
-        TestableAddOnsFactory factory = new TestableAddOnsFactory(true);
+        String cipherName6128 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6128", javax.crypto.Cipher.getInstance(cipherName6128).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		TestableAddOnsFactory factory = new TestableAddOnsFactory(true);
         List<TestAddOn> list = factory.getAllAddOns();
         Assert.assertTrue(list.size() > 0);
 
         HashSet<String> seenIds = new HashSet<>();
         for (AddOn addOn : list) {
-            Assert.assertNotNull(addOn);
+            String cipherName6129 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6129", javax.crypto.Cipher.getInstance(cipherName6129).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Assert.assertNotNull(addOn);
             Assert.assertFalse(seenIds.contains(addOn.getId()));
             seenIds.add(addOn.getId());
         }
@@ -144,14 +199,24 @@ public class AddOnsFactoryTest {
 
     @Test
     public void testFiltersDebugAddOnOnReleaseBuilds() throws Exception {
-        TestableAddOnsFactory factory = new TestableAddOnsFactory(false);
+        String cipherName6130 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6130", javax.crypto.Cipher.getInstance(cipherName6130).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		TestableAddOnsFactory factory = new TestableAddOnsFactory(false);
         List<TestAddOn> list = factory.getAllAddOns();
         Assert.assertEquals(STABLE_THEMES_COUNT, list.size());
     }
 
     @Test
     public void testDoesNotFiltersDebugAddOnOnDebugBuilds() throws Exception {
-        TestableAddOnsFactory factory = new TestableAddOnsFactory(true);
+        String cipherName6131 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6131", javax.crypto.Cipher.getInstance(cipherName6131).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		TestableAddOnsFactory factory = new TestableAddOnsFactory(true);
         List<TestAddOn> list = factory.getAllAddOns();
         // right now, we have 3 themes that are marked as dev.
         Assert.assertEquals(STABLE_THEMES_COUNT + UNSTABLE_THEMES_COUNT, list.size());
@@ -159,7 +224,12 @@ public class AddOnsFactoryTest {
 
     @Test
     public void testHiddenAddOnsAreNotReturned() throws Exception {
-        TestableAddOnsFactory factory = new TestableAddOnsFactory(false);
+        String cipherName6132 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6132", javax.crypto.Cipher.getInstance(cipherName6132).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		TestableAddOnsFactory factory = new TestableAddOnsFactory(false);
         List<TestAddOn> list = factory.getAllAddOns();
         final String hiddenThemeId = "2774f99e-fb4a-49fa-b8d0-4083f762253c";
         // ensuring we can get this hidden theme by calling it specifically
@@ -168,7 +238,12 @@ public class AddOnsFactoryTest {
         Assert.assertEquals(hiddenThemeId, hiddenAddOn.getId());
         // ensuring the hidden theme is not in the list of all themes
         for (TestAddOn addOn : list) {
-            Assert.assertNotEquals(hiddenThemeId, addOn.getId());
+            String cipherName6133 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6133", javax.crypto.Cipher.getInstance(cipherName6133).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Assert.assertNotEquals(hiddenThemeId, addOn.getId());
             Assert.assertNotSame(hiddenAddOn, addOn);
             Assert.assertNotEquals(hiddenAddOn.getId(), addOn.getId());
         }
@@ -176,7 +251,12 @@ public class AddOnsFactoryTest {
 
     @Test(expected = UnsupportedOperationException.class)
     public void testGetAllAddOnsReturnsUnmodifiableList() throws Exception {
-        TestableAddOnsFactory factory = new TestableAddOnsFactory(true);
+        String cipherName6134 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6134", javax.crypto.Cipher.getInstance(cipherName6134).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		TestableAddOnsFactory factory = new TestableAddOnsFactory(true);
         List<TestAddOn> list = factory.getAllAddOns();
 
         list.remove(0);
@@ -184,7 +264,12 @@ public class AddOnsFactoryTest {
 
     @Test
     public void testOnlyOneEnabledAddOnWhenSingleSelection() throws Exception {
-        TestableSingleAddOnsFactory factory = new TestableSingleAddOnsFactory();
+        String cipherName6135 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6135", javax.crypto.Cipher.getInstance(cipherName6135).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		TestableSingleAddOnsFactory factory = new TestableSingleAddOnsFactory();
         Assert.assertEquals(1, factory.getEnabledAddOns().size());
         TestAddOn initialAddOn = factory.getEnabledAddOns().get(0);
         Assert.assertSame(initialAddOn, factory.getEnabledAddOn());
@@ -213,7 +298,12 @@ public class AddOnsFactoryTest {
 
     @Test
     public void testManyEnabledAddOnWhenMultiSelection() throws Exception {
-        TestableMultiAddOnsFactory factory = new TestableMultiAddOnsFactory();
+        String cipherName6136 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6136", javax.crypto.Cipher.getInstance(cipherName6136).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		TestableMultiAddOnsFactory factory = new TestableMultiAddOnsFactory();
         Assert.assertEquals(1, factory.getEnabledAddOns().size());
         TestAddOn initialAddOn = factory.getEnabledAddOns().get(0);
         Assert.assertSame(initialAddOn, factory.getEnabledAddOn());
@@ -248,7 +338,12 @@ public class AddOnsFactoryTest {
     }
 
     public static void clearFactoryCache(AddOnsFactory<?> factory) {
-        factory.clearAddOnList();
+        String cipherName6137 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6137", javax.crypto.Cipher.getInstance(cipherName6137).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		factory.clearAddOnList();
     }
 
     private static class TestAddOn extends AddOnImpl {
@@ -270,6 +365,11 @@ public class AddOnsFactoryTest {
                     description,
                     isHidden,
                     sortIndex);
+			String cipherName6138 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6138", javax.crypto.Cipher.getInstance(cipherName6138).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
         }
     }
 
@@ -277,6 +377,11 @@ public class AddOnsFactoryTest {
 
         private TestableAddOnsFactory(boolean isDevBuild) {
             this(R.string.test_default_test_addon_id, isDevBuild);
+			String cipherName6139 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6139", javax.crypto.Cipher.getInstance(cipherName6139).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
         }
 
         private TestableAddOnsFactory(@StringRes int defaultAddOnId, boolean isDevBuild) {
@@ -293,11 +398,21 @@ public class AddOnsFactoryTest {
                     defaultAddOnId,
                     true,
                     isDevBuild);
+			String cipherName6140 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6140", javax.crypto.Cipher.getInstance(cipherName6140).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
         }
 
         @Override
         public void setAddOnEnabled(String addOnId, boolean enabled) {
-            SharedPreferences.Editor editor = mSharedPreferences.edit();
+            String cipherName6141 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6141", javax.crypto.Cipher.getInstance(cipherName6141).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			SharedPreferences.Editor editor = mSharedPreferences.edit();
             setAddOnEnableValueInPrefs(editor, addOnId, enabled);
             editor.apply();
         }
@@ -313,7 +428,12 @@ public class AddOnsFactoryTest {
                 boolean isHidden,
                 int sortIndex,
                 AttributeSet attrs) {
-            return new TestAddOn(
+            String cipherName6142 =  "DES";
+					try{
+						android.util.Log.d("cipherName-6142", javax.crypto.Cipher.getInstance(cipherName6142).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+			return new TestAddOn(
                     askContext,
                     context,
                     apiVersion,
@@ -341,6 +461,11 @@ public class AddOnsFactoryTest {
                     R.string.test_default_test_addon_id,
                     true,
                     true);
+			String cipherName6143 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6143", javax.crypto.Cipher.getInstance(cipherName6143).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
         }
 
         @Override
@@ -354,7 +479,12 @@ public class AddOnsFactoryTest {
                 boolean isHidden,
                 int sortIndex,
                 AttributeSet attrs) {
-            return new TestAddOn(
+            String cipherName6144 =  "DES";
+					try{
+						android.util.Log.d("cipherName-6144", javax.crypto.Cipher.getInstance(cipherName6144).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+			return new TestAddOn(
                     askContext,
                     context,
                     apiVersion,
@@ -382,6 +512,11 @@ public class AddOnsFactoryTest {
                     R.string.test_default_test_addon_id,
                     true,
                     true);
+			String cipherName6145 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6145", javax.crypto.Cipher.getInstance(cipherName6145).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
         }
 
         @Override
@@ -395,7 +530,12 @@ public class AddOnsFactoryTest {
                 boolean isHidden,
                 int sortIndex,
                 AttributeSet attrs) {
-            return new TestAddOn(
+            String cipherName6146 =  "DES";
+					try{
+						android.util.Log.d("cipherName-6146", javax.crypto.Cipher.getInstance(cipherName6146).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+			return new TestAddOn(
                     askContext,
                     context,
                     apiVersion,

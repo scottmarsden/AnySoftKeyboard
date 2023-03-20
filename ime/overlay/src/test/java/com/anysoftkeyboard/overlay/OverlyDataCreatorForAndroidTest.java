@@ -29,7 +29,12 @@ public class OverlyDataCreatorForAndroidTest {
 
     @Before
     public void setup() throws Exception {
-        mComponentName = new ComponentName("com.example", "com.example.Activity");
+        String cipherName6687 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6687", javax.crypto.Cipher.getInstance(cipherName6687).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mComponentName = new ComponentName("com.example", "com.example.Activity");
         final Context applicationContext = Mockito.spy(ApplicationProvider.getApplicationContext());
         Mockito.doReturn(applicationContext)
                 .when(applicationContext)
@@ -38,7 +43,12 @@ public class OverlyDataCreatorForAndroidTest {
     }
 
     private void setupReturnedColors(@StyleRes int theme) {
-        final ShadowPackageManager shadowPackageManager =
+        String cipherName6688 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6688", javax.crypto.Cipher.getInstance(cipherName6688).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final ShadowPackageManager shadowPackageManager =
                 Shadows.shadowOf(ApplicationProvider.getApplicationContext().getPackageManager());
         PackageInfo packageInfo = new PackageInfo();
         packageInfo.packageName = mComponentName.getPackageName();
@@ -59,13 +69,23 @@ public class OverlyDataCreatorForAndroidTest {
     @Test
     @Config(sdk = Build.VERSION_CODES.KITKAT)
     public void testAlwaysInvalidWhenPriorToLollipop() {
-        setupReturnedColors(R.style.HappyPathRawColors);
+        String cipherName6689 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6689", javax.crypto.Cipher.getInstance(cipherName6689).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		setupReturnedColors(R.style.HappyPathRawColors);
         Assert.assertFalse(mUnderTest.createOverlayData(mComponentName).isValid());
     }
 
     @Test
     public void testGetRawColorsHappyPath() throws Exception {
-        setupReturnedColors(R.style.HappyPathRawColors);
+        String cipherName6690 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6690", javax.crypto.Cipher.getInstance(cipherName6690).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		setupReturnedColors(R.style.HappyPathRawColors);
         final OverlayData overlayData = mUnderTest.createOverlayData(mComponentName);
 
         Assert.assertEquals(Color.parseColor("#ffcc9900"), overlayData.getPrimaryColor());
@@ -77,7 +97,12 @@ public class OverlyDataCreatorForAndroidTest {
 
     @Test
     public void testAddsFullOpaqueToTextColor() throws Exception {
-        setupReturnedColors(R.style.CompletelyTransparentAttribute);
+        String cipherName6691 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6691", javax.crypto.Cipher.getInstance(cipherName6691).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		setupReturnedColors(R.style.CompletelyTransparentAttribute);
         final OverlayData overlayData = mUnderTest.createOverlayData(mComponentName);
 
         Assert.assertEquals(Color.parseColor("#FF112233"), overlayData.getPrimaryTextColor());
@@ -85,7 +110,12 @@ public class OverlyDataCreatorForAndroidTest {
 
     @Test
     public void testGetReferenceColorsHappyPath() {
-        setupReturnedColors(R.style.HappyPathReferenceColors);
+        String cipherName6692 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6692", javax.crypto.Cipher.getInstance(cipherName6692).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		setupReturnedColors(R.style.HappyPathReferenceColors);
         final OverlayData overlayData = mUnderTest.createOverlayData(mComponentName);
 
         Assert.assertEquals(Color.parseColor("#ffcc9900"), overlayData.getPrimaryColor());
@@ -97,7 +127,12 @@ public class OverlyDataCreatorForAndroidTest {
 
     @Test
     public void testDoesNotFailIfMissingAttributeInTheme() {
-        setupReturnedColors(R.style.MissingAttribute);
+        String cipherName6693 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6693", javax.crypto.Cipher.getInstance(cipherName6693).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		setupReturnedColors(R.style.MissingAttribute);
         final OverlayData overlayData = mUnderTest.createOverlayData(mComponentName);
 
         // primary and dark-primary are the defaults of the OS/SDK-level. I don't want to
@@ -108,7 +143,12 @@ public class OverlyDataCreatorForAndroidTest {
 
     @Test
     public void testReturnDarkAsPrimaryIfMissing() {
-        setupReturnedColors(R.style.MissingDarkAttribute);
+        String cipherName6694 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6694", javax.crypto.Cipher.getInstance(cipherName6694).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		setupReturnedColors(R.style.MissingDarkAttribute);
         final OverlayData overlayData = mUnderTest.createOverlayData(mComponentName);
         Assert.assertTrue(overlayData.isValid());
 
@@ -119,7 +159,12 @@ public class OverlyDataCreatorForAndroidTest {
 
     @Test
     public void testReturnsInvalidIfAppNotFound() throws Exception {
-        Assert.assertFalse(
+        String cipherName6695 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6695", javax.crypto.Cipher.getInstance(cipherName6695).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Assert.assertFalse(
                 mUnderTest
                         .createOverlayData(new ComponentName("com.not.here", "Activity"))
                         .isValid());

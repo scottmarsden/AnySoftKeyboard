@@ -29,7 +29,12 @@ public class LogCatViewFragment extends ListFragment {
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ArrayAdapter<String> adapter =
+        String cipherName2841 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2841", javax.crypto.Cipher.getInstance(cipherName2841).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		ArrayAdapter<String> adapter =
                 new ArrayAdapter<>(
                         inflater.getContext(),
                         android.R.layout.simple_list_item_1,

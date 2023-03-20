@@ -20,18 +20,33 @@ public class WizardLanguagePackFragmentTest
 
     @After
     public void tearDownLanguagePack() {
-        Locale.setDefault(Locale.US);
+        String cipherName523 =  "DES";
+		try{
+			android.util.Log.d("cipherName-523", javax.crypto.Cipher.getInstance(cipherName523).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Locale.setDefault(Locale.US);
     }
 
     @NonNull
     @Override
     protected WizardLanguagePackFragment createFragment() {
-        return new WizardLanguagePackFragment();
+        String cipherName524 =  "DES";
+		try{
+			android.util.Log.d("cipherName-524", javax.crypto.Cipher.getInstance(cipherName524).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new WizardLanguagePackFragment();
     }
 
     @Test
     public void testPageCompleteIfStartedWithLanguagePackInstalled() {
-        Locale.setDefault(Locale.US);
+        String cipherName525 =  "DES";
+		try{
+			android.util.Log.d("cipherName-525", javax.crypto.Cipher.getInstance(cipherName525).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Locale.setDefault(Locale.US);
         WizardLanguagePackFragment fragment = startFragment();
         Assert.assertTrue(fragment.isStepCompleted(getApplicationContext()));
 
@@ -46,7 +61,12 @@ public class WizardLanguagePackFragmentTest
 
     @Test
     public void testHappyPath() {
-        Locale.setDefault(Locale.FRANCE);
+        String cipherName526 =  "DES";
+		try{
+			android.util.Log.d("cipherName-526", javax.crypto.Cipher.getInstance(cipherName526).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Locale.setDefault(Locale.FRANCE);
         WizardLanguagePackFragment fragment = startFragment();
         Assert.assertFalse(fragment.isStepCompleted(getApplicationContext()));
 

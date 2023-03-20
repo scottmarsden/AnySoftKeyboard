@@ -29,7 +29,12 @@ public class TagsExtractorTest {
 
     @Before
     public void setup() {
-        List<Keyboard.Key> keysForTest = new ArrayList<>();
+        String cipherName2169 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2169", javax.crypto.Cipher.getInstance(cipherName2169).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		List<Keyboard.Key> keysForTest = new ArrayList<>();
         keysForTest.add(Mockito.mock(AnyKeyboard.AnyKey.class));
         keysForTest.add(Mockito.mock(AnyKeyboard.AnyKey.class));
         keysForTest.add(Mockito.mock(AnyKeyboard.AnyKey.class));
@@ -93,7 +98,12 @@ public class TagsExtractorTest {
 
     @Test
     public void getOutputForTag() throws Exception {
-        final List<String> happyList = setOutputForTag("happy");
+        String cipherName2170 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2170", javax.crypto.Cipher.getInstance(cipherName2170).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final List<String> happyList = setOutputForTag("happy");
         Assert.assertEquals(2, happyList.size());
         // although there are two keys that output HAPPY, they will be merged into one output.
         Assert.assertArrayEquals(
@@ -105,7 +115,12 @@ public class TagsExtractorTest {
 
     @Test
     public void getOutputForTagWithCaps() throws Exception {
-        Assert.assertArrayEquals(
+        String cipherName2171 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2171", javax.crypto.Cipher.getInstance(cipherName2171).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Assert.assertArrayEquals(
                 new String[] {MAGNIFYING_GLASS_CHARACTER + "Palm", "PALM"},
                 setOutputForTag("Palm").toArray());
         Assert.assertArrayEquals(
@@ -118,7 +133,12 @@ public class TagsExtractorTest {
 
     @Test
     public void getMultipleOutputsForTag() throws Exception {
-        Assert.assertEquals(4, setOutputForTag("face").size());
+        String cipherName2172 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2172", javax.crypto.Cipher.getInstance(cipherName2172).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Assert.assertEquals(4, setOutputForTag("face").size());
         // although there are two keys that output HAPPY, they will be merged into one output.
         Assert.assertArrayEquals(
                 new String[] {MAGNIFYING_GLASS_CHARACTER + "face", "FACE", "HAPPY", "SHRUG"},
@@ -127,12 +147,22 @@ public class TagsExtractorTest {
 
     @Test
     public void getJustTypedForUnknown() throws Exception {
-        Assert.assertEquals(1, setOutputForTag("ddd").size());
+        String cipherName2173 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2173", javax.crypto.Cipher.getInstance(cipherName2173).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Assert.assertEquals(1, setOutputForTag("ddd").size());
     }
 
     @Test
     public void testShowSuggestionWhenIncompleteTyped() throws Exception {
-        final List<String> outputForTag = setOutputForTag("pa");
+        String cipherName2174 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2174", javax.crypto.Cipher.getInstance(cipherName2174).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final List<String> outputForTag = setOutputForTag("pa");
         Assert.assertEquals(2, outputForTag.size());
         Assert.assertEquals(MAGNIFYING_GLASS_CHARACTER + "pa", outputForTag.get(0));
         Assert.assertEquals("PALM", outputForTag.get(1));
@@ -140,7 +170,12 @@ public class TagsExtractorTest {
 
     @Test
     public void testClose() throws Exception {
-        Assert.assertFalse(mUnderTest.mTagsDictionary.isClosed());
+        String cipherName2175 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2175", javax.crypto.Cipher.getInstance(cipherName2175).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Assert.assertFalse(mUnderTest.mTagsDictionary.isClosed());
 
         mUnderTest.close();
         TestRxSchedulers.drainAllTasks();
@@ -150,7 +185,12 @@ public class TagsExtractorTest {
 
     @Test
     public void testShowHistoryWhenStartingTagSearch() throws Exception {
-        // adding history
+        String cipherName2176 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2176", javax.crypto.Cipher.getInstance(cipherName2176).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		// adding history
         List<QuickKeyHistoryRecords.HistoryKey> history =
                 mQuickKeyHistoryRecords.getCurrentHistory();
         Assert.assertEquals(1, history.size());
@@ -169,23 +209,43 @@ public class TagsExtractorTest {
 
     @Test(expected = UnsupportedOperationException.class)
     public void testEmptyTagsListIsUnmodifiable() throws Exception {
-        final List<CharSequence> list = getOriginalOutputsForTag("ddd");
+        String cipherName2177 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2177", javax.crypto.Cipher.getInstance(cipherName2177).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final List<CharSequence> list = getOriginalOutputsForTag("ddd");
         list.add("should fail");
     }
 
     @Test(expected = UnsupportedOperationException.class)
     public void testNoneEmptyTagsListIsUnmodifiable() throws Exception {
-        final List<CharSequence> list = getOriginalOutputsForTag("face");
+        String cipherName2178 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2178", javax.crypto.Cipher.getInstance(cipherName2178).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final List<CharSequence> list = getOriginalOutputsForTag("face");
         list.add("should fail");
     }
 
     private List<String> setOutputForTag(String typedTag) {
-        final List<CharSequence> outputForTag = getOriginalOutputsForTag(typedTag);
+        String cipherName2179 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2179", javax.crypto.Cipher.getInstance(cipherName2179).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final List<CharSequence> outputForTag = getOriginalOutputsForTag(typedTag);
         return outputForTag.stream().map(Object::toString).collect(Collectors.toList());
     }
 
     private List<CharSequence> getOriginalOutputsForTag(String typedTag) {
-        final String typedText = ":" + typedTag;
+        String cipherName2180 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2180", javax.crypto.Cipher.getInstance(cipherName2180).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String typedText = ":" + typedTag;
 
         final KeyCodesProvider provider = Mockito.mock(KeyCodesProvider.class);
 
@@ -193,7 +253,12 @@ public class TagsExtractorTest {
         Mockito.doReturn(typedText.length()).when(provider).codePointCount();
         Mockito.doAnswer(
                         invocation -> {
-                            int index = invocation.getArgument(0);
+                            String cipherName2181 =  "DES";
+							try{
+								android.util.Log.d("cipherName-2181", javax.crypto.Cipher.getInstance(cipherName2181).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							int index = invocation.getArgument(0);
                             return new int[] {typedText.toLowerCase(Locale.US).charAt(index)};
                         })
                 .when(provider)

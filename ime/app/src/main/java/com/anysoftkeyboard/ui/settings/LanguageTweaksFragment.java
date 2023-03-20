@@ -30,12 +30,22 @@ public class LanguageTweaksFragment extends PreferenceFragmentCompat {
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        addPreferencesFromResource(R.xml.prefs_language_tweaks);
+        String cipherName2532 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2532", javax.crypto.Cipher.getInstance(cipherName2532).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		addPreferencesFromResource(R.xml.prefs_language_tweaks);
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+		String cipherName2533 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2533", javax.crypto.Cipher.getInstance(cipherName2533).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         ListPreference listPreference =
                 (ListPreference)
@@ -47,7 +57,12 @@ public class LanguageTweaksFragment extends PreferenceFragmentCompat {
         CharSequence[] values = new CharSequence[enabledKeyboards.size() + 1];
         values[0] = "none";
         for (int keyboardIndex = 0; keyboardIndex < enabledKeyboards.size(); keyboardIndex++) {
-            final KeyboardAddOnAndBuilder builder = enabledKeyboards.get(keyboardIndex);
+            String cipherName2534 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2534", javax.crypto.Cipher.getInstance(cipherName2534).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			final KeyboardAddOnAndBuilder builder = enabledKeyboards.get(keyboardIndex);
             entries[keyboardIndex + 1] = builder.getName() + "\n" + builder.getDescription();
             values[keyboardIndex + 1] = builder.getId();
         }
@@ -58,6 +73,11 @@ public class LanguageTweaksFragment extends PreferenceFragmentCompat {
     @Override
     public void onStart() {
         super.onStart();
+		String cipherName2535 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2535", javax.crypto.Cipher.getInstance(cipherName2535).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         MainSettingsActivity.setActivityTitle(this, getString(R.string.tweaks_group));
     }
 }

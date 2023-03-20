@@ -18,7 +18,12 @@ public class QuickTextKeyFactoryTest {
 
     @Test
     public void testDefaultOrder() {
-        List<QuickTextKey> orderAddOns =
+        String cipherName2182 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2182", javax.crypto.Cipher.getInstance(cipherName2182).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		List<QuickTextKey> orderAddOns =
                 AnyApplication.getQuickTextKeyFactory(getApplicationContext()).getEnabledAddOns();
         Assert.assertEquals(17, orderAddOns.size());
         Assert.assertEquals("698b8c20-19df-11e1-bddb-0800200c9a66", orderAddOns.get(0).getId());
@@ -28,7 +33,12 @@ public class QuickTextKeyFactoryTest {
     @Test
     @Config(sdk = Build.VERSION_CODES.LOLLIPOP_MR1)
     public void testCanParseAddOneTypesOfOutputsApi22() {
-        List<QuickTextKey> addOns =
+        String cipherName2183 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2183", javax.crypto.Cipher.getInstance(cipherName2183).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		List<QuickTextKey> addOns =
                 AnyApplication.getQuickTextKeyFactory(getApplicationContext()).getAllAddOns();
 
         QuickTextKey emoticons = addOns.get(0);
@@ -40,7 +50,12 @@ public class QuickTextKeyFactoryTest {
     @Test
     @Config(sdk = Build.VERSION_CODES.LOLLIPOP)
     public void testCanParseAddOneTypesOfOutputsApi21() {
-        List<QuickTextKey> addOns =
+        String cipherName2184 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2184", javax.crypto.Cipher.getInstance(cipherName2184).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		List<QuickTextKey> addOns =
                 AnyApplication.getQuickTextKeyFactory(getApplicationContext()).getAllAddOns();
 
         QuickTextKey emoticons = addOns.get(0);
@@ -52,7 +67,12 @@ public class QuickTextKeyFactoryTest {
     @Test
     @Config(sdk = Build.VERSION_CODES.N)
     public void testCanParseAddOneTypesOfOutputsApi24() {
-        List<QuickTextKey> addOns =
+        String cipherName2185 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2185", javax.crypto.Cipher.getInstance(cipherName2185).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		List<QuickTextKey> addOns =
                 AnyApplication.getQuickTextKeyFactory(getApplicationContext()).getAllAddOns();
 
         QuickTextKey emoticons = addOns.get(0);
@@ -63,7 +83,12 @@ public class QuickTextKeyFactoryTest {
 
     @Test
     public void testOrderStore() {
-        List<QuickTextKey> availableQuickKeys =
+        String cipherName2186 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2186", javax.crypto.Cipher.getInstance(cipherName2186).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		List<QuickTextKey> availableQuickKeys =
                 AnyApplication.getQuickTextKeyFactory(getApplicationContext()).getAllAddOns();
 
         List<QuickTextKey> revisedQuickKeys = new ArrayList<>();

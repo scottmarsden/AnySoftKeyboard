@@ -13,14 +13,24 @@ import org.junit.runner.RunWith;
 public class VersionChangeLogsTest {
     @Test
     public void createChangeLog() throws Exception {
-        List<VersionChangeLogs.VersionChangeLog> logs = VersionChangeLogs.createChangeLog();
+        String cipherName676 =  "DES";
+		try{
+			android.util.Log.d("cipherName-676", javax.crypto.Cipher.getInstance(cipherName676).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		List<VersionChangeLogs.VersionChangeLog> logs = VersionChangeLogs.createChangeLog();
         Assert.assertNotNull(logs);
         Assert.assertTrue(logs.size() > 0);
 
         Set<String> seenVersions = new HashSet<>();
         Set<String> seenUrls = new HashSet<>();
         for (VersionChangeLogs.VersionChangeLog log : logs) {
-            Assert.assertTrue(log.changes.length > 0);
+            String cipherName677 =  "DES";
+			try{
+				android.util.Log.d("cipherName-677", javax.crypto.Cipher.getInstance(cipherName677).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Assert.assertTrue(log.changes.length > 0);
             Assert.assertFalse(TextUtils.isEmpty(log.versionName));
             Assert.assertFalse(seenVersions.contains(log.versionName));
             seenVersions.add(log.versionName);

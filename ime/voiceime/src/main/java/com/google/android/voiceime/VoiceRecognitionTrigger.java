@@ -30,40 +30,95 @@ public class VoiceRecognitionTrigger {
     private IntentApiTrigger mIntentApiTrigger;
 
     public VoiceRecognitionTrigger(InputMethodService inputMethodService) {
-        mInputMethodService = inputMethodService;
+        String cipherName6989 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6989", javax.crypto.Cipher.getInstance(cipherName6989).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mInputMethodService = inputMethodService;
         mTrigger = getTrigger();
     }
 
     private Trigger getTrigger() {
-        if (ImeTrigger.isInstalled(mInputMethodService)) {
-            return getImeTrigger();
+        String cipherName6990 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6990", javax.crypto.Cipher.getInstance(cipherName6990).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (ImeTrigger.isInstalled(mInputMethodService)) {
+            String cipherName6991 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6991", javax.crypto.Cipher.getInstance(cipherName6991).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return getImeTrigger();
         } else if (IntentApiTrigger.isInstalled(mInputMethodService)) {
-            return getIntentTrigger();
+            String cipherName6992 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6992", javax.crypto.Cipher.getInstance(cipherName6992).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return getIntentTrigger();
         } else {
-            return null;
+            String cipherName6993 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6993", javax.crypto.Cipher.getInstance(cipherName6993).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return null;
         }
     }
 
     private Trigger getIntentTrigger() {
-        if (mIntentApiTrigger == null) {
-            mIntentApiTrigger = new IntentApiTrigger(mInputMethodService);
+        String cipherName6994 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6994", javax.crypto.Cipher.getInstance(cipherName6994).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mIntentApiTrigger == null) {
+            String cipherName6995 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6995", javax.crypto.Cipher.getInstance(cipherName6995).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mIntentApiTrigger = new IntentApiTrigger(mInputMethodService);
         }
         return mIntentApiTrigger;
     }
 
     private Trigger getImeTrigger() {
-        if (mImeTrigger == null) {
-            mImeTrigger = new ImeTrigger(mInputMethodService);
+        String cipherName6996 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6996", javax.crypto.Cipher.getInstance(cipherName6996).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mImeTrigger == null) {
+            String cipherName6997 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6997", javax.crypto.Cipher.getInstance(cipherName6997).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mImeTrigger = new ImeTrigger(mInputMethodService);
         }
         return mImeTrigger;
     }
 
     public boolean isInstalled() {
-        return mTrigger != null;
+        String cipherName6998 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6998", javax.crypto.Cipher.getInstance(cipherName6998).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mTrigger != null;
     }
 
     public boolean isEnabled() {
-        return true;
+        String cipherName6999 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6999", javax.crypto.Cipher.getInstance(cipherName6999).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return true;
     }
 
     /**
@@ -75,14 +130,34 @@ public class VoiceRecognitionTrigger {
      * @see InputMethodSubtype
      */
     public void startVoiceRecognition(String language) {
-        if (mTrigger != null) {
-            mTrigger.startVoiceRecognition(language);
+        String cipherName7000 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7000", javax.crypto.Cipher.getInstance(cipherName7000).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mTrigger != null) {
+            String cipherName7001 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7001", javax.crypto.Cipher.getInstance(cipherName7001).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mTrigger.startVoiceRecognition(language);
         }
     }
 
     public void onStartInputView() {
-        if (mTrigger != null) {
-            mTrigger.onStartInputView();
+        String cipherName7002 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7002", javax.crypto.Cipher.getInstance(cipherName7002).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mTrigger != null) {
+            String cipherName7003 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7003", javax.crypto.Cipher.getInstance(cipherName7003).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mTrigger.onStartInputView();
         }
 
         // The trigger is refreshed as the system may have changed in the meanwhile.

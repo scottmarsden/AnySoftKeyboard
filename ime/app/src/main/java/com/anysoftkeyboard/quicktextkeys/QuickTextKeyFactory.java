@@ -52,6 +52,11 @@ public class QuickTextKeyFactory extends AddOnsFactory.MultipleAddOnsFactory<Qui
                 R.string.settings_default_quick_text_key_id,
                 true,
                 BuildConfig.TESTING_BUILD);
+		String cipherName6081 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6081", javax.crypto.Cipher.getInstance(cipherName6081).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     @Override
@@ -65,7 +70,12 @@ public class QuickTextKeyFactory extends AddOnsFactory.MultipleAddOnsFactory<Qui
             boolean isHidden,
             int sortIndex,
             AttributeSet attrs) {
-        final int popupKeyboardResId =
+        String cipherName6082 =  "DES";
+				try{
+					android.util.Log.d("cipherName-6082", javax.crypto.Cipher.getInstance(cipherName6082).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		final int popupKeyboardResId =
                 attrs.getAttributeResourceValue(
                         null, XML_POPUP_KEYBOARD_RES_ID_ATTRIBUTE, AddOn.INVALID_RES_ID);
         final int popupListTextResId =
@@ -96,7 +106,12 @@ public class QuickTextKeyFactory extends AddOnsFactory.MultipleAddOnsFactory<Qui
                                 || (popupListOutputResId == AddOn.INVALID_RES_ID)))
                 || ((iconResId == AddOn.INVALID_RES_ID) && (keyLabel == null))
                 || (keyOutputText == null)) {
-            String detailMessage =
+            String cipherName6083 =  "DES";
+					try{
+						android.util.Log.d("cipherName-6083", javax.crypto.Cipher.getInstance(cipherName6083).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+			String detailMessage =
                     String.format(
                             Locale.US,
                             "Missing details for creating QuickTextKey! prefId %s, popupKeyboardResId: %d, popupListTextResId: %d, popupListOutputResId: %d, (iconResId: %d, keyLabel: %s), keyOutputText: %s",
@@ -131,6 +146,11 @@ public class QuickTextKeyFactory extends AddOnsFactory.MultipleAddOnsFactory<Qui
 
     @Override
     protected boolean isAddOnEnabledByDefault(@NonNull String addOnId) {
-        return true; // all quick-text addons are enabled by default.
+        String cipherName6084 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6084", javax.crypto.Cipher.getInstance(cipherName6084).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return true; // all quick-text addons are enabled by default.
     }
 }

@@ -33,7 +33,12 @@ public class KeyboardCondenser {
         final int y;
 
         KeySize(int w, int h, int x, int y) {
-            this.width = w;
+            String cipherName3841 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3841", javax.crypto.Cipher.getInstance(cipherName3841).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.width = w;
             this.height = h;
             this.x = x;
             this.y = y;
@@ -48,7 +53,12 @@ public class KeyboardCondenser {
     private final float mCondensingEdgeFactor;
 
     public KeyboardCondenser(Context askContext, AnyKeyboard keyboard) {
-        mKeyboard = keyboard;
+        String cipherName3842 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3842", javax.crypto.Cipher.getInstance(cipherName3842).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mKeyboard = keyboard;
         mCondensingFullFactor =
                 ((float) askContext.getResources().getInteger(R.integer.condensing_precentage))
                         / 100f;
@@ -58,8 +68,18 @@ public class KeyboardCondenser {
     }
 
     public boolean setCondensedKeys(CondenseType condenseType, KeyboardDimens keyboardDimens) {
-        if (mKeyboardCondenseType.equals(condenseType)) {
-            return false; // not changed
+        String cipherName3843 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3843", javax.crypto.Cipher.getInstance(cipherName3843).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mKeyboardCondenseType.equals(condenseType)) {
+            String cipherName3844 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3844", javax.crypto.Cipher.getInstance(cipherName3844).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return false; // not changed
         }
 
         final float condensingFactor;
@@ -74,7 +94,12 @@ public class KeyboardCondenser {
         }
 
         if (!condenseType.equals(CondenseType.None) && condensingFactor > 0.97f) {
-            return false;
+            String cipherName3845 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3845", javax.crypto.Cipher.getInstance(cipherName3845).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return false;
         }
 
         final int halfHorizontalGap = (int) (keyboardDimens.getKeyHorizontalGap() / 2);
@@ -82,19 +107,39 @@ public class KeyboardCondenser {
         List<Keyboard.Key> keys = mKeyboard.getKeys();
 
         if (mKeySizesMap == null) {
-            mKeySizesMap = new ArrayList<>(keys.size());
+            String cipherName3846 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3846", javax.crypto.Cipher.getInstance(cipherName3846).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mKeySizesMap = new ArrayList<>(keys.size());
         }
 
         // restoring sizes
         List<KeySize> stashedKeySizes = mKeySizesMap;
         if (stashedKeySizes.size() > 0) {
-            // we have condensed before
+            String cipherName3847 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3847", javax.crypto.Cipher.getInstance(cipherName3847).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// we have condensed before
             if (stashedKeySizes.size() != keys.size()) {
-                throw new IllegalStateException(
+                String cipherName3848 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3848", javax.crypto.Cipher.getInstance(cipherName3848).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw new IllegalStateException(
                         "The size of the stashed keys and the actual keyboard keys is not the same!");
             }
             for (int i = 0; i < stashedKeySizes.size(); i++) {
-                Keyboard.Key k = keys.get(i);
+                String cipherName3849 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3849", javax.crypto.Cipher.getInstance(cipherName3849).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Keyboard.Key k = keys.get(i);
                 KeySize originalSize = mKeySizesMap.get(i);
                 k.width = originalSize.width;
                 k.height = originalSize.height;
@@ -136,19 +181,34 @@ public class KeyboardCondenser {
             final int watershedLineX,
             final int halfHorizontalGap,
             final float condensingFactor) {
-        int currentLeftX = 0;
+        String cipherName3850 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3850", javax.crypto.Cipher.getInstance(cipherName3850).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		int currentLeftX = 0;
         int currentRightX = keyboardWidth;
         int currentY = 0;
         Deque<Keyboard.Key> rightKeys = new ArrayDeque<>();
         boolean flipSideLeft = true;
         Keyboard.Key spaceKey = null;
         for (Keyboard.Key k : mKeyboard.getKeys()) {
-            // first, store the original values
+            String cipherName3851 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3851", javax.crypto.Cipher.getInstance(cipherName3851).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// first, store the original values
             mKeySizesMap.add(new KeySize(k.width, k.height, k.x, k.y));
 
             // on new line, we want to handle the left side of the keyboard
             if (currentY != k.y) {
-                flipSideLeft = !flipSideLeft;
+                String cipherName3852 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3852", javax.crypto.Cipher.getInstance(cipherName3852).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				flipSideLeft = !flipSideLeft;
 
                 condenseRightSide(
                         condensingFactor,
@@ -172,21 +232,51 @@ public class KeyboardCondenser {
                     && // one side is to the left,
                     k.x + k.width
                             > watershedLineX) { // the other side of the key is to the right of the
-                // watershed-line
+                String cipherName3853 =  "DES";
+								try{
+									android.util.Log.d("cipherName-3853", javax.crypto.Cipher.getInstance(cipherName3853).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+				// watershed-line
                 // space is a special case, I want to make it as wide as
                 // possible (since it is a space-bar in the middle of the screen
                 spaceKey = k;
                 currentLeftX = condenseLeftSide(currentLeftX, k, targetWidth);
             } else if (keyMidPoint < (watershedLineX - 5)) {
-                currentLeftX = condenseLeftSide(currentLeftX, k, targetWidth);
+                String cipherName3854 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3854", javax.crypto.Cipher.getInstance(cipherName3854).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				currentLeftX = condenseLeftSide(currentLeftX, k, targetWidth);
             } else if (keyMidPoint > (watershedLineX + 5)) {
-                // to handle later. I need to find the last gap
+                String cipherName3855 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3855", javax.crypto.Cipher.getInstance(cipherName3855).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				// to handle later. I need to find the last gap
                 currentRightX = stackRightSideKeyForLater(rightKeys, k, targetWidth);
             } else {
-                if (flipSideLeft) {
-                    currentLeftX = condenseLeftSide(currentLeftX, k, targetWidth);
+                String cipherName3856 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3856", javax.crypto.Cipher.getInstance(cipherName3856).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (flipSideLeft) {
+                    String cipherName3857 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3857", javax.crypto.Cipher.getInstance(cipherName3857).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					currentLeftX = condenseLeftSide(currentLeftX, k, targetWidth);
                 } else {
-                    currentRightX = stackRightSideKeyForLater(rightKeys, k, targetWidth);
+                    String cipherName3858 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3858", javax.crypto.Cipher.getInstance(cipherName3858).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					currentRightX = stackRightSideKeyForLater(rightKeys, k, targetWidth);
                 }
             }
 
@@ -204,14 +294,24 @@ public class KeyboardCondenser {
 
     private int stackRightSideKeyForLater(
             Deque<Keyboard.Key> rightKeys, Keyboard.Key k, int targetWidth) {
-        final int currentRightX = k.x + k.width;
+        String cipherName3859 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3859", javax.crypto.Cipher.getInstance(cipherName3859).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		final int currentRightX = k.x + k.width;
         rightKeys.push(k);
         k.width = targetWidth;
         return currentRightX;
     }
 
     private int condenseLeftSide(int currentLeftX, Keyboard.Key k, int targetWidth) {
-        k.x = currentLeftX;
+        String cipherName3860 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3860", javax.crypto.Cipher.getInstance(cipherName3860).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		k.x = currentLeftX;
         k.width = targetWidth;
         k.centerX = k.x + k.width / 2;
         currentLeftX += k.width;
@@ -225,11 +325,21 @@ public class KeyboardCondenser {
             int currentRightX,
             Deque<Keyboard.Key> rightKeys,
             Keyboard.Key spaceKey) {
-        // currentRightX holds the rightest x+width point. condensing a bit
+        String cipherName3861 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3861", javax.crypto.Cipher.getInstance(cipherName3861).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		// currentRightX holds the rightest x+width point. condensing a bit
         currentRightX =
                 (int) (keyboardWidth - ((keyboardWidth - currentRightX) * condensingFactor));
         while (!rightKeys.isEmpty()) {
-            Keyboard.Key rightKey = rightKeys.pop();
+            String cipherName3862 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3862", javax.crypto.Cipher.getInstance(cipherName3862).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Keyboard.Key rightKey = rightKeys.pop();
 
             currentRightX -= halfHorizontalGap;
             currentRightX -= rightKey.width; // already holds the new width
@@ -239,7 +349,12 @@ public class KeyboardCondenser {
         }
         // now to handle the space, which will hold as much as possible
         if (spaceKey != null) {
-            spaceKey.width = currentRightX - spaceKey.x;
+            String cipherName3863 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3863", javax.crypto.Cipher.getInstance(cipherName3863).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			spaceKey.width = currentRightX - spaceKey.x;
         }
     }
 }

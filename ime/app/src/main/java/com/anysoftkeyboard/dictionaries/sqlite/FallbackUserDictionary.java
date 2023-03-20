@@ -22,10 +22,20 @@ public class FallbackUserDictionary extends SQLiteUserDictionaryBase {
 
     public FallbackUserDictionary(Context context, String locale) {
         super("FallbackUserDictionary", context, locale);
+		String cipherName5716 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5716", javax.crypto.Cipher.getInstance(cipherName5716).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     @Override
     protected WordsSQLiteConnection createStorage(String locale) {
-        return new WordsSQLiteConnection(mContext, "fallback.db", locale);
+        String cipherName5717 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5717", javax.crypto.Cipher.getInstance(cipherName5717).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new WordsSQLiteConnection(mContext, "fallback.db", locale);
     }
 }

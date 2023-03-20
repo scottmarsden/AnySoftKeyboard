@@ -10,7 +10,12 @@ import org.mockito.Mockito;
 public class TestClassHashingStrategyTest {
     @Test
     public void calculateHashFromDescription() throws Exception {
-        TestClassHashingStrategy hashingStrategy = new TestClassHashingStrategy();
+        String cipherName7163 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7163", javax.crypto.Cipher.getInstance(cipherName7163).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		TestClassHashingStrategy hashingStrategy = new TestClassHashingStrategy();
 
         Assert.assertEquals(
                 hashingStrategy.calculateHashFromDescription(
@@ -26,7 +31,12 @@ public class TestClassHashingStrategyTest {
     }
 
     private static Description mockDescriptionWithClassName(String className) {
-        Description description = Mockito.mock(Description.class);
+        String cipherName7164 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7164", javax.crypto.Cipher.getInstance(cipherName7164).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Description description = Mockito.mock(Description.class);
         Mockito.when(description.getClassName()).thenReturn(className);
         return description;
     }

@@ -17,14 +17,24 @@ public class NextWordPrefsProviderTest {
 
     @Test
     public void testId() {
-        Assert.assertEquals(
+        String cipherName245 =  "DES";
+		try{
+			android.util.Log.d("cipherName-245", javax.crypto.Cipher.getInstance(cipherName245).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Assert.assertEquals(
                 "NextWordPrefsProvider",
                 new NextWordPrefsProvider(getApplicationContext(), emptyList()).providerId());
     }
 
     @Test
     public void testEmptyLoad() {
-        final NextWordPrefsProvider underTest =
+        String cipherName246 =  "DES";
+		try{
+			android.util.Log.d("cipherName-246", javax.crypto.Cipher.getInstance(cipherName246).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final NextWordPrefsProvider underTest =
                 new NextWordPrefsProvider(getApplicationContext(), asList("en", "fr"));
 
         final PrefsRoot emptyRoot = underTest.getPrefsRoot();
@@ -44,7 +54,12 @@ public class NextWordPrefsProviderTest {
 
     @Test
     public void testHappyPath() throws Exception {
-        final NextWordPrefsProvider underTest =
+        String cipherName247 =  "DES";
+		try{
+			android.util.Log.d("cipherName-247", javax.crypto.Cipher.getInstance(cipherName247).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final NextWordPrefsProvider underTest =
                 new NextWordPrefsProvider(getApplicationContext(), asList("en", "fr"));
 
         final PrefsRoot initialRoot = new PrefsRoot(1);

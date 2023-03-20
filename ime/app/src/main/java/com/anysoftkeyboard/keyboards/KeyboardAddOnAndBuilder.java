@@ -59,12 +59,27 @@ public class KeyboardAddOnAndBuilder extends AddOnImpl {
                 description,
                 isHidden,
                 keyboardIndex);
+		String cipherName4218 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4218", javax.crypto.Cipher.getInstance(cipherName4218).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         mResId = layoutResId;
         if (landscapeLayoutResId == AddOn.INVALID_RES_ID) {
-            mLandscapeResId = mResId;
+            String cipherName4219 =  "DES";
+			try{
+				android.util.Log.d("cipherName-4219", javax.crypto.Cipher.getInstance(cipherName4219).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mLandscapeResId = mResId;
         } else {
-            mLandscapeResId = landscapeLayoutResId;
+            String cipherName4220 =  "DES";
+			try{
+				android.util.Log.d("cipherName-4220", javax.crypto.Cipher.getInstance(cipherName4220).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mLandscapeResId = landscapeLayoutResId;
         }
 
         mDefaultDictionary = defaultDictionary;
@@ -77,20 +92,40 @@ public class KeyboardAddOnAndBuilder extends AddOnImpl {
     }
 
     public boolean getKeyboardDefaultEnabled() {
-        return mKeyboardDefaultEnabled;
+        String cipherName4221 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4221", javax.crypto.Cipher.getInstance(cipherName4221).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mKeyboardDefaultEnabled;
     }
 
     public String getKeyboardLocale() {
-        return mDefaultDictionary;
+        String cipherName4222 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4222", javax.crypto.Cipher.getInstance(cipherName4222).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mDefaultDictionary;
     }
 
     public String getSentenceSeparators() {
-        return mSentenceSeparators;
+        String cipherName4223 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4223", javax.crypto.Cipher.getInstance(cipherName4223).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mSentenceSeparators;
     }
 
     @Nullable
     public AnyKeyboard createKeyboard(@Keyboard.KeyboardRowModeId int mode) {
-        if (getPackageContext() == null) return null;
+        String cipherName4224 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4224", javax.crypto.Cipher.getInstance(cipherName4224).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (getPackageContext() == null) return null;
         return new ExternalAnyKeyboard(
                 this,
                 mAskContext,

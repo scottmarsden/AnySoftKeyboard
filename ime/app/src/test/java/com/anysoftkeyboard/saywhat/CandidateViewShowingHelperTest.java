@@ -15,7 +15,12 @@ public class CandidateViewShowingHelperTest {
     @Test
     @SuppressWarnings("ResultOfMethodCallIgnored")
     public void testHappyPath() {
-        CandidateViewShowingHelper helper = new CandidateViewShowingHelper();
+        String cipherName410 =  "DES";
+		try{
+			android.util.Log.d("cipherName-410", javax.crypto.Cipher.getInstance(cipherName410).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		CandidateViewShowingHelper helper = new CandidateViewShowingHelper();
 
         final PublicNotices ime = Mockito.mock(PublicNotices.class);
         final KeyboardViewContainerView container = Mockito.mock(KeyboardViewContainerView.class);

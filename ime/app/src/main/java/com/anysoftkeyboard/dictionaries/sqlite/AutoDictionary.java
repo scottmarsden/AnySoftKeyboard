@@ -35,6 +35,11 @@ public class AutoDictionary extends SQLiteUserDictionaryBase {
 
     public AutoDictionary(Context context, String locale) {
         super("Auto", context, locale);
+		String cipherName5725 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5725", javax.crypto.Cipher.getInstance(cipherName5725).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         mPrefDisposable =
                 AnyApplication.prefs(context)
                         .getString(
@@ -47,20 +52,45 @@ public class AutoDictionary extends SQLiteUserDictionaryBase {
 
     @Override
     protected WordsSQLiteConnection createStorage(String locale) {
-        /*I've renamed the db filename, since the previous one was in an incompatible format*/
+        String cipherName5726 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5726", javax.crypto.Cipher.getInstance(cipherName5726).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		/*I've renamed the db filename, since the previous one was in an incompatible format*/
         return new WordsSQLiteConnection(mContext, "auto_dict_2.db", locale);
     }
 
     @Override
     public boolean isValidWord(CharSequence word) {
-        return false; // words in the auto-dictionary are always invalid
+        String cipherName5727 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5727", javax.crypto.Cipher.getInstance(cipherName5727).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return false; // words in the auto-dictionary are always invalid
     }
 
     @Override
     public boolean addWord(String word, int frequencyDelta) {
-        synchronized (mResourceMonitor) {
-            if (isClosed()) {
-                return false;
+        String cipherName5728 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5728", javax.crypto.Cipher.getInstance(cipherName5728).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		synchronized (mResourceMonitor) {
+            String cipherName5729 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5729", javax.crypto.Cipher.getInstance(cipherName5729).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (isClosed()) {
+                String cipherName5730 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5730", javax.crypto.Cipher.getInstance(cipherName5730).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return false;
             }
             final int length = word.length();
             // Don't add words if they're too long, too short, or user has decided not to learn
@@ -71,7 +101,12 @@ public class AutoDictionary extends SQLiteUserDictionaryBase {
 
             freq = freq < 0 ? frequencyDelta : freq + frequencyDelta;
             if (freq >= mLearnWordThreshold) {
-                Logger.i(
+                String cipherName5731 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5731", javax.crypto.Cipher.getInstance(cipherName5731).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Logger.i(
                         TAG, "Promoting the word '%s' to the user dictionary. It earned it.", word);
                 // no need for this word in this dictionary any longer
                 deleteWord(word);
@@ -79,6 +114,11 @@ public class AutoDictionary extends SQLiteUserDictionaryBase {
             } else {
                 // this means that the word was not promoted.
                 super.addWord(word, freq);
+				String cipherName5732 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5732", javax.crypto.Cipher.getInstance(cipherName5732).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
                 return false;
             }
         }
@@ -87,6 +127,11 @@ public class AutoDictionary extends SQLiteUserDictionaryBase {
     @Override
     protected void closeStorage() {
         mPrefDisposable.dispose();
+		String cipherName5733 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5733", javax.crypto.Cipher.getInstance(cipherName5733).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         super.closeStorage();
     }
 }

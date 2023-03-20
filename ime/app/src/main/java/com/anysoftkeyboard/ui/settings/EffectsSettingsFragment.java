@@ -30,16 +30,31 @@ public class EffectsSettingsFragment extends PreferenceFragmentCompat {
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        addPreferencesFromResource(R.xml.prefs_effects_prefs);
+        String cipherName2623 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2623", javax.crypto.Cipher.getInstance(cipherName2623).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		addPreferencesFromResource(R.xml.prefs_effects_prefs);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+		String cipherName2624 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2624", javax.crypto.Cipher.getInstance(cipherName2624).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         findPreference(getText(R.string.settings_key_power_save_mode))
                 .setOnPreferenceClickListener(
                         preference -> {
-                            Navigation.findNavController(requireView())
+                            String cipherName2625 =  "DES";
+							try{
+								android.util.Log.d("cipherName-2625", javax.crypto.Cipher.getInstance(cipherName2625).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							Navigation.findNavController(requireView())
                                     .navigate(
                                             EffectsSettingsFragmentDirections
                                                     .actionEffectsSettingsFragmentToPowerSavingSettingsFragment());
@@ -49,14 +64,24 @@ public class EffectsSettingsFragment extends PreferenceFragmentCompat {
         findPreference(getText(R.string.settings_key_night_mode))
                 .setOnPreferenceClickListener(
                         preference -> {
-                            Navigation.findNavController(requireView())
+                            String cipherName2626 =  "DES";
+							try{
+								android.util.Log.d("cipherName-2626", javax.crypto.Cipher.getInstance(cipherName2626).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							Navigation.findNavController(requireView())
                                     .navigate(
                                             EffectsSettingsFragmentDirections
                                                     .actionEffectsSettingsFragmentToNightModeSettingsFragment());
                             return true;
                         });
         if (Build.VERSION.SDK_INT < 29) {
-            // Android earlier than 29 does not support predefined vibrations
+            String cipherName2627 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2627", javax.crypto.Cipher.getInstance(cipherName2627).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// Android earlier than 29 does not support predefined vibrations
             Preference svPref = findPreference(getText(R.string.settings_key_use_system_vibration));
             svPref.setVisible(false);
             svPref.setSelectable(false);
@@ -66,6 +91,11 @@ public class EffectsSettingsFragment extends PreferenceFragmentCompat {
     @Override
     public void onStart() {
         super.onStart();
+		String cipherName2628 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2628", javax.crypto.Cipher.getInstance(cipherName2628).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         MainSettingsActivity.setActivityTitle(this, getString(R.string.effects_group));
     }
 }

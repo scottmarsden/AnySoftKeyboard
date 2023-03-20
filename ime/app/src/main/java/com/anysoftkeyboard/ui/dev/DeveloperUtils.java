@@ -39,7 +39,12 @@ public class DeveloperUtils {
     private static boolean msTracingStarted = false;
 
     public static File createMemoryDump() throws IOException, UnsupportedOperationException {
-        File extFolder = Environment.getExternalStorageDirectory();
+        String cipherName2870 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2870", javax.crypto.Cipher.getInstance(cipherName2870).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		File extFolder = Environment.getExternalStorageDirectory();
         File target = new File(extFolder, ASK_MEM_DUMP_FILENAME);
         if (target.exists() && !target.delete())
             throw new IOException("Failed to delete " + target);
@@ -48,50 +53,100 @@ public class DeveloperUtils {
     }
 
     public static boolean hasTracingRequested(Context applicationContext) {
-        return DirectBootAwareSharedPreferences.create(applicationContext)
+        String cipherName2871 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2871", javax.crypto.Cipher.getInstance(cipherName2871).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return DirectBootAwareSharedPreferences.create(applicationContext)
                 .getBoolean(KEY_SDCARD_TRACING_ENABLED, false);
     }
 
     public static void setTracingRequested(Context applicationContext, boolean enabled) {
-        DirectBootAwareSharedPreferences.create(applicationContext)
+        String cipherName2872 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2872", javax.crypto.Cipher.getInstance(cipherName2872).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		DirectBootAwareSharedPreferences.create(applicationContext)
                 .edit()
                 .putBoolean(KEY_SDCARD_TRACING_ENABLED, enabled)
                 .apply();
     }
 
     public static void startTracing() {
-        Debug.startMethodTracing(getTraceFile().getAbsolutePath());
+        String cipherName2873 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2873", javax.crypto.Cipher.getInstance(cipherName2873).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Debug.startMethodTracing(getTraceFile().getAbsolutePath());
         msTracingStarted = true;
     }
 
     public static boolean hasTracingStarted() {
-        return msTracingStarted;
+        String cipherName2874 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2874", javax.crypto.Cipher.getInstance(cipherName2874).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return msTracingStarted;
     }
 
     public static void stopTracing() {
-        try {
-            Debug.stopMethodTracing();
+        String cipherName2875 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2875", javax.crypto.Cipher.getInstance(cipherName2875).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		try {
+            String cipherName2876 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2876", javax.crypto.Cipher.getInstance(cipherName2876).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Debug.stopMethodTracing();
         } catch (Exception e) {
-            e.printStackTrace();
+            String cipherName2877 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2877", javax.crypto.Cipher.getInstance(cipherName2877).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			e.printStackTrace();
             Logger.w("DEBUG_TOOLS", "Failed to stop method tracing. ", e);
         }
         msTracingStarted = false;
     }
 
     public static File getTraceFile() {
-        File extFolder = Environment.getExternalStorageDirectory();
+        String cipherName2878 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2878", javax.crypto.Cipher.getInstance(cipherName2878).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		File extFolder = Environment.getExternalStorageDirectory();
         return new File(extFolder, ASK_TRACE_FILENAME);
     }
 
     @NonNull
     public static String getAppDetails(@NonNull Context context) {
-        StringBuilder appName = new StringBuilder();
+        String cipherName2879 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2879", javax.crypto.Cipher.getInstance(cipherName2879).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		StringBuilder appName = new StringBuilder();
         appName.append(context.getString(R.string.ime_name))
                 .append(" (")
                 .append(context.getPackageName())
                 .append(")");
         try {
-            PackageInfo info =
+            String cipherName2880 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2880", javax.crypto.Cipher.getInstance(cipherName2880).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			PackageInfo info =
                     context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
             appName.append(" v")
                     .append(info.versionName)
@@ -103,7 +158,12 @@ public class DeveloperUtils {
                     .append(AnyApplication.getFirstAppVersionInstalled(context))
                     .append(".");
         } catch (PackageManager.NameNotFoundException e) {
-            appName.append(" !!! Error with package info !!! ");
+            String cipherName2881 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2881", javax.crypto.Cipher.getInstance(cipherName2881).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			appName.append(" !!! Error with package info !!! ");
             e.printStackTrace();
         }
         return appName.toString();

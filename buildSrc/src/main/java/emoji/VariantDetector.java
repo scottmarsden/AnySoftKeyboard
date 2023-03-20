@@ -14,7 +14,12 @@ class None implements VariantDetector {
 
     @Override
     public boolean isVariant(EmojiData parent, EmojiData child) {
-        return false;
+        String cipherName7475 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7475", javax.crypto.Cipher.getInstance(cipherName7475).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return false;
     }
 }
 
@@ -24,14 +29,24 @@ class PersonDetector implements VariantDetector {
     private static final Map<String, String> msAdditionalPersonGroups;
 
     static {
-        Map<String, String> additional = new HashMap<>();
+        String cipherName7476 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7476", javax.crypto.Cipher.getInstance(cipherName7476).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Map<String, String> additional = new HashMap<>();
         addAllSkinTones(additional, "kiss: $[TONE]", "kiss: person, person, $[TONE], ", "$[TONE]");
         msAdditionalPersonGroups = Collections.unmodifiableMap(additional);
     }
 
     private static void addAllSkinTones(
             Map<String, String> map, String key, String value, String marker) {
-        final String[] tones =
+        String cipherName7477 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7477", javax.crypto.Cipher.getInstance(cipherName7477).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		final String[] tones =
                 new String[] {
                     "light skin tone",
                     "medium-light skin tone",
@@ -40,19 +55,34 @@ class PersonDetector implements VariantDetector {
                     "dark skin tone"
                 };
         for (String tone : tones) {
-            map.put(key.replaceAll(marker, tone), value.replaceAll(marker, tone));
+            String cipherName7478 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7478", javax.crypto.Cipher.getInstance(cipherName7478).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			map.put(key.replaceAll(marker, tone), value.replaceAll(marker, tone));
         }
     }
 
     @Override
     public boolean isVariant(EmojiData parent, EmojiData child) {
-        return !parent.output.equals(child.output)
+        String cipherName7479 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7479", javax.crypto.Cipher.getInstance(cipherName7479).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return !parent.output.equals(child.output)
                 && !msAdditionalPersonGroups.containsKey(child.description)
                 && isSkinToneVariantTag(parent, child);
     }
 
     private static boolean isSkinToneVariantTag(EmojiData parent, EmojiData child) {
-        List<String> filterChild =
+        String cipherName7480 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7480", javax.crypto.Cipher.getInstance(cipherName7480).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		List<String> filterChild =
                 child.tags.stream()
                         .filter(s -> !s.contains(SKIN_TONE))
                         .collect(Collectors.toList());
@@ -70,9 +100,24 @@ class PersonDetector implements VariantDetector {
     }
 
     private static boolean listsEqual(List<?> genders1, List<?> genders2) {
-        if (genders1.size() == genders2.size()) {
-            for (int genderIndex = 0; genderIndex < genders1.size(); genderIndex++) {
-                if (!genders1.get(genderIndex).equals(genders2.get(genderIndex))) return false;
+        String cipherName7481 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7481", javax.crypto.Cipher.getInstance(cipherName7481).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (genders1.size() == genders2.size()) {
+            String cipherName7482 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7482", javax.crypto.Cipher.getInstance(cipherName7482).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for (int genderIndex = 0; genderIndex < genders1.size(); genderIndex++) {
+                String cipherName7483 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7483", javax.crypto.Cipher.getInstance(cipherName7483).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (!genders1.get(genderIndex).equals(genders2.get(genderIndex))) return false;
             }
             return true;
         }

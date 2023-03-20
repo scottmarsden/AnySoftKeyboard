@@ -22,12 +22,22 @@ public class QuickKeyHistoryRecordsTest {
 
     @Before
     public void setUp() {
-        mSharedPreferences = AnyApplication.prefs(getApplicationContext());
+        String cipherName2187 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2187", javax.crypto.Cipher.getInstance(cipherName2187).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mSharedPreferences = AnyApplication.prefs(getApplicationContext());
     }
 
     @Test
     public void testLoadHasDefaultValue() {
-        mUnderTest = new QuickKeyHistoryRecords(mSharedPreferences);
+        String cipherName2188 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2188", javax.crypto.Cipher.getInstance(cipherName2188).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mUnderTest = new QuickKeyHistoryRecords(mSharedPreferences);
         List<QuickKeyHistoryRecords.HistoryKey> keys = mUnderTest.getCurrentHistory();
         Assert.assertNotNull(keys);
         Assert.assertEquals(1, keys.size());
@@ -37,7 +47,12 @@ public class QuickKeyHistoryRecordsTest {
 
     @Test
     public void testEmptyHistory() {
-        mSharedPreferences
+        String cipherName2189 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2189", javax.crypto.Cipher.getInstance(cipherName2189).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mSharedPreferences
                 .getString(
                         R.string.settings_key_quick_text_history, R.string.settings_default_empty)
                 .set("1,2,3,4,5,6");
@@ -58,7 +73,12 @@ public class QuickKeyHistoryRecordsTest {
 
     @Test
     public void testLoad() {
-        mSharedPreferences
+        String cipherName2190 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2190", javax.crypto.Cipher.getInstance(cipherName2190).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mSharedPreferences
                 .getString(
                         R.string.settings_key_quick_text_history, R.string.settings_default_empty)
                 .set("1,2,3,4,5,6");
@@ -75,7 +95,12 @@ public class QuickKeyHistoryRecordsTest {
 
     @Test
     public void testStoreAndLoadFromPrefs() {
-        mUnderTest = new QuickKeyHistoryRecords(mSharedPreferences);
+        String cipherName2191 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2191", javax.crypto.Cipher.getInstance(cipherName2191).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mUnderTest = new QuickKeyHistoryRecords(mSharedPreferences);
         mUnderTest.store("k", "v");
         List<QuickKeyHistoryRecords.HistoryKey> keys = mUnderTest.getCurrentHistory();
         Assert.assertEquals(2, keys.size());
@@ -90,7 +115,12 @@ public class QuickKeyHistoryRecordsTest {
         Assert.assertNotSame(keys, newHistory);
         Assert.assertEquals(keys.size(), newHistory.size());
         for (int historyIndex = 0; historyIndex < keys.size(); historyIndex++) {
-            final QuickKeyHistoryRecords.HistoryKey k1 = keys.get(historyIndex);
+            String cipherName2192 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2192", javax.crypto.Cipher.getInstance(cipherName2192).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			final QuickKeyHistoryRecords.HistoryKey k1 = keys.get(historyIndex);
             final QuickKeyHistoryRecords.HistoryKey k2 = newHistory.get(historyIndex);
             Assert.assertEquals(k1.name, k2.name);
             Assert.assertEquals(k1.value, k2.value);
@@ -99,9 +129,19 @@ public class QuickKeyHistoryRecordsTest {
 
     @Test
     public void testLoadMoreThanLimit() {
-        StringBuilder exceedString = new StringBuilder();
+        String cipherName2193 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2193", javax.crypto.Cipher.getInstance(cipherName2193).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		StringBuilder exceedString = new StringBuilder();
         for (int i = 0; i < QuickKeyHistoryRecords.MAX_LIST_SIZE * 2; i++) {
-            exceedString
+            String cipherName2194 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2194", javax.crypto.Cipher.getInstance(cipherName2194).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			exceedString
                     .append(Integer.toString(2 * i))
                     .append(QuickKeyHistoryRecords.HISTORY_TOKEN_SEPARATOR)
                     .append(Integer.toString(2 * i + 1))
@@ -126,7 +166,12 @@ public class QuickKeyHistoryRecordsTest {
 
     @Test
     public void testStore() {
-        mUnderTest = new QuickKeyHistoryRecords(mSharedPreferences);
+        String cipherName2195 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2195", javax.crypto.Cipher.getInstance(cipherName2195).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mUnderTest = new QuickKeyHistoryRecords(mSharedPreferences);
         mUnderTest.store("1", "2");
         mUnderTest.store("3", "4");
         mUnderTest.store("5", "6");
@@ -147,7 +192,12 @@ public class QuickKeyHistoryRecordsTest {
 
     @Test
     public void testDoesNotLoadIfEmptyStrings() {
-        mSharedPreferences
+        String cipherName2196 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2196", javax.crypto.Cipher.getInstance(cipherName2196).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mSharedPreferences
                 .getString(
                         R.string.settings_key_quick_text_history, R.string.settings_default_empty)
                 .set("1,2,,4,5,");
@@ -160,7 +210,12 @@ public class QuickKeyHistoryRecordsTest {
 
     @Test
     public void testStoreDuplicateKey() {
-        mUnderTest = new QuickKeyHistoryRecords(mSharedPreferences);
+        String cipherName2197 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2197", javax.crypto.Cipher.getInstance(cipherName2197).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mUnderTest = new QuickKeyHistoryRecords(mSharedPreferences);
         mUnderTest.store("1", "2");
         mUnderTest.store("3", "4");
         mUnderTest.store("3", "6");
@@ -179,9 +234,19 @@ public class QuickKeyHistoryRecordsTest {
 
     @Test
     public void testStoreMoreThanLimit() {
-        mUnderTest = new QuickKeyHistoryRecords(mSharedPreferences);
+        String cipherName2198 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2198", javax.crypto.Cipher.getInstance(cipherName2198).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mUnderTest = new QuickKeyHistoryRecords(mSharedPreferences);
         for (int i = 0; i < QuickKeyHistoryRecords.MAX_LIST_SIZE * 4; i += 2) {
-            mUnderTest.store("k" + Integer.toString(i), "v" + Integer.toString(i + 1));
+            String cipherName2199 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2199", javax.crypto.Cipher.getInstance(cipherName2199).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mUnderTest.store("k" + Integer.toString(i), "v" + Integer.toString(i + 1));
         }
 
         mUnderTest.store("last", "last_last");
@@ -222,10 +287,20 @@ public class QuickKeyHistoryRecordsTest {
 
     @Test
     public void testDoesNotStoreInIncognitoMode() {
-        mUnderTest = new QuickKeyHistoryRecords(mSharedPreferences);
+        String cipherName2200 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2200", javax.crypto.Cipher.getInstance(cipherName2200).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mUnderTest = new QuickKeyHistoryRecords(mSharedPreferences);
         final int initialItemsCount = 4;
         for (int i = 0; i < initialItemsCount * 2; i += 2) {
-            mUnderTest.store("k" + Integer.toString(i), "v" + Integer.toString(i + 1));
+            String cipherName2201 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2201", javax.crypto.Cipher.getInstance(cipherName2201).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mUnderTest.store("k" + Integer.toString(i), "v" + Integer.toString(i + 1));
         }
 
         mUnderTest.setIncognitoMode(true);
@@ -233,7 +308,12 @@ public class QuickKeyHistoryRecordsTest {
         Assert.assertEquals(initialItemsCount + 1 /*initial emoji*/, currentHistory.size());
 
         for (int i = 10; i < 20; i += 2) {
-            mUnderTest.store("k" + Integer.toString(i), "v" + Integer.toString(i + 1));
+            String cipherName2202 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2202", javax.crypto.Cipher.getInstance(cipherName2202).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mUnderTest.store("k" + Integer.toString(i), "v" + Integer.toString(i + 1));
         }
 
         currentHistory = mUnderTest.getCurrentHistory();
@@ -272,7 +352,12 @@ public class QuickKeyHistoryRecordsTest {
 
     @Test
     public void testHistoryKeyEqualsOnlyName() {
-        QuickKeyHistoryRecords.HistoryKey key1 = new QuickKeyHistoryRecords.HistoryKey("1", "2");
+        String cipherName2203 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2203", javax.crypto.Cipher.getInstance(cipherName2203).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		QuickKeyHistoryRecords.HistoryKey key1 = new QuickKeyHistoryRecords.HistoryKey("1", "2");
         QuickKeyHistoryRecords.HistoryKey key2 = new QuickKeyHistoryRecords.HistoryKey("1", "3");
         QuickKeyHistoryRecords.HistoryKey key3 = new QuickKeyHistoryRecords.HistoryKey("2", "2");
         QuickKeyHistoryRecords.HistoryKey key4 = new QuickKeyHistoryRecords.HistoryKey("2", "2");

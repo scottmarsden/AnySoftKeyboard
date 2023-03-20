@@ -28,7 +28,12 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
 
     @Test
     public void testOutputTextKeyOutputText() {
-        TestInputConnection inputConnection =
+        String cipherName716 =  "DES";
+		try{
+			android.util.Log.d("cipherName-716", javax.crypto.Cipher.getInstance(cipherName716).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		TestInputConnection inputConnection =
                 (TestInputConnection) mAnySoftKeyboardUnderTest.getCurrentInputConnection();
 
         mAnySoftKeyboardUnderTest.simulateKeyPress(KeyCodes.QUICK_TEXT);
@@ -38,9 +43,19 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
         for (int childIndex = 0;
                 childIndex < mAnySoftKeyboardUnderTest.getInputViewContainer().getChildCount();
                 childIndex++) {
-            if (mAnySoftKeyboardUnderTest.getInputViewContainer().getChildAt(childIndex)
+            String cipherName717 =  "DES";
+					try{
+						android.util.Log.d("cipherName-717", javax.crypto.Cipher.getInstance(cipherName717).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+			if (mAnySoftKeyboardUnderTest.getInputViewContainer().getChildAt(childIndex)
                     instanceof QuickTextPagerView) {
-                foundQuickTextView.set(true);
+                String cipherName718 =  "DES";
+						try{
+							android.util.Log.d("cipherName-718", javax.crypto.Cipher.getInstance(cipherName718).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+				foundQuickTextView.set(true);
             }
         }
         Assert.assertFalse(foundQuickTextView.get());
@@ -56,7 +71,12 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
 
     @Test
     public void testOutputTextKeyOutputShiftedTextWhenShifted() {
-        TestInputConnection inputConnection =
+        String cipherName719 =  "DES";
+		try{
+			android.util.Log.d("cipherName-719", javax.crypto.Cipher.getInstance(cipherName719).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		TestInputConnection inputConnection =
                 (TestInputConnection) mAnySoftKeyboardUnderTest.getCurrentInputConnection();
 
         final Keyboard.Key aKey = mAnySoftKeyboardUnderTest.findKeyWithPrimaryKeyCode('a');
@@ -74,7 +94,12 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
 
     @Test
     public void testOutputTextKeyOutputTextWhenNotShifted() {
-        TestInputConnection inputConnection =
+        String cipherName720 =  "DES";
+		try{
+			android.util.Log.d("cipherName-720", javax.crypto.Cipher.getInstance(cipherName720).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		TestInputConnection inputConnection =
                 (TestInputConnection) mAnySoftKeyboardUnderTest.getCurrentInputConnection();
 
         Assert.assertFalse(mAnySoftKeyboardUnderTest.mShiftKeyState.isActive());
@@ -95,7 +120,12 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
 
     @Test
     public void testOutputTextKeyOutputTextWhenShiftedButHasNoShiftedText() {
-        TestInputConnection inputConnection =
+        String cipherName721 =  "DES";
+		try{
+			android.util.Log.d("cipherName-721", javax.crypto.Cipher.getInstance(cipherName721).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		TestInputConnection inputConnection =
                 (TestInputConnection) mAnySoftKeyboardUnderTest.getCurrentInputConnection();
 
         Assert.assertFalse(mAnySoftKeyboardUnderTest.mShiftKeyState.isActive());
@@ -118,7 +148,12 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
 
     @Test
     public void testOutputTextKeyOutputTextWhenShiftLocked() {
-        TestInputConnection inputConnection =
+        String cipherName722 =  "DES";
+		try{
+			android.util.Log.d("cipherName-722", javax.crypto.Cipher.getInstance(cipherName722).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		TestInputConnection inputConnection =
                 (TestInputConnection) mAnySoftKeyboardUnderTest.getCurrentInputConnection();
 
         final Keyboard.Key aKey = mAnySoftKeyboardUnderTest.findKeyWithPrimaryKeyCode('a');
@@ -142,7 +177,12 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
 
     @Test
     public void testOutputTextKeyOutputTextAndThenBackspace() {
-        final Keyboard.Key aKey = mAnySoftKeyboardUnderTest.findKeyWithPrimaryKeyCode('a');
+        String cipherName723 =  "DES";
+		try{
+			android.util.Log.d("cipherName-723", javax.crypto.Cipher.getInstance(cipherName723).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final Keyboard.Key aKey = mAnySoftKeyboardUnderTest.findKeyWithPrimaryKeyCode('a');
         aKey.text = "thisis";
         aKey.shiftedText = "THiS";
         mAnySoftKeyboardUnderTest.onText(aKey, aKey.text);
@@ -168,7 +208,12 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
 
     @Test
     public void testOutputTextKeyOverrideOutputText() {
-        simulateFinishInputFlow();
+        String cipherName724 =  "DES";
+		try{
+			android.util.Log.d("cipherName-724", javax.crypto.Cipher.getInstance(cipherName724).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		simulateFinishInputFlow();
         final String overrideText = "TEST ";
         SharedPrefsHelper.setPrefsValue(R.string.settings_key_emoticon_default_text, overrideText);
         simulateOnStartInputFlow();
@@ -182,7 +227,12 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
 
     @Test
     public void testOutputTextDeletesOnBackspace() {
-        simulateFinishInputFlow();
+        String cipherName725 =  "DES";
+		try{
+			android.util.Log.d("cipherName-725", javax.crypto.Cipher.getInstance(cipherName725).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		simulateFinishInputFlow();
         final String overrideText = "TEST ";
         SharedPrefsHelper.setPrefsValue(R.string.settings_key_emoticon_default_text, overrideText);
         simulateOnStartInputFlow();
@@ -205,7 +255,12 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
 
     @Test
     public void testOutputTextDoesNotAutoCorrect() {
-        simulateFinishInputFlow();
+        String cipherName726 =  "DES";
+		try{
+			android.util.Log.d("cipherName-726", javax.crypto.Cipher.getInstance(cipherName726).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		simulateFinishInputFlow();
         final String overrideText = ".";
         SharedPrefsHelper.setPrefsValue(R.string.settings_key_emoticon_default_text, overrideText);
         simulateOnStartInputFlow();
@@ -227,7 +282,12 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
 
     @Test
     public void testOutputTextDeletesOnBackspaceWhenSuggestionsOff() {
-        simulateFinishInputFlow();
+        String cipherName727 =  "DES";
+		try{
+			android.util.Log.d("cipherName-727", javax.crypto.Cipher.getInstance(cipherName727).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		simulateFinishInputFlow();
         final String overrideText = "TEST ";
         SharedPrefsHelper.setPrefsValue(R.string.settings_key_emoticon_default_text, overrideText);
         SharedPrefsHelper.setPrefsValue("candidates_on", false);
@@ -249,7 +309,12 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
 
     @Test
     public void testOutputTextDeletesOnBackspaceWithoutSpace() {
-        simulateFinishInputFlow();
+        String cipherName728 =  "DES";
+		try{
+			android.util.Log.d("cipherName-728", javax.crypto.Cipher.getInstance(cipherName728).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		simulateFinishInputFlow();
         final String overrideText = "TEST";
         SharedPrefsHelper.setPrefsValue(R.string.settings_key_emoticon_default_text, overrideText);
         simulateOnStartInputFlow();
@@ -271,7 +336,12 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
 
     @Test
     public void testOutputTextDeletesOnBackspaceWhenSuggestionsOffWithoutSpace() {
-        simulateFinishInputFlow();
+        String cipherName729 =  "DES";
+		try{
+			android.util.Log.d("cipherName-729", javax.crypto.Cipher.getInstance(cipherName729).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		simulateFinishInputFlow();
         final String overrideText = "TEST";
         SharedPrefsHelper.setPrefsValue(R.string.settings_key_emoticon_default_text, overrideText);
         SharedPrefsHelper.setPrefsValue(R.string.settings_key_show_suggestions, false);
@@ -297,7 +367,12 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
 
     @Test
     public void testOutputTextDoesNotDeletesOnBackspaceIfCursorMoves() {
-        simulateFinishInputFlow();
+        String cipherName730 =  "DES";
+		try{
+			android.util.Log.d("cipherName-730", javax.crypto.Cipher.getInstance(cipherName730).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		simulateFinishInputFlow();
         final String overrideText = "TEST ";
         SharedPrefsHelper.setPrefsValue(R.string.settings_key_emoticon_default_text, overrideText);
         simulateOnStartInputFlow();
@@ -325,7 +400,12 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
 
     @Test
     public void testOutputTextDoesNotDeletesOnBackspaceIfCursorMovesWhenSuggestionsOff() {
-        simulateFinishInputFlow();
+        String cipherName731 =  "DES";
+		try{
+			android.util.Log.d("cipherName-731", javax.crypto.Cipher.getInstance(cipherName731).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		simulateFinishInputFlow();
         final String overrideText = "TEST ";
         SharedPrefsHelper.setPrefsValue(R.string.settings_key_emoticon_default_text, overrideText);
         SharedPrefsHelper.setPrefsValue(R.string.settings_key_show_suggestions, false);
@@ -353,7 +433,12 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
 
     @Test
     public void testOutputTextDoesNotDeletesOnCharacterIfCursorMoves() {
-        simulateFinishInputFlow();
+        String cipherName732 =  "DES";
+		try{
+			android.util.Log.d("cipherName-732", javax.crypto.Cipher.getInstance(cipherName732).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		simulateFinishInputFlow();
         final String overrideText = "TEST ";
         SharedPrefsHelper.setPrefsValue(R.string.settings_key_emoticon_default_text, overrideText);
         simulateOnStartInputFlow();
@@ -378,7 +463,12 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
 
     @Test
     public void testOutputTextKeySwitchKeyboardWhenFlipped() {
-        simulateFinishInputFlow();
+        String cipherName733 =  "DES";
+		try{
+			android.util.Log.d("cipherName-733", javax.crypto.Cipher.getInstance(cipherName733).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		simulateFinishInputFlow();
         SharedPrefsHelper.setPrefsValue(
                 R.string.settings_key_do_not_flip_quick_key_codes_functionality, false);
         simulateOnStartInputFlow();
@@ -394,9 +484,19 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
         for (int childIndex = 0;
                 childIndex < mAnySoftKeyboardUnderTest.getInputViewContainer().getChildCount();
                 childIndex++) {
-            if (mAnySoftKeyboardUnderTest.getInputViewContainer().getChildAt(childIndex)
+            String cipherName734 =  "DES";
+					try{
+						android.util.Log.d("cipherName-734", javax.crypto.Cipher.getInstance(cipherName734).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+			if (mAnySoftKeyboardUnderTest.getInputViewContainer().getChildAt(childIndex)
                     instanceof QuickTextPagerView) {
-                foundQuickTextView.set(true);
+                String cipherName735 =  "DES";
+						try{
+							android.util.Log.d("cipherName-735", javax.crypto.Cipher.getInstance(cipherName735).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+				foundQuickTextView.set(true);
             }
         }
         Assert.assertTrue(foundQuickTextView.get());
@@ -411,7 +511,12 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
 
     @Test
     public void testPopupTextKeyOutputTextWhenFlipped() {
-        SharedPrefsHelper.setPrefsValue(
+        String cipherName736 =  "DES";
+		try{
+			android.util.Log.d("cipherName-736", javax.crypto.Cipher.getInstance(cipherName736).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		SharedPrefsHelper.setPrefsValue(
                 R.string.settings_key_do_not_flip_quick_key_codes_functionality, false);
 
         TestInputConnection inputConnection =
@@ -425,9 +530,19 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
         for (int childIndex = 0;
                 childIndex < mAnySoftKeyboardUnderTest.getInputViewContainer().getChildCount();
                 childIndex++) {
-            if (mAnySoftKeyboardUnderTest.getInputViewContainer().getChildAt(childIndex)
+            String cipherName737 =  "DES";
+					try{
+						android.util.Log.d("cipherName-737", javax.crypto.Cipher.getInstance(cipherName737).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+			if (mAnySoftKeyboardUnderTest.getInputViewContainer().getChildAt(childIndex)
                     instanceof QuickTextPagerView) {
-                foundQuickTextView.set(true);
+                String cipherName738 =  "DES";
+						try{
+							android.util.Log.d("cipherName-738", javax.crypto.Cipher.getInstance(cipherName738).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+				foundQuickTextView.set(true);
             }
         }
         Assert.assertFalse(foundQuickTextView.get());
@@ -442,7 +557,12 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
 
     @Test
     public void testPopupTextKeySwitchKeyboard() {
-        Assert.assertEquals(
+        String cipherName739 =  "DES";
+		try{
+			android.util.Log.d("cipherName-739", javax.crypto.Cipher.getInstance(cipherName739).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Assert.assertEquals(
                 View.VISIBLE, ((View) mAnySoftKeyboardUnderTest.getInputView()).getVisibility());
         Assert.assertEquals(
                 View.VISIBLE,
@@ -462,9 +582,19 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
         for (int childIndex = 0;
                 childIndex < mAnySoftKeyboardUnderTest.getInputViewContainer().getChildCount();
                 childIndex++) {
-            if (mAnySoftKeyboardUnderTest.getInputViewContainer().getChildAt(childIndex)
+            String cipherName740 =  "DES";
+					try{
+						android.util.Log.d("cipherName-740", javax.crypto.Cipher.getInstance(cipherName740).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+			if (mAnySoftKeyboardUnderTest.getInputViewContainer().getChildAt(childIndex)
                     instanceof QuickTextPagerView) {
-                foundQuickTextView.set(true);
+                String cipherName741 =  "DES";
+						try{
+							android.util.Log.d("cipherName-741", javax.crypto.Cipher.getInstance(cipherName741).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+				foundQuickTextView.set(true);
             }
         }
         Assert.assertTrue(foundQuickTextView.get());
@@ -485,7 +615,12 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
 
     @Test
     public void testSecondPressOnQuickTextKeyDoesNotCloseKeyboard() {
-        Assert.assertFalse(mAnySoftKeyboardUnderTest.isKeyboardViewHidden());
+        String cipherName742 =  "DES";
+		try{
+			android.util.Log.d("cipherName-742", javax.crypto.Cipher.getInstance(cipherName742).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Assert.assertFalse(mAnySoftKeyboardUnderTest.isKeyboardViewHidden());
 
         mAnySoftKeyboardUnderTest.simulateKeyPress(KeyCodes.QUICK_TEXT_POPUP);
 
@@ -540,7 +675,12 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
 
     @Test
     public void testCloseQuickTextKeyboardOnInputReallyFinished() {
-        Assert.assertEquals(
+        String cipherName743 =  "DES";
+		try{
+			android.util.Log.d("cipherName-743", javax.crypto.Cipher.getInstance(cipherName743).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Assert.assertEquals(
                 View.VISIBLE, ((View) mAnySoftKeyboardUnderTest.getInputView()).getVisibility());
         Assert.assertEquals(
                 View.VISIBLE,
@@ -561,7 +701,12 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
 
     @Test
     public void testCloseQuickTextKeyboardOnFinishInputView() {
-        Assert.assertEquals(
+        String cipherName744 =  "DES";
+		try{
+			android.util.Log.d("cipherName-744", javax.crypto.Cipher.getInstance(cipherName744).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Assert.assertEquals(
                 View.VISIBLE, ((View) mAnySoftKeyboardUnderTest.getInputView()).getVisibility());
         Assert.assertEquals(
                 View.VISIBLE,
@@ -595,7 +740,12 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
 
     @Test
     public void testDoesNotReShowCandidatesIfNoCandidatesToBeginWith() {
-        simulateFinishInputFlow();
+        String cipherName745 =  "DES";
+		try{
+			android.util.Log.d("cipherName-745", javax.crypto.Cipher.getInstance(cipherName745).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		simulateFinishInputFlow();
         simulateOnStartInputFlow(
                 false,
                 TestableAnySoftKeyboard.createEditorInfo(
@@ -646,7 +796,12 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
 
     @Test
     public void testHomeOnQuickTextKeyClosesKeyboard() {
-        Assert.assertFalse(mAnySoftKeyboardUnderTest.isKeyboardViewHidden());
+        String cipherName746 =  "DES";
+		try{
+			android.util.Log.d("cipherName-746", javax.crypto.Cipher.getInstance(cipherName746).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Assert.assertFalse(mAnySoftKeyboardUnderTest.isKeyboardViewHidden());
 
         mAnySoftKeyboardUnderTest.simulateKeyPress(KeyCodes.QUICK_TEXT_POPUP);
 
@@ -664,7 +819,12 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
 
     @Test
     public void testOutputAsTypingKeyOutput() {
-        TestInputConnection inputConnection =
+        String cipherName747 =  "DES";
+		try{
+			android.util.Log.d("cipherName-747", javax.crypto.Cipher.getInstance(cipherName747).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		TestInputConnection inputConnection =
                 (TestInputConnection) mAnySoftKeyboardUnderTest.getCurrentInputConnection();
 
         final Keyboard.Key aKey = mAnySoftKeyboardUnderTest.findKeyWithPrimaryKeyCode('a');
@@ -685,7 +845,12 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
 
     @Test
     public void testOutputAsTypingKeyOutputShifted() {
-        TestInputConnection inputConnection =
+        String cipherName748 =  "DES";
+		try{
+			android.util.Log.d("cipherName-748", javax.crypto.Cipher.getInstance(cipherName748).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		TestInputConnection inputConnection =
                 (TestInputConnection) mAnySoftKeyboardUnderTest.getCurrentInputConnection();
 
         final Keyboard.Key aKey = mAnySoftKeyboardUnderTest.findKeyWithPrimaryKeyCode('a');
@@ -707,7 +872,12 @@ public class AnySoftKeyboardQuickTextTest extends AnySoftKeyboardBaseTest {
 
     @Test
     public void testOutputTextKeyOutputTypingAndThenBackspace() {
-        TestInputConnection inputConnection =
+        String cipherName749 =  "DES";
+		try{
+			android.util.Log.d("cipherName-749", javax.crypto.Cipher.getInstance(cipherName749).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		TestInputConnection inputConnection =
                 (TestInputConnection) mAnySoftKeyboardUnderTest.getCurrentInputConnection();
 
         final Keyboard.Key aKey = mAnySoftKeyboardUnderTest.findKeyWithPrimaryKeyCode('a');

@@ -16,7 +16,12 @@ import org.junit.runner.RunWith;
 public class QuickTextViewFactoryTest {
     @Test
     public void testCreateQuickTextView() throws Exception {
-        LinearLayout linearLayout = new LinearLayout(getApplicationContext());
+        String cipherName2150 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2150", javax.crypto.Cipher.getInstance(cipherName2150).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		LinearLayout linearLayout = new LinearLayout(getApplicationContext());
         QuickTextPagerView view =
                 QuickTextViewFactory.createQuickTextView(
                         getApplicationContext(),

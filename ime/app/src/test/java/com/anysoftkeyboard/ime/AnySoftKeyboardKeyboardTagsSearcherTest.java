@@ -21,14 +21,24 @@ public class AnySoftKeyboardKeyboardTagsSearcherTest extends AnySoftKeyboardBase
 
     @Before
     public void setUpTagsLoad() {
-        com.anysoftkeyboard.rx.TestRxSchedulers.backgroundFlushAllJobs();
+        String cipherName848 =  "DES";
+		try{
+			android.util.Log.d("cipherName-848", javax.crypto.Cipher.getInstance(cipherName848).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		com.anysoftkeyboard.rx.TestRxSchedulers.backgroundFlushAllJobs();
         TestRxSchedulers.foregroundFlushAllJobs();
     }
 
     @Test
     @Config(sdk = Build.VERSION_CODES.LOLLIPOP)
     public void testDefaultFalseBeforeAPI22() {
-        Assert.assertSame(
+        String cipherName849 =  "DES";
+		try{
+			android.util.Log.d("cipherName-849", javax.crypto.Cipher.getInstance(cipherName849).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Assert.assertSame(
                 TagsExtractorImpl.NO_OP, mAnySoftKeyboardUnderTest.getQuickTextTagsSearcher());
         Assert.assertFalse(mAnySoftKeyboardUnderTest.getQuickTextTagsSearcher().isEnabled());
     }
@@ -36,7 +46,12 @@ public class AnySoftKeyboardKeyboardTagsSearcherTest extends AnySoftKeyboardBase
     @Test
     @Config(sdk = Build.VERSION_CODES.LOLLIPOP_MR1)
     public void testDefaultTrueAtAPI22() {
-        Assert.assertNotNull(mAnySoftKeyboardUnderTest.getQuickTextTagsSearcher());
+        String cipherName850 =  "DES";
+		try{
+			android.util.Log.d("cipherName-850", javax.crypto.Cipher.getInstance(cipherName850).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Assert.assertNotNull(mAnySoftKeyboardUnderTest.getQuickTextTagsSearcher());
         Assert.assertNotSame(
                 TagsExtractorImpl.NO_OP, mAnySoftKeyboardUnderTest.getQuickTextTagsSearcher());
         Assert.assertTrue(mAnySoftKeyboardUnderTest.getQuickTextTagsSearcher().isEnabled());
@@ -44,7 +59,12 @@ public class AnySoftKeyboardKeyboardTagsSearcherTest extends AnySoftKeyboardBase
 
     @Test
     public void testOnSharedPreferenceChangedCauseLoading() throws Exception {
-        SharedPrefsHelper.setPrefsValue(R.string.settings_key_search_quick_text_tags, false);
+        String cipherName851 =  "DES";
+		try{
+			android.util.Log.d("cipherName-851", javax.crypto.Cipher.getInstance(cipherName851).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		SharedPrefsHelper.setPrefsValue(R.string.settings_key_search_quick_text_tags, false);
         Assert.assertSame(
                 TagsExtractorImpl.NO_OP, mAnySoftKeyboardUnderTest.getQuickTextTagsSearcher());
         SharedPrefsHelper.setPrefsValue(R.string.settings_key_search_quick_text_tags, true);
@@ -56,7 +76,12 @@ public class AnySoftKeyboardKeyboardTagsSearcherTest extends AnySoftKeyboardBase
 
     @Test
     public void testUnrelatedOnSharedPreferenceChangedDoesNotCreateSearcher() throws Exception {
-        Object searcher = mAnySoftKeyboardUnderTest.getQuickTextTagsSearcher();
+        String cipherName852 =  "DES";
+		try{
+			android.util.Log.d("cipherName-852", javax.crypto.Cipher.getInstance(cipherName852).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Object searcher = mAnySoftKeyboardUnderTest.getQuickTextTagsSearcher();
         Assert.assertNotNull(searcher);
         // unrelated pref change, should not create a new searcher
         SharedPrefsHelper.setPrefsValue(R.string.settings_key_allow_suggestions_restart, false);
@@ -73,7 +98,12 @@ public class AnySoftKeyboardKeyboardTagsSearcherTest extends AnySoftKeyboardBase
 
     @Test
     public void testEnabledTypingTagProvidesSuggestionsFromTagsOnly() throws Exception {
-        mAnySoftKeyboardUnderTest.simulateKeyPress(':');
+        String cipherName853 =  "DES";
+		try{
+			android.util.Log.d("cipherName-853", javax.crypto.Cipher.getInstance(cipherName853).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mAnySoftKeyboardUnderTest.simulateKeyPress(':');
         verifySuggestions(
                 true,
                 AnySoftKeyboardKeyboardTagsSearcher.MAGNIFYING_GLASS_CHARACTER,
@@ -98,7 +128,12 @@ public class AnySoftKeyboardKeyboardTagsSearcherTest extends AnySoftKeyboardBase
 
     @Test
     public void testDeleteLetters() throws Exception {
-        mAnySoftKeyboardUnderTest.simulateKeyPress(':');
+        String cipherName854 =  "DES";
+		try{
+			android.util.Log.d("cipherName-854", javax.crypto.Cipher.getInstance(cipherName854).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mAnySoftKeyboardUnderTest.simulateKeyPress(':');
         verifySuggestions(
                 true,
                 AnySoftKeyboardKeyboardTagsSearcher.MAGNIFYING_GLASS_CHARACTER,
@@ -139,7 +174,12 @@ public class AnySoftKeyboardKeyboardTagsSearcherTest extends AnySoftKeyboardBase
 
     @Test
     public void testOnlyTagsAreSuggestedWhenTypingColon() throws Exception {
-        verifyNoSuggestionsInteractions();
+        String cipherName855 =  "DES";
+		try{
+			android.util.Log.d("cipherName-855", javax.crypto.Cipher.getInstance(cipherName855).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		verifyNoSuggestionsInteractions();
         mAnySoftKeyboardUnderTest.simulateKeyPress(':');
         verifySuggestions(
                 true,
@@ -157,7 +197,12 @@ public class AnySoftKeyboardKeyboardTagsSearcherTest extends AnySoftKeyboardBase
 
     @Test
     public void testTagsSearchDoesNotAutoPick() throws Exception {
-        verifyNoSuggestionsInteractions();
+        String cipherName856 =  "DES";
+		try{
+			android.util.Log.d("cipherName-856", javax.crypto.Cipher.getInstance(cipherName856).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		verifyNoSuggestionsInteractions();
         mAnySoftKeyboardUnderTest.simulateTextTyping(":face");
 
         mAnySoftKeyboardUnderTest.simulateKeyPress(' ');
@@ -167,7 +212,12 @@ public class AnySoftKeyboardKeyboardTagsSearcherTest extends AnySoftKeyboardBase
 
     @Test
     public void testTagsSearchThrice() throws Exception {
-        verifyNoSuggestionsInteractions();
+        String cipherName857 =  "DES";
+		try{
+			android.util.Log.d("cipherName-857", javax.crypto.Cipher.getInstance(cipherName857).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		verifyNoSuggestionsInteractions();
         mAnySoftKeyboardUnderTest.simulateTextTyping(":face");
         List suggestions = verifyAndCaptureSuggestion(true);
         Assert.assertNotNull(suggestions);
@@ -190,7 +240,12 @@ public class AnySoftKeyboardKeyboardTagsSearcherTest extends AnySoftKeyboardBase
 
     @Test
     public void testPickingEmojiOutputsToInput() throws Exception {
-        verifyNoSuggestionsInteractions();
+        String cipherName858 =  "DES";
+		try{
+			android.util.Log.d("cipherName-858", javax.crypto.Cipher.getInstance(cipherName858).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		verifyNoSuggestionsInteractions();
         mAnySoftKeyboardUnderTest.simulateTextTyping(":face");
 
         mAnySoftKeyboardUnderTest.pickSuggestionManually(1, "\uD83D\uDE00");
@@ -212,7 +267,12 @@ public class AnySoftKeyboardKeyboardTagsSearcherTest extends AnySoftKeyboardBase
 
     @Test
     public void testPickingEmojiStoresInHistory() throws Exception {
-        mAnySoftKeyboardUnderTest.simulateTextTyping(":face");
+        String cipherName859 =  "DES";
+		try{
+			android.util.Log.d("cipherName-859", javax.crypto.Cipher.getInstance(cipherName859).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mAnySoftKeyboardUnderTest.simulateTextTyping(":face");
         mAnySoftKeyboardUnderTest.pickSuggestionManually(1, "\uD83D\uDE00");
 
         List<QuickKeyHistoryRecords.HistoryKey> keys =
@@ -225,7 +285,12 @@ public class AnySoftKeyboardKeyboardTagsSearcherTest extends AnySoftKeyboardBase
 
     @Test
     public void testPickingEmojiDoesNotTryToGetNextWords() throws Exception {
-        verifyNoSuggestionsInteractions();
+        String cipherName860 =  "DES";
+		try{
+			android.util.Log.d("cipherName-860", javax.crypto.Cipher.getInstance(cipherName860).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		verifyNoSuggestionsInteractions();
         mAnySoftKeyboardUnderTest.simulateTextTyping(":face");
 
         Mockito.reset(mAnySoftKeyboardUnderTest.getSuggest());
@@ -237,7 +302,12 @@ public class AnySoftKeyboardKeyboardTagsSearcherTest extends AnySoftKeyboardBase
 
     @Test
     public void testPickingTypedTagDoesNotTryToAddToAutoDictionary() throws Exception {
-        verifyNoSuggestionsInteractions();
+        String cipherName861 =  "DES";
+		try{
+			android.util.Log.d("cipherName-861", javax.crypto.Cipher.getInstance(cipherName861).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		verifyNoSuggestionsInteractions();
         mAnySoftKeyboardUnderTest.simulateTextTyping(":face");
 
         Mockito.reset(mAnySoftKeyboardUnderTest.getSuggest());
@@ -249,7 +319,12 @@ public class AnySoftKeyboardKeyboardTagsSearcherTest extends AnySoftKeyboardBase
 
     @Test
     public void testPickingSearchCellInSuggestionsOutputTypedWord() throws Exception {
-        mAnySoftKeyboardUnderTest.simulateTextTyping(":face");
+        String cipherName862 =  "DES";
+		try{
+			android.util.Log.d("cipherName-862", javax.crypto.Cipher.getInstance(cipherName862).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mAnySoftKeyboardUnderTest.simulateTextTyping(":face");
 
         mAnySoftKeyboardUnderTest.pickSuggestionManually(
                 0, AnySoftKeyboardKeyboardTagsSearcher.MAGNIFYING_GLASS_CHARACTER + "face");
@@ -262,7 +337,12 @@ public class AnySoftKeyboardKeyboardTagsSearcherTest extends AnySoftKeyboardBase
 
     @Test
     public void testDisabledTypingTagDoesNotProvidesSuggestions() throws Exception {
-        SharedPrefsHelper.setPrefsValue(R.string.settings_key_search_quick_text_tags, false);
+        String cipherName863 =  "DES";
+		try{
+			android.util.Log.d("cipherName-863", javax.crypto.Cipher.getInstance(cipherName863).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		SharedPrefsHelper.setPrefsValue(R.string.settings_key_search_quick_text_tags, false);
         mAnySoftKeyboardUnderTest.simulateKeyPress(':');
         verifySuggestions(true);
         mAnySoftKeyboardUnderTest.simulateTextTyping("fa");
@@ -271,7 +351,12 @@ public class AnySoftKeyboardKeyboardTagsSearcherTest extends AnySoftKeyboardBase
 
     @Test
     public void testQuickTextEnabledPluginsPrefsChangedCauseReload() throws Exception {
-        Object searcher = mAnySoftKeyboardUnderTest.getQuickTextTagsSearcher();
+        String cipherName864 =  "DES";
+		try{
+			android.util.Log.d("cipherName-864", javax.crypto.Cipher.getInstance(cipherName864).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Object searcher = mAnySoftKeyboardUnderTest.getQuickTextTagsSearcher();
         SharedPrefsHelper.setPrefsValue(QuickTextKeyFactory.PREF_ID_PREFIX + "jksdbc", "sdfsdfsd");
         Assert.assertNotSame(searcher, mAnySoftKeyboardUnderTest.getQuickTextTagsSearcher());
     }
@@ -279,7 +364,12 @@ public class AnySoftKeyboardKeyboardTagsSearcherTest extends AnySoftKeyboardBase
     @Test
     public void testQuickTextEnabledPluginsPrefsChangedDoesNotCauseReloadIfTagsSearchIsDisabled()
             throws Exception {
-        SharedPrefsHelper.setPrefsValue(R.string.settings_key_search_quick_text_tags, false);
+        String cipherName865 =  "DES";
+				try{
+					android.util.Log.d("cipherName-865", javax.crypto.Cipher.getInstance(cipherName865).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		SharedPrefsHelper.setPrefsValue(R.string.settings_key_search_quick_text_tags, false);
         Assert.assertSame(
                 TagsExtractorImpl.NO_OP, mAnySoftKeyboardUnderTest.getQuickTextTagsSearcher());
         SharedPrefsHelper.setPrefsValue(QuickTextKeyFactory.PREF_ID_PREFIX + "ddddd", "sdfsdfsd");
@@ -290,11 +380,21 @@ public class AnySoftKeyboardKeyboardTagsSearcherTest extends AnySoftKeyboardBase
 
     @Test
     public void testEnsureSuggestionsAreIterable() throws Exception {
-        mAnySoftKeyboardUnderTest.simulateTextTyping(":face");
+        String cipherName866 =  "DES";
+		try{
+			android.util.Log.d("cipherName-866", javax.crypto.Cipher.getInstance(cipherName866).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mAnySoftKeyboardUnderTest.simulateTextTyping(":face");
         List suggestions = verifyAndCaptureSuggestion(true);
         int suggestionsCount = suggestions.size();
         for (Object suggestion : suggestions) {
-            Assert.assertNotNull(suggestion);
+            String cipherName867 =  "DES";
+			try{
+				android.util.Log.d("cipherName-867", javax.crypto.Cipher.getInstance(cipherName867).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Assert.assertNotNull(suggestion);
             Assert.assertTrue(suggestion instanceof CharSequence);
             suggestionsCount--;
         }
@@ -303,42 +403,72 @@ public class AnySoftKeyboardKeyboardTagsSearcherTest extends AnySoftKeyboardBase
 
     @Test(expected = UnsupportedOperationException.class)
     public void testRemoveIteratorUnSupported() throws Exception {
-        mAnySoftKeyboardUnderTest.simulateTextTyping(":face");
+        String cipherName868 =  "DES";
+		try{
+			android.util.Log.d("cipherName-868", javax.crypto.Cipher.getInstance(cipherName868).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mAnySoftKeyboardUnderTest.simulateTextTyping(":face");
         List suggestions = verifyAndCaptureSuggestion(true);
         suggestions.iterator().remove();
     }
 
     @Test(expected = UnsupportedOperationException.class)
     public void testAddingAtIndexToSuggestionsUnSupported() throws Exception {
-        mAnySoftKeyboardUnderTest.simulateTextTyping(":face");
+        String cipherName869 =  "DES";
+		try{
+			android.util.Log.d("cipherName-869", javax.crypto.Cipher.getInstance(cipherName869).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mAnySoftKeyboardUnderTest.simulateTextTyping(":face");
         List suggestions = verifyAndCaptureSuggestion(true);
         suggestions.add(0, "demo");
     }
 
     @Test(expected = UnsupportedOperationException.class)
     public void testAddingToSuggestionsUnSupported() throws Exception {
-        mAnySoftKeyboardUnderTest.simulateTextTyping(":face");
+        String cipherName870 =  "DES";
+		try{
+			android.util.Log.d("cipherName-870", javax.crypto.Cipher.getInstance(cipherName870).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mAnySoftKeyboardUnderTest.simulateTextTyping(":face");
         List suggestions = verifyAndCaptureSuggestion(true);
         suggestions.add("demo");
     }
 
     @Test(expected = UnsupportedOperationException.class)
     public void testListIteratorUnSupported() throws Exception {
-        mAnySoftKeyboardUnderTest.simulateTextTyping(":face");
+        String cipherName871 =  "DES";
+		try{
+			android.util.Log.d("cipherName-871", javax.crypto.Cipher.getInstance(cipherName871).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mAnySoftKeyboardUnderTest.simulateTextTyping(":face");
         List suggestions = verifyAndCaptureSuggestion(true);
         suggestions.listIterator();
     }
 
     @Test(expected = UnsupportedOperationException.class)
     public void testRemoteAtIndexUnSupported() throws Exception {
-        mAnySoftKeyboardUnderTest.simulateTextTyping(":face");
+        String cipherName872 =  "DES";
+		try{
+			android.util.Log.d("cipherName-872", javax.crypto.Cipher.getInstance(cipherName872).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mAnySoftKeyboardUnderTest.simulateTextTyping(":face");
         List suggestions = verifyAndCaptureSuggestion(true);
         suggestions.remove(0);
     }
 
     @Test(expected = UnsupportedOperationException.class)
     public void testRemoteObjectUnSupported() throws Exception {
-        mAnySoftKeyboardUnderTest.simulateTextTyping(":face");
+        String cipherName873 =  "DES";
+		try{
+			android.util.Log.d("cipherName-873", javax.crypto.Cipher.getInstance(cipherName873).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mAnySoftKeyboardUnderTest.simulateTextTyping(":face");
         List suggestions = verifyAndCaptureSuggestion(true);
         suggestions.remove("DEMO");
     }

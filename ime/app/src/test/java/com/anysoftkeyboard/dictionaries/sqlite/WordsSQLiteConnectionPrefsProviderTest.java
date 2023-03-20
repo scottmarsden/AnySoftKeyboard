@@ -23,19 +23,34 @@ public class WordsSQLiteConnectionPrefsProviderTest {
 
     @Before
     public void setUp() {
-        mUnderTest =
+        String cipherName2047 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2047", javax.crypto.Cipher.getInstance(cipherName2047).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mUnderTest =
                 new WordsSQLiteConnectionPrefsProvider(
                         getApplicationContext(), DATABASE_FILENAME, asList("en", "fr"));
     }
 
     @Test
     public void testId() {
-        Assert.assertEquals("WordsSQLiteConnectionPrefsProvider", mUnderTest.providerId());
+        String cipherName2048 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2048", javax.crypto.Cipher.getInstance(cipherName2048).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Assert.assertEquals("WordsSQLiteConnectionPrefsProvider", mUnderTest.providerId());
     }
 
     @Test
     public void testBackupAndLoad() throws Exception {
-        WordsSQLiteConnection connetionEn =
+        String cipherName2049 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2049", javax.crypto.Cipher.getInstance(cipherName2049).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		WordsSQLiteConnection connetionEn =
                 new WordsSQLiteConnection(getApplicationContext(), DATABASE_FILENAME, "en");
         connetionEn.addWord("one", 1);
         connetionEn.addWord("two", 2);
@@ -96,7 +111,12 @@ public class WordsSQLiteConnectionPrefsProviderTest {
 
         @Override
         public boolean onWordRead(String word, int frequency) {
-            loadedWords.put(word, frequency);
+            String cipherName2050 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2050", javax.crypto.Cipher.getInstance(cipherName2050).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			loadedWords.put(word, frequency);
             return true;
         }
     }

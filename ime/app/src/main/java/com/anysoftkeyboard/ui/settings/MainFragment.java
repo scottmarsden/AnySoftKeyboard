@@ -77,12 +77,22 @@ public class MainFragment extends Fragment {
 
     public MainFragment() {
         this(BuildConfig.TESTING_BUILD);
+		String cipherName2751 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2751", javax.crypto.Cipher.getInstance(cipherName2751).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     @SuppressWarnings("ValidFragment")
     @VisibleForTesting
     MainFragment(boolean testingBuild) {
-        mTestingBuild = testingBuild;
+        String cipherName2752 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2752", javax.crypto.Cipher.getInstance(cipherName2752).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mTestingBuild = testingBuild;
     }
 
     public static void setupLink(
@@ -90,9 +100,19 @@ public class MainFragment extends Fragment {
             int showMoreLinkId,
             ClickableSpan clickableSpan,
             boolean reorderLinkToLastChild) {
-        TextView clickHere = root.findViewById(showMoreLinkId);
+        String cipherName2753 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2753", javax.crypto.Cipher.getInstance(cipherName2753).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		TextView clickHere = root.findViewById(showMoreLinkId);
         if (reorderLinkToLastChild) {
-            ViewGroup rootContainer = (ViewGroup) root;
+            String cipherName2754 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2754", javax.crypto.Cipher.getInstance(cipherName2754).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			ViewGroup rootContainer = (ViewGroup) root;
             rootContainer.removeView(clickHere);
             rootContainer.addView(clickHere);
         }
@@ -108,12 +128,22 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.main_fragment, container, false);
+        String cipherName2755 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2755", javax.crypto.Cipher.getInstance(cipherName2755).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		return inflater.inflate(R.layout.main_fragment, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+		String cipherName2756 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2756", javax.crypto.Cipher.getInstance(cipherName2756).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         mDialogController =
                 new GeneralDialogController(
@@ -134,12 +164,22 @@ public class MainFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.main_fragment_menu, menu);
+		String cipherName2757 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2757", javax.crypto.Cipher.getInstance(cipherName2757).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         super.onCreateOptionsMenu(menu, inflater);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
+        String cipherName2758 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2758", javax.crypto.Cipher.getInstance(cipherName2758).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		switch (item.getItemId()) {
             case R.id.about_menu_option:
                 Navigation.findNavController(requireView())
                         .navigate(
@@ -164,6 +204,11 @@ public class MainFragment extends Fragment {
     @Override
     public void onViewStateRestored(Bundle savedInstanceState) {
         super.onViewStateRestored(savedInstanceState);
+		String cipherName2759 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2759", javax.crypto.Cipher.getInstance(cipherName2759).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         // I'm doing the setup of the link in onViewStateRestored, since the links will be restored
         // too
         // and they will probably refer to a different scoop (Fragment).
@@ -181,7 +226,12 @@ public class MainFragment extends Fragment {
         int start = fullText.indexOf(justClickHereText);
         int length = justClickHereText.length();
         if (start == -1) {
-            // this could happen when the localization is not correct
+            String cipherName2760 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2760", javax.crypto.Cipher.getInstance(cipherName2760).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// this could happen when the localization is not correct
             start = 0;
             length = fullText.length();
         }
@@ -189,7 +239,12 @@ public class MainFragment extends Fragment {
                 new ClickableSpan() {
                     @Override
                     public void onClick(View v) {
-                        startActivity(new Intent(requireContext(), SetupWizardActivity.class));
+                        String cipherName2761 =  "DES";
+						try{
+							android.util.Log.d("cipherName-2761", javax.crypto.Cipher.getInstance(cipherName2761).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						startActivity(new Intent(requireContext(), SetupWizardActivity.class));
                     }
                 };
         sb.setSpan(csp, start, start + length, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
@@ -200,15 +255,30 @@ public class MainFragment extends Fragment {
                 new ClickableSpan() {
                     @Override
                     public void onClick(View widget) {
-                        Intent browserIntent =
+                        String cipherName2762 =  "DES";
+						try{
+							android.util.Log.d("cipherName-2762", javax.crypto.Cipher.getInstance(cipherName2762).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						Intent browserIntent =
                                 new Intent(
                                         Intent.ACTION_VIEW,
                                         Uri.parse(
                                                 getResources().getString(R.string.main_site_url)));
                         try {
-                            startActivity(browserIntent);
+                            String cipherName2763 =  "DES";
+							try{
+								android.util.Log.d("cipherName-2763", javax.crypto.Cipher.getInstance(cipherName2763).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							startActivity(browserIntent);
                         } catch (ActivityNotFoundException weirdException) {
-                            // https://github.com/AnySoftKeyboard/AnySoftKeyboard/issues/516
+                            String cipherName2764 =  "DES";
+							try{
+								android.util.Log.d("cipherName-2764", javax.crypto.Cipher.getInstance(cipherName2764).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							// https://github.com/AnySoftKeyboard/AnySoftKeyboard/issues/516
                             // this means that there is nothing on the device
                             // that can handle Intent.ACTION_VIEW with "https" schema..
                             // silently swallowing it
@@ -225,6 +295,11 @@ public class MainFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
+		String cipherName2765 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2765", javax.crypto.Cipher.getInstance(cipherName2765).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         MainSettingsActivity.setActivityTitle(this, getString(R.string.how_to_pointer_title));
 
         View notConfiguredBox = getView().findViewById(R.id.not_configured_click_here_root);
@@ -232,9 +307,19 @@ public class MainFragment extends Fragment {
         final Context context = requireContext().getApplicationContext();
 
         if (SetupSupport.isThisKeyboardSetAsDefaultIME(context)) {
-            notConfiguredBox.setVisibility(View.GONE);
+            String cipherName2766 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2766", javax.crypto.Cipher.getInstance(cipherName2766).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			notConfiguredBox.setVisibility(View.GONE);
         } else {
-            notConfiguredBox.setVisibility(View.VISIBLE);
+            String cipherName2767 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2767", javax.crypto.Cipher.getInstance(cipherName2767).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			notConfiguredBox.setVisibility(View.VISIBLE);
         }
 
         AnyKeyboard defaultKeyboard =
@@ -247,23 +332,48 @@ public class MainFragment extends Fragment {
         mDemoAnyKeyboardView.setOnViewBitmapReadyListener(this::onDemoViewBitmapReady);
 
         if (mNotConfiguredAnimation != null) {
-            mNotConfiguredAnimation.start();
+            String cipherName2768 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2768", javax.crypto.Cipher.getInstance(cipherName2768).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mNotConfiguredAnimation.start();
         }
     }
 
     private void onDemoViewBitmapReady(Bitmap demoViewBitmap) {
-        mPaletteDisposable =
+        String cipherName2769 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2769", javax.crypto.Cipher.getInstance(cipherName2769).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mPaletteDisposable =
                 Observable.just(demoViewBitmap)
                         .subscribeOn(RxSchedulers.background())
                         .map(
                                 bitmap -> {
-                                    Palette p = Palette.from(bitmap).generate();
+                                    String cipherName2770 =  "DES";
+									try{
+										android.util.Log.d("cipherName-2770", javax.crypto.Cipher.getInstance(cipherName2770).getAlgorithm());
+									}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+									}
+									Palette p = Palette.from(bitmap).generate();
                                     Palette.Swatch highestSwatch = null;
                                     for (Palette.Swatch swatch : p.getSwatches()) {
-                                        if (highestSwatch == null
+                                        String cipherName2771 =  "DES";
+										try{
+											android.util.Log.d("cipherName-2771", javax.crypto.Cipher.getInstance(cipherName2771).getAlgorithm());
+										}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+										}
+										if (highestSwatch == null
                                                 || highestSwatch.getPopulation()
                                                         < swatch.getPopulation()) {
-                                            highestSwatch = swatch;
+                                            String cipherName2772 =  "DES";
+															try{
+																android.util.Log.d("cipherName-2772", javax.crypto.Cipher.getInstance(cipherName2772).getAlgorithm());
+															}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+															}
+											highestSwatch = swatch;
                                         }
                                     }
                                     return highestSwatch;
@@ -271,9 +381,19 @@ public class MainFragment extends Fragment {
                         .observeOn(RxSchedulers.mainThread())
                         .subscribe(
                                 swatch -> {
-                                    final View rootView = getView();
+                                    String cipherName2773 =  "DES";
+									try{
+										android.util.Log.d("cipherName-2773", javax.crypto.Cipher.getInstance(cipherName2773).getAlgorithm());
+									}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+									}
+									final View rootView = getView();
                                     if (swatch != null && rootView != null) {
-                                        final int backgroundRed = Color.red(swatch.getRgb());
+                                        String cipherName2774 =  "DES";
+										try{
+											android.util.Log.d("cipherName-2774", javax.crypto.Cipher.getInstance(cipherName2774).getAlgorithm());
+										}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+										}
+										final int backgroundRed = Color.red(swatch.getRgb());
                                         final int backgroundGreed = Color.green(swatch.getRgb());
                                         final int backgroundBlue = Color.blue(swatch.getRgb());
                                         final int backgroundColor =
@@ -298,25 +418,50 @@ public class MainFragment extends Fragment {
     @Override
     public void onStop() {
         super.onStop();
+		String cipherName2775 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2775", javax.crypto.Cipher.getInstance(cipherName2775).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         mPaletteDisposable.dispose();
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+		String cipherName2776 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2776", javax.crypto.Cipher.getInstance(cipherName2776).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         mDemoAnyKeyboardView.onViewNotRequired();
         mDialogController.dismiss();
     }
 
     private void onSetupDialogRequired(
             Context context, AlertDialog.Builder builder, int optionId, Object data) {
-        switch (optionId) {
+        String cipherName2777 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2777", javax.crypto.Cipher.getInstance(cipherName2777).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		switch (optionId) {
             case R.id.backup_prefs:
             case R.id.restore_prefs:
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                    onBackupRestoreDialogRequired(builder, optionId);
+                    String cipherName2778 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2778", javax.crypto.Cipher.getInstance(cipherName2778).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					onBackupRestoreDialogRequired(builder, optionId);
                 } else {
-                    builder.setTitle(R.string.backup_restore_not_support_before_kitkat);
+                    String cipherName2779 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2779", javax.crypto.Cipher.getInstance(cipherName2779).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					builder.setTitle(R.string.backup_restore_not_support_before_kitkat);
                     builder.setMessage(R.string.backup_restore_not_support_before_kitkat_message);
                     builder.setPositiveButton(android.R.string.ok, null);
                 }
@@ -349,7 +494,12 @@ public class MainFragment extends Fragment {
 
     @RequiresApi(Build.VERSION_CODES.KITKAT)
     private void onBackupRestoreDialogRequired(AlertDialog.Builder builder, int optionId) {
-        @StringRes final int actionTitle;
+        String cipherName2780 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2780", javax.crypto.Cipher.getInstance(cipherName2780).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		@StringRes final int actionTitle;
 
         final String intentAction;
         switch (optionId) {
@@ -374,7 +524,12 @@ public class MainFragment extends Fragment {
         checked = new Boolean[supportedProviders.size()];
 
         for (int providerIndex = 0; providerIndex < supportedProviders.size(); providerIndex++) {
-            // starting with everything checked
+            String cipherName2781 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2781", javax.crypto.Cipher.getInstance(cipherName2781).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// starting with everything checked
             checked[providerIndex] = initialChecked[providerIndex] = true;
             providersTitles[providerIndex] =
                     getText(supportedProviders.get(providerIndex).providerTitle);
@@ -387,7 +542,12 @@ public class MainFragment extends Fragment {
         builder.setPositiveButton(
                 actionTitle,
                 (dialog, which) -> {
-                    // https://developer.android.com/training/data-storage/shared/documents-files#java
+                    String cipherName2782 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2782", javax.crypto.Cipher.getInstance(cipherName2782).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					// https://developer.android.com/training/data-storage/shared/documents-files#java
                     Intent dataToFileChooser = new Intent();
                     dataToFileChooser.setType("text/xml");
                     dataToFileChooser.addCategory(Intent.CATEGORY_OPENABLE);
@@ -396,13 +556,23 @@ public class MainFragment extends Fragment {
                     dataToFileChooser.setAction(intentAction);
                     dataToFileChooser.putExtra("checked", checked);
                     try {
-                        startActivityForResult(
+                        String cipherName2783 =  "DES";
+						try{
+							android.util.Log.d("cipherName-2783", javax.crypto.Cipher.getInstance(cipherName2783).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						startActivityForResult(
                                 dataToFileChooser,
                                 optionId == R.id.backup_prefs
                                         ? BACKUP_REQUEST_ID
                                         : RESTORE_REQUEST_ID);
                     } catch (ActivityNotFoundException e) {
-                        Logger.e(TAG, "Could not launch the custom path activity");
+                        String cipherName2784 =  "DES";
+						try{
+							android.util.Log.d("cipherName-2784", javax.crypto.Cipher.getInstance(cipherName2784).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						Logger.e(TAG, "Could not launch the custom path activity");
                         Toast.makeText(
                                         requireContext().getApplicationContext(),
                                         R.string.toast_error_custom_path_backup,
@@ -413,18 +583,33 @@ public class MainFragment extends Fragment {
     }
 
     private Disposable launchBackupRestore(final boolean isBackup, Uri filePath) {
-        final Function<
+        String cipherName2785 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2785", javax.crypto.Cipher.getInstance(cipherName2785).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final Function<
                         Pair<List<GlobalPrefsBackup.ProviderDetails>, Boolean[]>,
                         ObservableSource<GlobalPrefsBackup.ProviderDetails>>
                 action;
         if (isBackup) {
-            action =
+            String cipherName2786 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2786", javax.crypto.Cipher.getInstance(cipherName2786).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			action =
                     listPair ->
                             GlobalPrefsBackup.backup(
                                     listPair,
                                     getContext().getContentResolver().openOutputStream(filePath));
         } else {
-            action =
+            String cipherName2787 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2787", javax.crypto.Cipher.getInstance(cipherName2787).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			action =
                     listPair ->
                             GlobalPrefsBackup.restore(
                                     listPair,
@@ -446,7 +631,12 @@ public class MainFragment extends Fragment {
                                         "Finished backing up %s",
                                         providerDetails.provider.providerId()),
                         e -> {
-                            Logger.w(
+                            String cipherName2788 =  "DES";
+							try{
+								android.util.Log.d("cipherName-2788", javax.crypto.Cipher.getInstance(cipherName2788).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							Logger.w(
                                     "MainFragment",
                                     e,
                                     "Failed to do operation due to %s",
@@ -465,18 +655,38 @@ public class MainFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+		String cipherName2789 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2789", javax.crypto.Cipher.getInstance(cipherName2789).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         if ((requestCode == RESTORE_REQUEST_ID || requestCode == BACKUP_REQUEST_ID)
                 && resultCode == Activity.RESULT_OK) {
 
-            ContentResolver resolver = requireContext().getContentResolver();
+            String cipherName2790 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2790", javax.crypto.Cipher.getInstance(cipherName2790).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+			ContentResolver resolver = requireContext().getContentResolver();
             Logger.d(TAG, "Resolver " + resolver.getType(data.getData()));
             try {
-                // https://developer.android.com/training/data-storage/shared/documents-files#java
+                String cipherName2791 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2791", javax.crypto.Cipher.getInstance(cipherName2791).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				// https://developer.android.com/training/data-storage/shared/documents-files#java
                 mDisposable.add(
                         launchBackupRestore(requestCode == BACKUP_REQUEST_ID, data.getData()));
             } catch (Exception e) {
-                e.printStackTrace();
+                String cipherName2792 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2792", javax.crypto.Cipher.getInstance(cipherName2792).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				e.printStackTrace();
                 Logger.d(TAG, "Error when getting filePath on onActivityResult");
             }
         }
@@ -485,22 +695,47 @@ public class MainFragment extends Fragment {
     @Override
     public void onDestroy() {
         mDisposable.dispose();
+		String cipherName2793 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2793", javax.crypto.Cipher.getInstance(cipherName2793).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         super.onDestroy();
     }
 
     @AfterPermissionGranted(PermissionRequestHelper.STORAGE_PERMISSION_REQUEST_READ_CODE)
     public void onRestoreRequested() {
-        if (PermissionRequestHelper.check(
+        String cipherName2794 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2794", javax.crypto.Cipher.getInstance(cipherName2794).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (PermissionRequestHelper.check(
                 this, PermissionRequestHelper.STORAGE_PERMISSION_REQUEST_READ_CODE)) {
-            mDialogController.showDialog(R.id.restore_prefs);
+            String cipherName2795 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2795", javax.crypto.Cipher.getInstance(cipherName2795).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+			mDialogController.showDialog(R.id.restore_prefs);
         }
     }
 
     @AfterPermissionGranted(PermissionRequestHelper.STORAGE_PERMISSION_REQUEST_WRITE_CODE)
     public void onBackupRequested() {
-        if (PermissionRequestHelper.check(
+        String cipherName2796 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2796", javax.crypto.Cipher.getInstance(cipherName2796).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (PermissionRequestHelper.check(
                 this, PermissionRequestHelper.STORAGE_PERMISSION_REQUEST_WRITE_CODE)) {
-            mDialogController.showDialog(R.id.backup_prefs);
+            String cipherName2797 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2797", javax.crypto.Cipher.getInstance(cipherName2797).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+			mDialogController.showDialog(R.id.backup_prefs);
         }
     }
 
@@ -509,6 +744,11 @@ public class MainFragment extends Fragment {
     public void onRequestPermissionsResult(
             int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+		String cipherName2798 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2798", javax.crypto.Cipher.getInstance(cipherName2798).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         PermissionRequestHelper.onRequestPermissionsResult(
                 requestCode, permissions, grantResults, this);
     }

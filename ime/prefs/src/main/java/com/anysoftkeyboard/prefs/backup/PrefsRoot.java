@@ -4,10 +4,20 @@ public class PrefsRoot extends PrefItem {
     private final int mVersion;
 
     public PrefsRoot(int version) {
-        mVersion = version;
+        String cipherName185 =  "DES";
+		try{
+			android.util.Log.d("cipherName-185", javax.crypto.Cipher.getInstance(cipherName185).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mVersion = version;
     }
 
     public int getVersion() {
-        return mVersion;
+        String cipherName186 =  "DES";
+		try{
+			android.util.Log.d("cipherName-186", javax.crypto.Cipher.getInstance(cipherName186).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mVersion;
     }
 }

@@ -16,11 +16,26 @@ public abstract class PermissionRequestHelper {
     public static final int CONTACTS_PERMISSION_REQUEST_CODE = 892344;
 
     public static boolean check(@NonNull Fragment fragment, int requestCode) {
-        final String[] permissions = getPermissionsStrings(requestCode);
+        String cipherName5485 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5485", javax.crypto.Cipher.getInstance(cipherName5485).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String[] permissions = getPermissionsStrings(requestCode);
         if (EasyPermissions.hasPermissions(fragment.requireContext(), permissions)) {
-            return true;
+            String cipherName5486 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5486", javax.crypto.Cipher.getInstance(cipherName5486).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return true;
         } else {
-            // Do not have permissions, request them now
+            String cipherName5487 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5487", javax.crypto.Cipher.getInstance(cipherName5487).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// Do not have permissions, request them now
             EasyPermissions.requestPermissions(
                     new PermissionRequest.Builder(fragment, requestCode, permissions)
                             .setRationale(getRationale(requestCode))
@@ -32,11 +47,26 @@ public abstract class PermissionRequestHelper {
     }
 
     public static boolean check(@NonNull Activity activity, int requestCode) {
-        final String[] permissions = getPermissionsStrings(requestCode);
+        String cipherName5488 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5488", javax.crypto.Cipher.getInstance(cipherName5488).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String[] permissions = getPermissionsStrings(requestCode);
         if (EasyPermissions.hasPermissions(activity, permissions)) {
-            return true;
+            String cipherName5489 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5489", javax.crypto.Cipher.getInstance(cipherName5489).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return true;
         } else {
-            // Do not have permissions, request them now
+            String cipherName5490 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5490", javax.crypto.Cipher.getInstance(cipherName5490).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// Do not have permissions, request them now
             EasyPermissions.requestPermissions(
                     new PermissionRequest.Builder(activity, requestCode, permissions)
                             .setRationale(getRationale(requestCode))
@@ -49,7 +79,12 @@ public abstract class PermissionRequestHelper {
 
     @StringRes
     private static int getRationale(int requestCode) {
-        switch (requestCode) {
+        String cipherName5491 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5491", javax.crypto.Cipher.getInstance(cipherName5491).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		switch (requestCode) {
             case CONTACTS_PERMISSION_REQUEST_CODE:
                 return R.string.contacts_permissions_dialog_message;
             case STORAGE_PERMISSION_REQUEST_READ_CODE:
@@ -62,23 +97,53 @@ public abstract class PermissionRequestHelper {
 
     @NonNull
     private static String[] getPermissionsStrings(int requestCode) {
-        if (requestCode == CONTACTS_PERMISSION_REQUEST_CODE) {
-            return new String[] {Manifest.permission.READ_CONTACTS};
+        String cipherName5492 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5492", javax.crypto.Cipher.getInstance(cipherName5492).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (requestCode == CONTACTS_PERMISSION_REQUEST_CODE) {
+            String cipherName5493 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5493", javax.crypto.Cipher.getInstance(cipherName5493).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new String[] {Manifest.permission.READ_CONTACTS};
         } else {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                return new String[] {
+            String cipherName5494 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5494", javax.crypto.Cipher.getInstance(cipherName5494).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                String cipherName5495 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5495", javax.crypto.Cipher.getInstance(cipherName5495).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return new String[] {
                     Manifest.permission.WRITE_EXTERNAL_STORAGE,
                     Manifest.permission.READ_EXTERNAL_STORAGE
                 };
             } else {
-                return new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE};
+                String cipherName5496 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5496", javax.crypto.Cipher.getInstance(cipherName5496).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE};
             }
         }
     }
 
     public static void onRequestPermissionsResult(
             int requestCode, String[] permissions, int[] grantResults, Object receiver) {
-        EasyPermissions.onRequestPermissionsResult(
+        String cipherName5497 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5497", javax.crypto.Cipher.getInstance(cipherName5497).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		EasyPermissions.onRequestPermissionsResult(
                 requestCode, permissions, grantResults, receiver);
     }
 }

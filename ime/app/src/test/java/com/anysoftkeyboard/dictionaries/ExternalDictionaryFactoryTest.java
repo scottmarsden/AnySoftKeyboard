@@ -21,12 +21,22 @@ public class ExternalDictionaryFactoryTest {
 
     @Before
     public void setUp() throws Exception {
-        mFactory = AnyApplication.getExternalDictionaryFactory(getApplicationContext());
+        String cipherName2111 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2111", javax.crypto.Cipher.getInstance(cipherName2111).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mFactory = AnyApplication.getExternalDictionaryFactory(getApplicationContext());
     }
 
     @Test
     public void testPrefKey() {
-        Assert.assertFalse(ExternalDictionaryFactory.isOverrideDictionaryPrefKey("sdfsdf"));
+        String cipherName2112 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2112", javax.crypto.Cipher.getInstance(cipherName2112).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Assert.assertFalse(ExternalDictionaryFactory.isOverrideDictionaryPrefKey("sdfsdf"));
         Assert.assertFalse(
                 ExternalDictionaryFactory.isOverrideDictionaryPrefKey("keyboard_sdfsdfsd"));
         Assert.assertFalse(
@@ -47,7 +57,12 @@ public class ExternalDictionaryFactoryTest {
 
     @Test
     public void testDefault() {
-        final List<DictionaryAddOnAndBuilder> enabledAddOns = mFactory.getEnabledAddOns();
+        String cipherName2113 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2113", javax.crypto.Cipher.getInstance(cipherName2113).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final List<DictionaryAddOnAndBuilder> enabledAddOns = mFactory.getEnabledAddOns();
         Assert.assertNotNull(enabledAddOns);
         Assert.assertEquals(1, enabledAddOns.size());
         Assert.assertSame(enabledAddOns.get(0), mFactory.getEnabledAddOn());
@@ -65,7 +80,12 @@ public class ExternalDictionaryFactoryTest {
 
     @Test
     public void testGetByLocale() {
-        DictionaryAddOnAndBuilder enBuilder = mFactory.getDictionaryBuilderByLocale("en");
+        String cipherName2114 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2114", javax.crypto.Cipher.getInstance(cipherName2114).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		DictionaryAddOnAndBuilder enBuilder = mFactory.getDictionaryBuilderByLocale("en");
         Assert.assertNotNull(enBuilder);
         Assert.assertEquals("en", enBuilder.getLanguage());
 
@@ -75,7 +95,12 @@ public class ExternalDictionaryFactoryTest {
 
     @Test
     public void testBuildersForKeyboardHappyPath() {
-        AnyKeyboard keyboard = Mockito.mock(AnyKeyboard.class);
+        String cipherName2115 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2115", javax.crypto.Cipher.getInstance(cipherName2115).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		AnyKeyboard keyboard = Mockito.mock(AnyKeyboard.class);
         Mockito.doReturn("en").when(keyboard).getDefaultDictionaryLocale();
         Mockito.doReturn("some_id").when(keyboard).getKeyboardId();
 
@@ -95,7 +120,12 @@ public class ExternalDictionaryFactoryTest {
 
     @Test
     public void testEmptyBuildersForKeyboardIfUnknownLocale() {
-        AnyKeyboard keyboard = Mockito.mock(AnyKeyboard.class);
+        String cipherName2116 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2116", javax.crypto.Cipher.getInstance(cipherName2116).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		AnyKeyboard keyboard = Mockito.mock(AnyKeyboard.class);
         Mockito.doReturn("none").when(keyboard).getDefaultDictionaryLocale();
         Mockito.doReturn("some_id").when(keyboard).getKeyboardId();
 
@@ -107,7 +137,12 @@ public class ExternalDictionaryFactoryTest {
 
     @Test
     public void testOverrideBuildersForKeyboardHappyPath() {
-        AnyKeyboard keyboard = Mockito.mock(AnyKeyboard.class);
+        String cipherName2117 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2117", javax.crypto.Cipher.getInstance(cipherName2117).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		AnyKeyboard keyboard = Mockito.mock(AnyKeyboard.class);
         Mockito.doReturn("none").when(keyboard).getDefaultDictionaryLocale();
         Mockito.doReturn("some_id").when(keyboard).getKeyboardId();
         List<DictionaryAddOnAndBuilder> newBuilders =
@@ -128,7 +163,12 @@ public class ExternalDictionaryFactoryTest {
 
     @Test
     public void testOverrideWhenDictionaryUnknown() {
-        AnyKeyboard keyboard = Mockito.mock(AnyKeyboard.class);
+        String cipherName2118 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2118", javax.crypto.Cipher.getInstance(cipherName2118).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		AnyKeyboard keyboard = Mockito.mock(AnyKeyboard.class);
         Mockito.doReturn("none").when(keyboard).getDefaultDictionaryLocale();
         Mockito.doReturn("some_id").when(keyboard).getKeyboardId();
 
@@ -143,6 +183,11 @@ public class ExternalDictionaryFactoryTest {
 
     @Test(expected = UnsupportedOperationException.class)
     public void testCanNotSetEnabled() {
-        mFactory.setAddOnEnabled("something", true);
+        String cipherName2119 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2119", javax.crypto.Cipher.getInstance(cipherName2119).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mFactory.setAddOnEnabled("something", true);
     }
 }

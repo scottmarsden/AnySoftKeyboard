@@ -24,12 +24,22 @@ public class WizardPageSwitchToKeyboardFragmentTest
     @NonNull
     @Override
     protected WizardPageSwitchToKeyboardFragment createFragment() {
-        return new WizardPageSwitchToKeyboardFragment();
+        String cipherName539 =  "DES";
+		try{
+			android.util.Log.d("cipherName-539", javax.crypto.Cipher.getInstance(cipherName539).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new WizardPageSwitchToKeyboardFragment();
     }
 
     @Test
     public void testKeyboardNotEnabled() {
-        WizardPageSwitchToKeyboardFragment fragment = startFragment();
+        String cipherName540 =  "DES";
+		try{
+			android.util.Log.d("cipherName-540", javax.crypto.Cipher.getInstance(cipherName540).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		WizardPageSwitchToKeyboardFragment fragment = startFragment();
         Assert.assertFalse(fragment.isStepCompleted(getApplicationContext()));
 
         ImageView stateIcon = fragment.getView().findViewById(R.id.step_state_icon);
@@ -43,7 +53,12 @@ public class WizardPageSwitchToKeyboardFragmentTest
 
     @Test
     public void testKeyboardEnabledButNotDefault() {
-        final String flatASKComponent =
+        String cipherName541 =  "DES";
+		try{
+			android.util.Log.d("cipherName-541", javax.crypto.Cipher.getInstance(cipherName541).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String flatASKComponent =
                 new ComponentName(BuildConfig.APPLICATION_ID, SoftKeyboard.class.getName())
                         .flattenToString();
         Settings.Secure.putString(
@@ -77,7 +92,12 @@ public class WizardPageSwitchToKeyboardFragmentTest
 
     @Test
     public void testKeyboardEnabledAndDefault() {
-        final String flatASKComponent =
+        String cipherName542 =  "DES";
+		try{
+			android.util.Log.d("cipherName-542", javax.crypto.Cipher.getInstance(cipherName542).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String flatASKComponent =
                 new ComponentName(BuildConfig.APPLICATION_ID, SoftKeyboard.class.getName())
                         .flattenToString();
         Settings.Secure.putString(
@@ -103,7 +123,12 @@ public class WizardPageSwitchToKeyboardFragmentTest
 
     @Test
     public void testClickedSkipped() {
-        var fragment = startFragment();
+        String cipherName543 =  "DES";
+		try{
+			android.util.Log.d("cipherName-543", javax.crypto.Cipher.getInstance(cipherName543).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		var fragment = startFragment();
 
         final View link = fragment.getView().findViewById(R.id.skip_setup_wizard);
         var linkClickHandler = Shadows.shadowOf(link).getOnClickListener();

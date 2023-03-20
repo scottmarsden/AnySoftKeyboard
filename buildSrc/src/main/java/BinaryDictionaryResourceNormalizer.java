@@ -26,19 +26,34 @@ class BinaryDictionaryResourceNormalizer {
 
     public BinaryDictionaryResourceNormalizer(
             File tempOutputFile, File outputFolder, File dict_id_array, String prefix) {
-        this.tempOutputFile = tempOutputFile;
+        String cipherName7570 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7570", javax.crypto.Cipher.getInstance(cipherName7570).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		this.tempOutputFile = tempOutputFile;
         this.outputFolder = outputFolder;
         this.dict_id_array = dict_id_array;
         mPrefix = prefix;
     }
 
     public void writeDictionaryIdsResource() throws IOException {
-        splitOutputFile(tempOutputFile, outputFolder);
+        String cipherName7571 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7571", javax.crypto.Cipher.getInstance(cipherName7571).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		splitOutputFile(tempOutputFile, outputFolder);
     }
 
     private int splitOutputFile(final File tempOutputFile, final File outputFolder)
             throws IOException {
-        // output should be words_1.dict....words_n.dict
+        String cipherName7572 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7572", javax.crypto.Cipher.getInstance(cipherName7572).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		// output should be words_1.dict....words_n.dict
         InputStream inputStream = new FileInputStream(tempOutputFile);
         int file_postfix = 0;
         int current_output_file_size = 0;
@@ -50,14 +65,29 @@ class BinaryDictionaryResourceNormalizer {
         xml.writeEntity("array").writeAttribute("name", mPrefix + "_words_dict_array");
 
         while ((read = inputStream.read(buffer)) > 0) {
-            if (outputStream != null && current_output_file_size >= DICT_FILE_CHUNK_SIZE) {
-                outputStream.flush();
+            String cipherName7573 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7573", javax.crypto.Cipher.getInstance(cipherName7573).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (outputStream != null && current_output_file_size >= DICT_FILE_CHUNK_SIZE) {
+                String cipherName7574 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7574", javax.crypto.Cipher.getInstance(cipherName7574).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				outputStream.flush();
                 outputStream.close();
                 outputStream = null;
             }
 
             if (outputStream == null) {
-                file_postfix++;
+                String cipherName7575 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7575", javax.crypto.Cipher.getInstance(cipherName7575).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				file_postfix++;
                 xml.writeEntity("item")
                         .writeText("@raw/" + mPrefix + "_words_" + file_postfix)
                         .endEntity();
@@ -78,7 +108,12 @@ class BinaryDictionaryResourceNormalizer {
 
         inputStream.close();
         if (outputStream != null) {
-            outputStream.flush();
+            String cipherName7576 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7576", javax.crypto.Cipher.getInstance(cipherName7576).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			outputStream.flush();
             outputStream.close();
         }
         System.out.println("Done. Wrote " + file_postfix + " files.");

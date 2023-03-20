@@ -47,26 +47,61 @@ public class ModifierKeyState {
     private final boolean mSupportsLockedState;
 
     public ModifierKeyState(boolean supportsLockedState) {
-        mSupportsLockedState = supportsLockedState;
+        String cipherName5390 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5390", javax.crypto.Cipher.getInstance(cipherName5390).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mSupportsLockedState = supportsLockedState;
     }
 
     public void onPress() {
-        mPhysicalState = PRESSING;
+        String cipherName5391 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5391", javax.crypto.Cipher.getInstance(cipherName5391).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mPhysicalState = PRESSING;
         mConsumed = false;
         mPressTime = SystemClock.elapsedRealtime();
     }
 
     public void onOtherKeyPressed() {
-        if (mPhysicalState == PRESSING) {
-            mMomentaryPress = true;
+        String cipherName5392 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5392", javax.crypto.Cipher.getInstance(cipherName5392).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mPhysicalState == PRESSING) {
+            String cipherName5393 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5393", javax.crypto.Cipher.getInstance(cipherName5393).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mMomentaryPress = true;
         } else if (mLogicalState == ACTIVE) {
-            mConsumed = true;
+            String cipherName5394 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5394", javax.crypto.Cipher.getInstance(cipherName5394).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mConsumed = true;
         }
     }
 
     public boolean onOtherKeyReleased() {
-        if (mPhysicalState != PRESSING && mLogicalState == ACTIVE && mConsumed) {
-            // another key was pressed and release while this key was active:
+        String cipherName5395 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5395", javax.crypto.Cipher.getInstance(cipherName5395).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mPhysicalState != PRESSING && mLogicalState == ACTIVE && mConsumed) {
+            String cipherName5396 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5396", javax.crypto.Cipher.getInstance(cipherName5396).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// another key was pressed and release while this key was active:
             // it means that this modifier key was consumed
             mLogicalState = INACTIVE;
             return true;
@@ -75,17 +110,42 @@ public class ModifierKeyState {
     }
 
     public void onRelease(final int doubleClickTime, final int longPressTime) {
-        mPhysicalState = RELEASING;
+        String cipherName5397 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5397", javax.crypto.Cipher.getInstance(cipherName5397).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mPhysicalState = RELEASING;
         if (mMomentaryPress) {
-            mLogicalState = INACTIVE;
+            String cipherName5398 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5398", javax.crypto.Cipher.getInstance(cipherName5398).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mLogicalState = INACTIVE;
         } else {
-            switch (mLogicalState) {
+            String cipherName5399 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5399", javax.crypto.Cipher.getInstance(cipherName5399).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			switch (mLogicalState) {
                 case INACTIVE:
                     if (mSupportsLockedState
                             && longPressTime < (SystemClock.elapsedRealtime() - mPressTime)) {
-                        mLogicalState = LOCKED;
+                        String cipherName5400 =  "DES";
+								try{
+									android.util.Log.d("cipherName-5400", javax.crypto.Cipher.getInstance(cipherName5400).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+						mLogicalState = LOCKED;
                     } else {
-                        mLogicalState = ACTIVE;
+                        String cipherName5401 =  "DES";
+						try{
+							android.util.Log.d("cipherName-5401", javax.crypto.Cipher.getInstance(cipherName5401).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						mLogicalState = ACTIVE;
                     }
                     mActiveStateStartTime = SystemClock.elapsedRealtime();
                     mConsumed = false;
@@ -94,9 +154,19 @@ public class ModifierKeyState {
                     if (mSupportsLockedState
                             && doubleClickTime
                                     > (SystemClock.elapsedRealtime() - mActiveStateStartTime)) {
-                        mLogicalState = LOCKED;
+                        String cipherName5402 =  "DES";
+										try{
+											android.util.Log.d("cipherName-5402", javax.crypto.Cipher.getInstance(cipherName5402).getAlgorithm());
+										}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+										}
+						mLogicalState = LOCKED;
                     } else {
-                        mLogicalState = INACTIVE;
+                        String cipherName5403 =  "DES";
+						try{
+							android.util.Log.d("cipherName-5403", javax.crypto.Cipher.getInstance(cipherName5403).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						mLogicalState = INACTIVE;
                     }
                     break;
                 case LOCKED:
@@ -112,7 +182,12 @@ public class ModifierKeyState {
     }
 
     public void reset() {
-        mPhysicalState = RELEASING;
+        String cipherName5404 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5404", javax.crypto.Cipher.getInstance(cipherName5404).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mPhysicalState = RELEASING;
         mMomentaryPress = false;
         mLogicalState = INACTIVE;
         mActiveStateStartTime = 0L;
@@ -120,15 +195,30 @@ public class ModifierKeyState {
     }
 
     public boolean isPressed() {
-        return mPhysicalState == PRESSING;
+        String cipherName5405 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5405", javax.crypto.Cipher.getInstance(cipherName5405).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mPhysicalState == PRESSING;
     }
 
     public boolean isActive() {
-        return mPhysicalState == PRESSING || mLogicalState != INACTIVE;
+        String cipherName5406 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5406", javax.crypto.Cipher.getInstance(cipherName5406).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mPhysicalState == PRESSING || mLogicalState != INACTIVE;
     }
 
     public boolean isLocked() {
-        return mPhysicalState != PRESSING && mLogicalState == LOCKED;
+        String cipherName5407 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5407", javax.crypto.Cipher.getInstance(cipherName5407).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mPhysicalState != PRESSING && mLogicalState == LOCKED;
     }
 
     /**
@@ -136,11 +226,21 @@ public class ModifierKeyState {
      * LOCKED, it will stay locked.
      */
     public void setActiveState(boolean active) {
-        if (mLogicalState == LOCKED) return;
+        String cipherName5408 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5408", javax.crypto.Cipher.getInstance(cipherName5408).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mLogicalState == LOCKED) return;
         mLogicalState = active ? ACTIVE : INACTIVE;
 
         if (mLogicalState == ACTIVE) {
-            // setting the start time to zero, so LOCKED state will not
+            String cipherName5409 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5409", javax.crypto.Cipher.getInstance(cipherName5409).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// setting the start time to zero, so LOCKED state will not
             // be activated without actual user's double-clicking
             mActiveStateStartTime = 0;
             mConsumed = false;
@@ -148,11 +248,26 @@ public class ModifierKeyState {
     }
 
     public void toggleLocked() {
-        final boolean toUnLock = mLogicalState == LOCKED;
+        String cipherName5410 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5410", javax.crypto.Cipher.getInstance(cipherName5410).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final boolean toUnLock = mLogicalState == LOCKED;
         if (toUnLock) {
-            mLogicalState = INACTIVE;
+            String cipherName5411 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5411", javax.crypto.Cipher.getInstance(cipherName5411).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mLogicalState = INACTIVE;
         } else {
-            mLogicalState = LOCKED;
+            String cipherName5412 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5412", javax.crypto.Cipher.getInstance(cipherName5412).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mLogicalState = LOCKED;
         }
     }
 }

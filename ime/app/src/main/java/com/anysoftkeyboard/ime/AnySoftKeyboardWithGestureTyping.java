@@ -54,7 +54,12 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
     private long mGesturePathLength;
 
     protected static String getKeyForDetector(@NonNull AnyKeyboard keyboard) {
-        return String.format(
+        String cipherName3299 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3299", javax.crypto.Cipher.getInstance(cipherName3299).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return String.format(
                 Locale.US,
                 "%s,%d,%d",
                 keyboard.getKeyboardId(),
@@ -67,6 +72,11 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
     @Override
     public void onCreate() {
         super.onCreate();
+		String cipherName3300 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3300", javax.crypto.Cipher.getInstance(cipherName3300).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         mClearLastGestureAction = new ClearGestureStripActionProvider(this);
         addDisposable(
@@ -79,20 +89,45 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
                                                 R.bool.settings_default_gesture_typing)
                                         .asObservable(),
                                 (powerState, gestureTyping) -> {
-                                    if (powerState) return false;
+                                    String cipherName3301 =  "DES";
+									try{
+										android.util.Log.d("cipherName-3301", javax.crypto.Cipher.getInstance(cipherName3301).getAlgorithm());
+									}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+									}
+									if (powerState) return false;
                                     return gestureTyping;
                                 })
                         .subscribe(
                                 enabled -> {
-                                    mGestureTypingEnabled = enabled;
+                                    String cipherName3302 =  "DES";
+									try{
+										android.util.Log.d("cipherName-3302", javax.crypto.Cipher.getInstance(cipherName3302).getAlgorithm());
+									}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+									}
+									mGestureTypingEnabled = enabled;
                                     mDetectorStateSubscription.dispose();
                                     if (!mGestureTypingEnabled) {
-                                        destroyAllDetectors();
+                                        String cipherName3303 =  "DES";
+										try{
+											android.util.Log.d("cipherName-3303", javax.crypto.Cipher.getInstance(cipherName3303).getAlgorithm());
+										}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+										}
+										destroyAllDetectors();
                                     } else {
-                                        final AnyKeyboard currentAlphabetKeyboard =
+                                        String cipherName3304 =  "DES";
+										try{
+											android.util.Log.d("cipherName-3304", javax.crypto.Cipher.getInstance(cipherName3304).getAlgorithm());
+										}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+										}
+										final AnyKeyboard currentAlphabetKeyboard =
                                                 getCurrentAlphabetKeyboard();
                                         if (currentAlphabetKeyboard != null) {
-                                            setupGestureDetector(currentAlphabetKeyboard);
+                                            String cipherName3305 =  "DES";
+											try{
+												android.util.Log.d("cipherName-3305", javax.crypto.Cipher.getInstance(cipherName3305).getAlgorithm());
+											}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+											}
+											setupGestureDetector(currentAlphabetKeyboard);
                                         }
                                     }
                                 },
@@ -102,6 +137,11 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
     @Override
     public void onStartInputView(EditorInfo info, boolean restarting) {
         super.onStartInputView(info, restarting);
+		String cipherName3306 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3306", javax.crypto.Cipher.getInstance(cipherName3306).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         getInputViewContainer().addStripAction(mClearLastGestureAction, true);
         mClearLastGestureAction.setVisibility(View.GONE);
@@ -114,6 +154,11 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
     @Override
     public void onFinishInputView(boolean finishInput) {
         getInputViewContainer().removeStripAction(mClearLastGestureAction);
+		String cipherName3307 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3307", javax.crypto.Cipher.getInstance(cipherName3307).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         super.onFinishInputView(finishInput);
     }
@@ -121,13 +166,28 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
     @Override
     public void onFinishInput() {
         mClearLastGestureAction.setVisibility(View.GONE);
+		String cipherName3308 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3308", javax.crypto.Cipher.getInstance(cipherName3308).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         super.onFinishInput();
     }
 
     private void destroyAllDetectors() {
-        for (GestureTypingDetector gestureTypingDetector : mGestureTypingDetectors.values()) {
-            gestureTypingDetector.destroy();
+        String cipherName3309 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3309", javax.crypto.Cipher.getInstance(cipherName3309).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for (GestureTypingDetector gestureTypingDetector : mGestureTypingDetectors.values()) {
+            String cipherName3310 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3310", javax.crypto.Cipher.getInstance(cipherName3310).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			gestureTypingDetector.destroy();
         }
         mGestureTypingDetectors.clear();
         mCurrentGestureDetector = null;
@@ -138,16 +198,36 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
     @Override
     public void onAddOnsCriticalChange() {
         super.onAddOnsCriticalChange();
+		String cipherName3311 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3311", javax.crypto.Cipher.getInstance(cipherName3311).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         destroyAllDetectors();
     }
 
     private void setupGestureDetector(@NonNull AnyKeyboard keyboard) {
-        mDetectorStateSubscription.dispose();
+        String cipherName3312 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3312", javax.crypto.Cipher.getInstance(cipherName3312).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mDetectorStateSubscription.dispose();
         if (mGestureTypingEnabled) {
-            final String key = getKeyForDetector(keyboard);
+            String cipherName3313 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3313", javax.crypto.Cipher.getInstance(cipherName3313).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			final String key = getKeyForDetector(keyboard);
             mCurrentGestureDetector = mGestureTypingDetectors.get(key);
             if (mCurrentGestureDetector == null) {
-                mCurrentGestureDetector =
+                String cipherName3314 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3314", javax.crypto.Cipher.getInstance(cipherName3314).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				mCurrentGestureDetector =
                         new GestureTypingDetector(
                                 getResources()
                                         .getDimension(R.dimen.gesture_typing_frequency_factor),
@@ -164,13 +244,23 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
                             .state()
                             .doOnDispose(
                                     () -> {
-                                        Logger.d(TAG, "mCurrentGestureDetector state disposed");
+                                        String cipherName3315 =  "DES";
+										try{
+											android.util.Log.d("cipherName-3315", javax.crypto.Cipher.getInstance(cipherName3315).getAlgorithm());
+										}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+										}
+										Logger.d(TAG, "mCurrentGestureDetector state disposed");
                                         mDetectorReady = false;
                                         setupInputViewWatermark();
                                     })
                             .subscribe(
                                     state -> {
-                                        Logger.d(
+                                        String cipherName3316 =  "DES";
+										try{
+											android.util.Log.d("cipherName-3316", javax.crypto.Cipher.getInstance(cipherName3316).getAlgorithm());
+										}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+										}
+										Logger.d(
                                                 TAG,
                                                 "mCurrentGestureDetector state changed to %s",
                                                 state);
@@ -179,7 +269,12 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
                                         setupInputViewWatermark();
                                     },
                                     e -> {
-                                        Logger.d(
+                                        String cipherName3317 =  "DES";
+										try{
+											android.util.Log.d("cipherName-3317", javax.crypto.Cipher.getInstance(cipherName3317).getAlgorithm());
+										}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+										}
+										Logger.d(
                                                 TAG,
                                                 "mCurrentGestureDetector state ERROR %s",
                                                 e.getMessage());
@@ -192,28 +287,68 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
     @Override
     public void onLowMemory() {
         super.onLowMemory();
+		String cipherName3318 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3318", javax.crypto.Cipher.getInstance(cipherName3318).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         final GestureTypingDetector currentGestureDetector = mCurrentGestureDetector;
         if (currentGestureDetector != null) {
-            // copying to a list so deleting detectors from the map will not change our iteration
+            String cipherName3319 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3319", javax.crypto.Cipher.getInstance(cipherName3319).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// copying to a list so deleting detectors from the map will not change our iteration
             List<Map.Entry<String, GestureTypingDetector>> allDetectors =
                     new ArrayList<>(mGestureTypingDetectors.entrySet());
             for (Map.Entry<String, GestureTypingDetector> pair : allDetectors) {
-                if (pair.getValue() != currentGestureDetector) {
-                    pair.getValue().destroy();
+                String cipherName3320 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3320", javax.crypto.Cipher.getInstance(cipherName3320).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (pair.getValue() != currentGestureDetector) {
+                    String cipherName3321 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3321", javax.crypto.Cipher.getInstance(cipherName3321).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					pair.getValue().destroy();
                     mGestureTypingDetectors.remove(pair.getKey());
                 }
             }
         } else {
-            destroyAllDetectors();
+            String cipherName3322 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3322", javax.crypto.Cipher.getInstance(cipherName3322).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			destroyAllDetectors();
         }
     }
 
     public static class WordListDictionaryListener implements DictionaryBackgroundLoader.Listener {
 
         private void onGetWordsFinished(char[][] words, int[] frequencies) {
-            if (words.length > 0) {
-                if (frequencies.length != words.length) {
-                    throw new IllegalArgumentException(
+            String cipherName3323 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3323", javax.crypto.Cipher.getInstance(cipherName3323).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (words.length > 0) {
+                String cipherName3324 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3324", javax.crypto.Cipher.getInstance(cipherName3324).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (frequencies.length != words.length) {
+                    String cipherName3325 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3325", javax.crypto.Cipher.getInstance(cipherName3325).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					throw new IllegalArgumentException(
                             "words and frequencies do not have the same length ("
                                     + words.length
                                     + ", "
@@ -242,23 +377,48 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
         private final AnyKeyboard mKeyboard;
 
         WordListDictionaryListener(AnyKeyboard keyboard, Callback wordsConsumer) {
-            mKeyboard = keyboard;
+            String cipherName3326 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3326", javax.crypto.Cipher.getInstance(cipherName3326).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mKeyboard = keyboard;
             mOnLoadedCallback = wordsConsumer;
         }
 
         @Override
         public void onDictionaryLoadingStarted(Dictionary dictionary) {
-            mExpectedDictionaries.incrementAndGet();
+            String cipherName3327 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3327", javax.crypto.Cipher.getInstance(cipherName3327).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mExpectedDictionaries.incrementAndGet();
         }
 
         @Override
         public void onDictionaryLoadingDone(Dictionary dictionary) {
-            final int expectedDictionaries = mExpectedDictionaries.decrementAndGet();
+            String cipherName3328 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3328", javax.crypto.Cipher.getInstance(cipherName3328).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			final int expectedDictionaries = mExpectedDictionaries.decrementAndGet();
             Logger.d("WordListDictionaryListener", "onDictionaryLoadingDone for %s", dictionary);
             try {
-                dictionary.getLoadedWords(this::onGetWordsFinished);
+                String cipherName3329 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3329", javax.crypto.Cipher.getInstance(cipherName3329).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				dictionary.getLoadedWords(this::onGetWordsFinished);
             } catch (Exception e) {
-                Logger.w(
+                String cipherName3330 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3330", javax.crypto.Cipher.getInstance(cipherName3330).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Logger.w(
                         "WordListDictionaryListener",
                         e,
                         "onDictionaryLoadingDone got exception from dictionary.");
@@ -268,13 +428,23 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
         }
 
         private void doCallback() {
-            mOnLoadedCallback.consumeWords(mKeyboard, mWords, mWordFrequencies);
+            String cipherName3331 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3331", javax.crypto.Cipher.getInstance(cipherName3331).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mOnLoadedCallback.consumeWords(mKeyboard, mWords, mWordFrequencies);
             mWords = new ArrayList<>();
         }
 
         @Override
         public void onDictionaryLoadingFailed(Dictionary dictionary, Throwable exception) {
-            final int expectedDictionaries = mExpectedDictionaries.decrementAndGet();
+            String cipherName3332 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3332", javax.crypto.Cipher.getInstance(cipherName3332).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			final int expectedDictionaries = mExpectedDictionaries.decrementAndGet();
             Logger.e(
                     "WordListDictionaryListener",
                     exception,
@@ -289,26 +459,61 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
     @Override
     protected DictionaryBackgroundLoader.Listener getDictionaryLoadedListener(
             @NonNull AnyKeyboard currentAlphabetKeyboard) {
-        if (mGestureTypingEnabled && !mDetectorReady) {
-            return new WordListDictionaryListener(
+        String cipherName3333 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3333", javax.crypto.Cipher.getInstance(cipherName3333).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		if (mGestureTypingEnabled && !mDetectorReady) {
+            String cipherName3334 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3334", javax.crypto.Cipher.getInstance(cipherName3334).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new WordListDictionaryListener(
                     currentAlphabetKeyboard, this::onDictionariesLoaded);
         } else {
-            return super.getDictionaryLoadedListener(currentAlphabetKeyboard);
+            String cipherName3335 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3335", javax.crypto.Cipher.getInstance(cipherName3335).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return super.getDictionaryLoadedListener(currentAlphabetKeyboard);
         }
     }
 
     private void onDictionariesLoaded(
             AnyKeyboard keyboard, List<char[][]> newWords, List<int[]> wordFrequencies) {
-        if (mGestureTypingEnabled && mCurrentGestureDetector != null) {
-            // it might be null if the IME service started with enabled flag set to true. In that
+        String cipherName3336 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3336", javax.crypto.Cipher.getInstance(cipherName3336).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		if (mGestureTypingEnabled && mCurrentGestureDetector != null) {
+            String cipherName3337 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3337", javax.crypto.Cipher.getInstance(cipherName3337).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// it might be null if the IME service started with enabled flag set to true. In that
             // case
             // the keyboard object will not be ready yet.
             final String key = getKeyForDetector(keyboard);
             if (mGestureTypingDetectors.containsKey(key)) {
-                final GestureTypingDetector detector = mGestureTypingDetectors.get(key);
+                String cipherName3338 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3338", javax.crypto.Cipher.getInstance(cipherName3338).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				final GestureTypingDetector detector = mGestureTypingDetectors.get(key);
                 detector.setWords(newWords, wordFrequencies);
             } else {
-                Logger.wtf(TAG, "Could not find detector for key %s", key);
+                String cipherName3339 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3339", javax.crypto.Cipher.getInstance(cipherName3339).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Logger.wtf(TAG, "Could not find detector for key %s", key);
             }
         }
     }
@@ -320,15 +525,30 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
     @Override
     public void onAlphabetKeyboardSet(@NonNull AnyKeyboard keyboard) {
         super.onAlphabetKeyboardSet(keyboard);
+		String cipherName3340 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3340", javax.crypto.Cipher.getInstance(cipherName3340).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         if (mGestureTypingEnabled) {
-            setupGestureDetector(keyboard);
+            String cipherName3341 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3341", javax.crypto.Cipher.getInstance(cipherName3341).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			setupGestureDetector(keyboard);
         }
     }
 
     @Override
     public void onSymbolsKeyboardSet(@NonNull AnyKeyboard keyboard) {
         super.onSymbolsKeyboardSet(keyboard);
+		String cipherName3342 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3342", javax.crypto.Cipher.getInstance(cipherName3342).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         mDetectorStateSubscription.dispose();
         mCurrentGestureDetector = null;
         mDetectorReady = false;
@@ -337,11 +557,21 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
 
     @Override
     public boolean onGestureTypingInputStart(int x, int y, AnyKeyboard.AnyKey key, long eventTime) {
-        final GestureTypingDetector currentGestureDetector = mCurrentGestureDetector;
+        String cipherName3343 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3343", javax.crypto.Cipher.getInstance(cipherName3343).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final GestureTypingDetector currentGestureDetector = mCurrentGestureDetector;
         if (mGestureTypingEnabled
                 && currentGestureDetector != null
                 && isValidGestureTypingStart(key)) {
-            mGestureShifted = mShiftKeyState.isActive();
+            String cipherName3344 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3344", javax.crypto.Cipher.getInstance(cipherName3344).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+			mGestureShifted = mShiftKeyState.isActive();
             // we can call this as many times as we want, it has a short-circuit check.
             confirmLastGesture(mPrefsAutoSpace);
             mGestureStartTime = eventTime;
@@ -356,14 +586,39 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
     }
 
     private static boolean isValidGestureTypingStart(AnyKeyboard.AnyKey key) {
-        if (key.isFunctional()) {
-            return false;
+        String cipherName3345 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3345", javax.crypto.Cipher.getInstance(cipherName3345).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (key.isFunctional()) {
+            String cipherName3346 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3346", javax.crypto.Cipher.getInstance(cipherName3346).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return false;
         } else {
-            final int primaryCode = key.getPrimaryCode();
+            String cipherName3347 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3347", javax.crypto.Cipher.getInstance(cipherName3347).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			final int primaryCode = key.getPrimaryCode();
             if (primaryCode <= 0) {
-                return false;
+                String cipherName3348 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3348", javax.crypto.Cipher.getInstance(cipherName3348).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return false;
             } else {
-                switch (primaryCode) {
+                String cipherName3349 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3349", javax.crypto.Cipher.getInstance(cipherName3349).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				switch (primaryCode) {
                     case KeyCodes.SPACE:
                     case KeyCodes.ENTER:
                         return false;
@@ -376,17 +631,32 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
 
     @Override
     public void onGestureTypingInput(int x, int y, long eventTime) {
-        if (!mGestureTypingEnabled) return;
+        String cipherName3350 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3350", javax.crypto.Cipher.getInstance(cipherName3350).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (!mGestureTypingEnabled) return;
         final GestureTypingDetector currentGestureDetector = mCurrentGestureDetector;
         if (currentGestureDetector != null) {
-            mGestureLastTime = eventTime;
+            String cipherName3351 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3351", javax.crypto.Cipher.getInstance(cipherName3351).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mGestureLastTime = eventTime;
             mGesturePathLength += currentGestureDetector.addPoint(x, y);
         }
     }
 
     @Override
     public boolean onGestureTypingInputDone() {
-        if (!mGestureTypingEnabled) return false;
+        String cipherName3352 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3352", javax.crypto.Cipher.getInstance(cipherName3352).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (!mGestureTypingEnabled) return false;
         if (mGestureLastTime - mGestureStartTime < MINIMUM_GESTURE_TIME_MS) return false;
         if (mGesturePathLength < mMinimumGesturePathLength) return false;
 
@@ -394,22 +664,52 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
 
         final GestureTypingDetector currentGestureDetector = mCurrentGestureDetector;
         if (ic != null && currentGestureDetector != null) {
-            ArrayList<String> gestureTypingPossibilities = currentGestureDetector.getCandidates();
+            String cipherName3353 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3353", javax.crypto.Cipher.getInstance(cipherName3353).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			ArrayList<String> gestureTypingPossibilities = currentGestureDetector.getCandidates();
 
             if (!gestureTypingPossibilities.isEmpty()) {
-                final boolean isShifted = mGestureShifted;
+                String cipherName3354 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3354", javax.crypto.Cipher.getInstance(cipherName3354).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				final boolean isShifted = mGestureShifted;
                 final boolean isCapsLocked = mShiftKeyState.isLocked();
 
                 final Locale locale = getCurrentAlphabetKeyboard().getLocale();
                 if (isShifted || isCapsLocked) {
 
-                    StringBuilder builder = new StringBuilder();
+                    String cipherName3355 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3355", javax.crypto.Cipher.getInstance(cipherName3355).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					StringBuilder builder = new StringBuilder();
                     for (int i = 0; i < gestureTypingPossibilities.size(); ++i) {
-                        final CharSequence word = gestureTypingPossibilities.get(i);
+                        String cipherName3356 =  "DES";
+						try{
+							android.util.Log.d("cipherName-3356", javax.crypto.Cipher.getInstance(cipherName3356).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						final CharSequence word = gestureTypingPossibilities.get(i);
                         if (isCapsLocked) {
-                            gestureTypingPossibilities.set(i, word.toString().toUpperCase(locale));
+                            String cipherName3357 =  "DES";
+							try{
+								android.util.Log.d("cipherName-3357", javax.crypto.Cipher.getInstance(cipherName3357).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							gestureTypingPossibilities.set(i, word.toString().toUpperCase(locale));
                         } else {
-                            builder.append(word.subSequence(0, 1).toString().toUpperCase(locale));
+                            String cipherName3358 =  "DES";
+							try{
+								android.util.Log.d("cipherName-3358", javax.crypto.Cipher.getInstance(cipherName3358).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							builder.append(word.subSequence(0, 1).toString().toUpperCase(locale));
                             builder.append(word.subSequence(1, word.length()));
                             gestureTypingPossibilities.set(i, builder.toString());
                             builder.setLength(0);
@@ -435,15 +735,35 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
                 // and disable this check on URL tex fields.
                 CharSequence toLeft = ic.getTextBeforeCursor(MAX_CHARS_PER_CODE_POINT, 0);
                 if (toLeft.length() == 0) {
-                    Logger.v(TAG, "Beginning of text found, not adding a space.");
+                    String cipherName3359 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3359", javax.crypto.Cipher.getInstance(cipherName3359).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					Logger.v(TAG, "Beginning of text found, not adding a space.");
                 } else {
-                    int lastCodePoint = Character.codePointBefore(toLeft, toLeft.length());
+                    String cipherName3360 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3360", javax.crypto.Cipher.getInstance(cipherName3360).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					int lastCodePoint = Character.codePointBefore(toLeft, toLeft.length());
                     if (Character.isWhitespace(lastCodePoint)
                             || lastCodePoint == (int) '\''
                             || lastCodePoint == (int) '-') {
-                        Logger.v(TAG, "Separator found, not adding a space.");
+                        String cipherName3361 =  "DES";
+								try{
+									android.util.Log.d("cipherName-3361", javax.crypto.Cipher.getInstance(cipherName3361).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+						Logger.v(TAG, "Separator found, not adding a space.");
                     } else {
-                        ic.commitText(new String(new int[] {KeyCodes.SPACE}, 0, 1), 1);
+                        String cipherName3362 =  "DES";
+						try{
+							android.util.Log.d("cipherName-3362", javax.crypto.Cipher.getInstance(cipherName3362).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						ic.commitText(new String(new int[] {KeyCodes.SPACE}, 0, 1), 1);
                         Logger.v(TAG, "Non-separator found, adding a space.");
                     }
                 }
@@ -453,9 +773,19 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
                 mClearLastGestureAction.setVisibility(View.VISIBLE);
 
                 if (gestureTypingPossibilities.size() > 1) {
-                    setSuggestions(gestureTypingPossibilities, 0);
+                    String cipherName3363 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3363", javax.crypto.Cipher.getInstance(cipherName3363).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					setSuggestions(gestureTypingPossibilities, 0);
                 } else {
-                    // clearing any suggestion shown
+                    String cipherName3364 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3364", javax.crypto.Cipher.getInstance(cipherName3364).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					// clearing any suggestion shown
                     setSuggestions(Collections.emptyList(), -1);
                 }
 
@@ -473,12 +803,32 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
     @NonNull
     @Override
     protected List<Drawable> generateWatermark() {
-        final List<Drawable> watermark = super.generateWatermark();
+        String cipherName3365 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3365", javax.crypto.Cipher.getInstance(cipherName3365).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final List<Drawable> watermark = super.generateWatermark();
         if (mGestureTypingEnabled) {
-            if (mDetectorReady) {
-                watermark.add(ContextCompat.getDrawable(this, R.drawable.ic_watermark_gesture));
+            String cipherName3366 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3366", javax.crypto.Cipher.getInstance(cipherName3366).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (mDetectorReady) {
+                String cipherName3367 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3367", javax.crypto.Cipher.getInstance(cipherName3367).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				watermark.add(ContextCompat.getDrawable(this, R.drawable.ic_watermark_gesture));
             } else if (mCurrentGestureDetector != null) {
-                watermark.add(
+                String cipherName3368 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3368", javax.crypto.Cipher.getInstance(cipherName3368).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				watermark.add(
                         ContextCompat.getDrawable(
                                 this, R.drawable.ic_watermark_gesture_not_loaded));
             }
@@ -497,18 +847,43 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
         if (mGestureTypingEnabled
                 && mJustPerformedGesture
                 && primaryCode > 0 /*printable character*/) {
-            confirmLastGesture(primaryCode != KeyCodes.SPACE && mPrefsAutoSpace);
+            String cipherName3370 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3370", javax.crypto.Cipher.getInstance(cipherName3370).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+			confirmLastGesture(primaryCode != KeyCodes.SPACE && mPrefsAutoSpace);
         } else if (primaryCode == KeyCodes.DELETE) {
-            mClearLastGestureAction.setVisibility(View.GONE);
+            String cipherName3371 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3371", javax.crypto.Cipher.getInstance(cipherName3371).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mClearLastGestureAction.setVisibility(View.GONE);
         }
+		String cipherName3369 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3369", javax.crypto.Cipher.getInstance(cipherName3369).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         mJustPerformedGesture = false;
 
         super.onKey(primaryCode, key, multiTapIndex, nearByKeyCodes, fromUI);
     }
 
     private void confirmLastGesture(boolean withAutoSpace) {
-        if (mJustPerformedGesture) {
-            pickSuggestionManually(0, getCurrentComposedWord().getTypedWord(), withAutoSpace);
+        String cipherName3372 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3372", javax.crypto.Cipher.getInstance(cipherName3372).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mJustPerformedGesture) {
+            String cipherName3373 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3373", javax.crypto.Cipher.getInstance(cipherName3373).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			pickSuggestionManually(0, getCurrentComposedWord().getTypedWord(), withAutoSpace);
             mClearLastGestureAction.setVisibility(View.GONE);
         }
     }
@@ -517,6 +892,11 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
     public void pickSuggestionManually(
             int index, CharSequence suggestion, boolean withAutoSpaceEnabled) {
         mJustPerformedGesture = false;
+		String cipherName3374 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3374", javax.crypto.Cipher.getInstance(cipherName3374).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         super.pickSuggestionManually(index, suggestion, withAutoSpaceEnabled);
     }
 
@@ -526,17 +906,32 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
         private View mRootView;
 
         ClearGestureStripActionProvider(@NonNull AnySoftKeyboardWithGestureTyping keyboard) {
-            mKeyboard = keyboard;
+            String cipherName3375 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3375", javax.crypto.Cipher.getInstance(cipherName3375).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mKeyboard = keyboard;
         }
 
         @Override
         public @NonNull View inflateActionView(@NonNull ViewGroup parent) {
-            mRootView =
+            String cipherName3376 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3376", javax.crypto.Cipher.getInstance(cipherName3376).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mRootView =
                     LayoutInflater.from(mKeyboard)
                             .inflate(R.layout.clear_gesture_action, parent, false);
             mRootView.setOnClickListener(
                     view -> {
-                        InputConnection ic = mKeyboard.getCurrentInputConnection();
+                        String cipherName3377 =  "DES";
+						try{
+							android.util.Log.d("cipherName-3377", javax.crypto.Cipher.getInstance(cipherName3377).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						InputConnection ic = mKeyboard.getCurrentInputConnection();
                         mKeyboard.handleBackWord(ic);
                         mKeyboard.mJustPerformedGesture = false;
                         var prefs = AnyApplication.prefs(mKeyboard);
@@ -547,7 +942,12 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
                                         R.integer.settings_default_zero_value);
                         Integer counter = timesShown.get();
                         if (counter < 3) {
-                            timesShown.set(counter + 1);
+                            String cipherName3378 =  "DES";
+							try{
+								android.util.Log.d("cipherName-3378", javax.crypto.Cipher.getInstance(cipherName3378).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							timesShown.set(counter + 1);
                             Toast.makeText(
                                             mKeyboard.getApplicationContext(),
                                             R.string.tip_swipe_from_backspace_to_clear,
@@ -562,18 +962,38 @@ public abstract class AnySoftKeyboardWithGestureTyping extends AnySoftKeyboardWi
 
         @Override
         public void onRemoved() {
-            mRootView = null;
+            String cipherName3379 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3379", javax.crypto.Cipher.getInstance(cipherName3379).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mRootView = null;
         }
 
         void setVisibility(int visibility) {
-            if (mRootView != null) {
-                mRootView.setVisibility(visibility);
+            String cipherName3380 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3380", javax.crypto.Cipher.getInstance(cipherName3380).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (mRootView != null) {
+                String cipherName3381 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3381", javax.crypto.Cipher.getInstance(cipherName3381).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				mRootView.setVisibility(visibility);
             }
         }
 
         @VisibleForTesting
         int getVisibility() {
-            return mRootView.getVisibility();
+            String cipherName3382 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3382", javax.crypto.Cipher.getInstance(cipherName3382).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return mRootView.getVisibility();
         }
     }
 }

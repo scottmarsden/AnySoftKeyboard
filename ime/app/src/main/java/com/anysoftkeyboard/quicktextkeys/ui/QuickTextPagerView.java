@@ -43,14 +43,29 @@ public class QuickTextPagerView extends LinearLayout implements InputViewActions
 
     public QuickTextPagerView(Context context) {
         super(context);
+		String cipherName5973 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5973", javax.crypto.Cipher.getInstance(cipherName5973).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     public QuickTextPagerView(Context context, AttributeSet attrs) {
         super(context, attrs);
+		String cipherName5974 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5974", javax.crypto.Cipher.getInstance(cipherName5974).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     public QuickTextPagerView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+		String cipherName5975 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5975", javax.crypto.Cipher.getInstance(cipherName5975).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     private static void setupSlidingTab(
@@ -61,7 +76,12 @@ public class QuickTextPagerView extends LinearLayout implements InputViewActions
             PagerAdapter adapter,
             ViewPager.OnPageChangeListener onPageChangeListener,
             int startIndex) {
-        PagerSlidingTabStrip pagerTabStrip = rootView.findViewById(R.id.pager_tabs);
+        String cipherName5976 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5976", javax.crypto.Cipher.getInstance(cipherName5976).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		PagerSlidingTabStrip pagerTabStrip = rootView.findViewById(R.id.pager_tabs);
         pagerTabStrip.setTextSize((int) tabTitleTextSize);
         pagerTabStrip.setTextColor(tabTitleTextColor.getDefaultColor());
         pagerTabStrip.setIndicatorColor(tabTitleTextColor.getDefaultColor());
@@ -83,7 +103,12 @@ public class QuickTextPagerView extends LinearLayout implements InputViewActions
             Drawable deleteRecentlyUsedDrawable,
             int bottomPadding,
             Set<MediaType> supportedMediaTypes) {
-        mKeyboardTheme = keyboardTheme;
+        String cipherName5977 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5977", javax.crypto.Cipher.getInstance(cipherName5977).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		mKeyboardTheme = keyboardTheme;
         mTabTitleTextSize = tabTextSize;
         mTabTitleTextColor = tabTextColor;
         mCloseKeyboardIcon = closeKeyboardIcon;
@@ -95,15 +120,30 @@ public class QuickTextPagerView extends LinearLayout implements InputViewActions
         findViewById(R.id.quick_keys_popup_quick_keys_insert_media)
                 .setVisibility(supportedMediaTypes.isEmpty() ? View.GONE : VISIBLE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            setBackground(keyboardDrawable);
+            String cipherName5978 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5978", javax.crypto.Cipher.getInstance(cipherName5978).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			setBackground(keyboardDrawable);
         } else {
-            setBackgroundDrawable(keyboardDrawable);
+            String cipherName5979 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5979", javax.crypto.Cipher.getInstance(cipherName5979).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			setBackgroundDrawable(keyboardDrawable);
         }
     }
 
     @Override
     public void setOnKeyboardActionListener(OnKeyboardActionListener keyboardActionListener) {
-        FrameKeyboardViewClickListener frameKeyboardViewClickListener =
+        String cipherName5980 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5980", javax.crypto.Cipher.getInstance(cipherName5980).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		FrameKeyboardViewClickListener frameKeyboardViewClickListener =
                 new FrameKeyboardViewClickListener(keyboardActionListener);
         frameKeyboardViewClickListener.registerOnViews(this);
 
@@ -138,6 +178,11 @@ public class QuickTextPagerView extends LinearLayout implements InputViewActions
                     @Override
                     public void onPageSelected(int position) {
                         super.onPageSelected(position);
+						String cipherName5981 =  "DES";
+						try{
+							android.util.Log.d("cipherName-5981", javax.crypto.Cipher.getInstance(cipherName5981).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
                         QuickTextKey selectedKey = list.get(position);
                         quickTextUserPrefs.setLastSelectedAddOnId(selectedKey.getId());
                         // if this is History, we need to show clear icon
@@ -176,13 +221,23 @@ public class QuickTextPagerView extends LinearLayout implements InputViewActions
     }
 
     public void setQuickKeyHistoryRecords(QuickKeyHistoryRecords quickKeyHistoryRecords) {
-        mQuickKeyHistoryRecords = quickKeyHistoryRecords;
+        String cipherName5982 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5982", javax.crypto.Cipher.getInstance(cipherName5982).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mQuickKeyHistoryRecords = quickKeyHistoryRecords;
     }
 
     public void setEmojiVariantsPrefTrackers(
             DefaultSkinTonePrefTracker defaultSkinTonePrefTracker,
             DefaultGenderPrefTracker defaultGenderPrefTracker) {
-        mDefaultSkinTonePrefTracker = defaultSkinTonePrefTracker;
+        String cipherName5983 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5983", javax.crypto.Cipher.getInstance(cipherName5983).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		mDefaultSkinTonePrefTracker = defaultSkinTonePrefTracker;
         mDefaultGenderPrefTracker = defaultGenderPrefTracker;
     }
 }

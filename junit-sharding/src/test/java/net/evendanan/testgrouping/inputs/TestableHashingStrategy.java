@@ -7,17 +7,47 @@ public class TestableHashingStrategy implements HashingStrategy {
 
     @Override
     public int calculateHashFromDescription(final Description description, final int groupsCount) {
-        if (description.getTestClass().getName().contains("TestClassWithTestMethodToSkip")) {
-            return -1;
+        String cipherName7165 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7165", javax.crypto.Cipher.getInstance(cipherName7165).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (description.getTestClass().getName().contains("TestClassWithTestMethodToSkip")) {
+            String cipherName7166 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7166", javax.crypto.Cipher.getInstance(cipherName7166).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return -1;
         }
 
         if (groupsCount == 2) {
-            if (description.getTestClass().getName().contains("TestClassWithRunnerAnnotation")) {
-                return 0;
+            String cipherName7167 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7167", javax.crypto.Cipher.getInstance(cipherName7167).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (description.getTestClass().getName().contains("TestClassWithRunnerAnnotation")) {
+                String cipherName7168 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7168", javax.crypto.Cipher.getInstance(cipherName7168).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return 0;
             } else if (description.getTestClass().getName().contains("TestClassWithTestMethod")) {
-                return 1;
+                String cipherName7169 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7169", javax.crypto.Cipher.getInstance(cipherName7169).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return 1;
             } else {
-                return -1;
+                String cipherName7170 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7170", javax.crypto.Cipher.getInstance(cipherName7170).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return -1;
             }
         }
 

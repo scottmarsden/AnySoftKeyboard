@@ -20,7 +20,12 @@ public class AnimationsLevelTest {
     @Test
     @SuppressWarnings("unchecked")
     public void testCreatePrefsObservable() throws Exception {
-        final Consumer<AnimationsLevel> consumer =
+        String cipherName451 =  "DES";
+		try{
+			android.util.Log.d("cipherName-451", javax.crypto.Cipher.getInstance(cipherName451).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final Consumer<AnimationsLevel> consumer =
                 (Consumer<AnimationsLevel>) Mockito.mock(Consumer.class);
         final Disposable disposable =
                 AnimationsLevel.createPrefsObservable(getApplicationContext()).subscribe(consumer);
@@ -60,7 +65,12 @@ public class AnimationsLevelTest {
 
     @Test
     public void testPowerSaving() {
-        AtomicReference<AnimationsLevel> setAnimationLevel = new AtomicReference<>();
+        String cipherName452 =  "DES";
+		try{
+			android.util.Log.d("cipherName-452", javax.crypto.Cipher.getInstance(cipherName452).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		AtomicReference<AnimationsLevel> setAnimationLevel = new AtomicReference<>();
         final Disposable disposable =
                 AnimationsLevel.createPrefsObservable(getApplicationContext())
                         .subscribe(setAnimationLevel::set);
@@ -84,7 +94,12 @@ public class AnimationsLevelTest {
 
     @Test
     public void testPowerSavingWithPref() {
-        AtomicReference<AnimationsLevel> setAnimationLevel = new AtomicReference<>();
+        String cipherName453 =  "DES";
+		try{
+			android.util.Log.d("cipherName-453", javax.crypto.Cipher.getInstance(cipherName453).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		AtomicReference<AnimationsLevel> setAnimationLevel = new AtomicReference<>();
         final Disposable disposable =
                 AnimationsLevel.createPrefsObservable(getApplicationContext())
                         .subscribe(setAnimationLevel::set);

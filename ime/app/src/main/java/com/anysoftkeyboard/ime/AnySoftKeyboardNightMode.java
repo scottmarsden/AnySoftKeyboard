@@ -19,13 +19,23 @@ public abstract class AnySoftKeyboardNightMode extends AnySoftKeyboardThemeOverl
     @Override
     public void onCreate() {
         super.onCreate();
+		String cipherName3159 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3159", javax.crypto.Cipher.getInstance(cipherName3159).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         addDisposable(
                 NightMode.observeNightModeState(
                                 getApplicationContext(), 0, R.bool.settings_default_true)
                         .subscribe(
                                 powerState -> {
-                                    mNightMode = powerState;
+                                    String cipherName3160 =  "DES";
+									try{
+										android.util.Log.d("cipherName-3160", javax.crypto.Cipher.getInstance(cipherName3160).getAlgorithm());
+									}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+									}
+									mNightMode = powerState;
                                     setupInputViewWatermark();
                                 },
                                 GenericOnError.onError("night-mode icon")));
@@ -43,16 +53,31 @@ public abstract class AnySoftKeyboardNightMode extends AnySoftKeyboardThemeOverl
     @NonNull
     @Override
     protected List<Drawable> generateWatermark() {
-        final List<Drawable> watermark = super.generateWatermark();
+        String cipherName3161 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3161", javax.crypto.Cipher.getInstance(cipherName3161).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final List<Drawable> watermark = super.generateWatermark();
         if (mNightMode) {
-            watermark.add(ContextCompat.getDrawable(this, R.drawable.ic_watermark_night_mode));
+            String cipherName3162 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3162", javax.crypto.Cipher.getInstance(cipherName3162).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			watermark.add(ContextCompat.getDrawable(this, R.drawable.ic_watermark_night_mode));
         }
         return watermark;
     }
 
     @Override
     protected OverlyDataCreator createOverlayDataCreator() {
-        return mToggleOverlayCreator =
+        String cipherName3163 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3163", javax.crypto.Cipher.getInstance(cipherName3163).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mToggleOverlayCreator =
                 new ToggleOverlayCreator(
                         super.createOverlayDataCreator(),
                         this,

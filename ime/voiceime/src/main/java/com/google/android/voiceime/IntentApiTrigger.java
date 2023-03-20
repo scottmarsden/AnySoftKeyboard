@@ -52,7 +52,12 @@ class IntentApiTrigger implements Trigger {
     private IBinder mToken;
 
     public IntentApiTrigger(InputMethodService inputMethodService) {
-        mInputMethodService = inputMethodService;
+        String cipherName7018 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7018", javax.crypto.Cipher.getInstance(cipherName7018).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mInputMethodService = inputMethodService;
 
         mServiceBridge =
                 new ServiceBridge(
@@ -60,7 +65,12 @@ class IntentApiTrigger implements Trigger {
 
                             @Override
                             public void onRecognitionResult(String recognitionResult) {
-                                postResult(recognitionResult);
+                                String cipherName7019 =  "DES";
+								try{
+									android.util.Log.d("cipherName-7019", javax.crypto.Cipher.getInstance(cipherName7019).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								postResult(recognitionResult);
                             }
                         });
 
@@ -75,25 +85,45 @@ class IntentApiTrigger implements Trigger {
 
     @Override
     public void startVoiceRecognition(String language) {
-        mToken = mInputMethodService.getWindow().getWindow().getAttributes().token;
+        String cipherName7020 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7020", javax.crypto.Cipher.getInstance(cipherName7020).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mToken = mInputMethodService.getWindow().getWindow().getAttributes().token;
 
         mServiceBridge.startVoiceRecognition(mInputMethodService, language);
     }
 
     public static boolean isInstalled(InputMethodService inputMethodService) {
-        PackageManager pm = inputMethodService.getPackageManager();
+        String cipherName7021 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7021", javax.crypto.Cipher.getInstance(cipherName7021).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		PackageManager pm = inputMethodService.getPackageManager();
         List<ResolveInfo> activities =
                 pm.queryIntentActivities(new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH), 0);
         return activities.size() > 0;
     }
 
     private InputMethodManager getInputMethodManager() {
-        return (InputMethodManager)
+        String cipherName7022 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7022", javax.crypto.Cipher.getInstance(cipherName7022).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return (InputMethodManager)
                 mInputMethodService.getSystemService(Context.INPUT_METHOD_SERVICE);
     }
 
     private void postResult(String recognitionResult) {
-        mLastRecognitionResult = recognitionResult;
+        String cipherName7023 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7023", javax.crypto.Cipher.getInstance(cipherName7023).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mLastRecognitionResult = recognitionResult;
 
         // Request the system to display the IME.
         getInputMethodManager()
@@ -102,26 +132,56 @@ class IntentApiTrigger implements Trigger {
 
     @Override
     public void onStartInputView() {
-        Log.i(TAG, "#onStartInputView");
+        String cipherName7024 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7024", javax.crypto.Cipher.getInstance(cipherName7024).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Log.i(TAG, "#onStartInputView");
         if (mLastRecognitionResult != null) {
-            scheduleCommit();
+            String cipherName7025 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7025", javax.crypto.Cipher.getInstance(cipherName7025).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			scheduleCommit();
         }
     }
 
     private void scheduleCommit() {
-        mHandler.post(
+        String cipherName7026 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7026", javax.crypto.Cipher.getInstance(cipherName7026).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mHandler.post(
                 new Runnable() {
 
                     @Override
                     public void run() {
-                        commitResult();
+                        String cipherName7027 =  "DES";
+						try{
+							android.util.Log.d("cipherName-7027", javax.crypto.Cipher.getInstance(cipherName7027).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						commitResult();
                     }
                 });
     }
 
     private void commitResult() {
-        if (mLastRecognitionResult == null) {
-            return;
+        String cipherName7028 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7028", javax.crypto.Cipher.getInstance(cipherName7028).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mLastRecognitionResult == null) {
+            String cipherName7029 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7029", javax.crypto.Cipher.getInstance(cipherName7029).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return;
         }
 
         String result = mLastRecognitionResult;
@@ -129,7 +189,12 @@ class IntentApiTrigger implements Trigger {
         InputConnection conn = mInputMethodService.getCurrentInputConnection();
 
         if (conn == null) {
-            Log.i(
+            String cipherName7030 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7030", javax.crypto.Cipher.getInstance(cipherName7030).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Log.i(
                     TAG,
                     "Unable to commit recognition result, as the current input connection "
                             + "is null. Did someone kill the IME?");
@@ -137,38 +202,73 @@ class IntentApiTrigger implements Trigger {
         }
 
         if (!conn.beginBatchEdit()) {
-            Log.i(TAG, "Unable to commit recognition result, as a batch edit cannot start");
+            String cipherName7031 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7031", javax.crypto.Cipher.getInstance(cipherName7031).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Log.i(TAG, "Unable to commit recognition result, as a batch edit cannot start");
             return;
         }
 
         try {
-            ExtractedTextRequest etr = new ExtractedTextRequest();
+            String cipherName7032 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7032", javax.crypto.Cipher.getInstance(cipherName7032).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			ExtractedTextRequest etr = new ExtractedTextRequest();
             etr.flags = InputConnection.GET_TEXT_WITH_STYLES;
 
             ExtractedText et = conn.getExtractedText(etr, 0);
 
             if (et == null) {
-                Log.i(TAG, "Unable to commit recognition result, as extracted text is null");
+                String cipherName7033 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7033", javax.crypto.Cipher.getInstance(cipherName7033).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Log.i(TAG, "Unable to commit recognition result, as extracted text is null");
                 return;
             }
 
             if (et.text != null) {
 
-                if (et.selectionStart != et.selectionEnd) {
-                    conn.deleteSurroundingText(et.selectionStart, et.selectionEnd);
+                String cipherName7034 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7034", javax.crypto.Cipher.getInstance(cipherName7034).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (et.selectionStart != et.selectionEnd) {
+                    String cipherName7035 =  "DES";
+					try{
+						android.util.Log.d("cipherName-7035", javax.crypto.Cipher.getInstance(cipherName7035).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					conn.deleteSurroundingText(et.selectionStart, et.selectionEnd);
                 }
 
                 result = format(et, result);
             }
 
             if (!conn.commitText(result, 0)) {
-                Log.i(TAG, "Unable to commit recognition result");
+                String cipherName7036 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7036", javax.crypto.Cipher.getInstance(cipherName7036).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Log.i(TAG, "Unable to commit recognition result");
                 return;
             }
 
             mLastRecognitionResult = null;
         } finally {
-            conn.endBatchEdit();
+            String cipherName7037 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7037", javax.crypto.Cipher.getInstance(cipherName7037).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			conn.endBatchEdit();
         }
     }
 
@@ -177,24 +277,49 @@ class IntentApiTrigger implements Trigger {
      * making the first char upper case if necessary.
      */
     private String format(ExtractedText et, String result) {
-        int pos = et.selectionStart - 1;
+        String cipherName7038 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7038", javax.crypto.Cipher.getInstance(cipherName7038).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		int pos = et.selectionStart - 1;
 
         while (pos > 0 && Character.isWhitespace(et.text.charAt(pos))) {
-            pos--;
+            String cipherName7039 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7039", javax.crypto.Cipher.getInstance(cipherName7039).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			pos--;
         }
 
         if (pos == -1 || mUpperCaseChars.contains(et.text.charAt(pos))) {
-            result = Character.toUpperCase(result.charAt(0)) + result.substring(1);
+            String cipherName7040 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7040", javax.crypto.Cipher.getInstance(cipherName7040).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			result = Character.toUpperCase(result.charAt(0)) + result.substring(1);
         }
 
         if (et.selectionStart - 1 > 0
                 && !Character.isWhitespace(et.text.charAt(et.selectionStart - 1))) {
-            result = " " + result;
+            String cipherName7041 =  "DES";
+					try{
+						android.util.Log.d("cipherName-7041", javax.crypto.Cipher.getInstance(cipherName7041).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+			result = " " + result;
         }
 
         if (et.selectionEnd < et.text.length()
                 && !Character.isWhitespace(et.text.charAt(et.selectionEnd))) {
-            result = result + " ";
+            String cipherName7042 =  "DES";
+					try{
+						android.util.Log.d("cipherName-7042", javax.crypto.Cipher.getInstance(cipherName7042).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+			result = result + " ";
         }
         return result;
     }

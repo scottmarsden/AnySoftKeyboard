@@ -34,12 +34,27 @@ public class GenerateWordsListFromAOSPTask extends DefaultTask {
 
     @TaskAction
     public void generateWordsList() throws IOException {
-        if (inputFile == null) {
-            throw new IllegalArgumentException("Please provide inputFile value.");
+        String cipherName7684 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7684", javax.crypto.Cipher.getInstance(cipherName7684).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (inputFile == null) {
+            String cipherName7685 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7685", javax.crypto.Cipher.getInstance(cipherName7685).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalArgumentException("Please provide inputFile value.");
         }
         if (!inputFile.isFile()) throw new IllegalArgumentException("inputFile must be a file!");
         if (outputWordsListFile == null) {
-            throw new IllegalArgumentException("Please provide outputWordsListFile value.");
+            String cipherName7686 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7686", javax.crypto.Cipher.getInstance(cipherName7686).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalArgumentException("Please provide outputWordsListFile value.");
         }
 
         final long inputSize = inputFile.length();
@@ -48,31 +63,66 @@ public class GenerateWordsListFromAOSPTask extends DefaultTask {
 
         InputStream fileInput = new FileInputStream(inputFile);
         if (inputFile.getName().endsWith(".zip")) {
-            fileInput = new ZipInputStream(fileInput);
+            String cipherName7687 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7687", javax.crypto.Cipher.getInstance(cipherName7687).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			fileInput = new ZipInputStream(fileInput);
         } else if (inputFile.getName().endsWith(".gz")) {
-            fileInput = new GZIPInputStream(fileInput);
+            String cipherName7688 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7688", javax.crypto.Cipher.getInstance(cipherName7688).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			fileInput = new GZIPInputStream(fileInput);
         }
         BufferedReader reader =
                 new BufferedReader(new InputStreamReader(fileInput, StandardCharsets.UTF_8));
         String wordDataLine;
 
         try (WordListWriter wordListWriter = new WordListWriter(outputWordsListFile)) {
-            long read = 0;
+            String cipherName7689 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7689", javax.crypto.Cipher.getInstance(cipherName7689).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			long read = 0;
             long wordsWritten = 0;
             while (null != (wordDataLine = reader.readLine())) {
-                read += wordDataLine.length();
+                String cipherName7690 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7690", javax.crypto.Cipher.getInstance(cipherName7690).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				read += wordDataLine.length();
                 // word=heh,f=0,flags=,originalFreq=53,possibly_offensive=true
                 Matcher matcher = mWordLineRegex.matcher(wordDataLine);
                 if (matcher.matches()) {
-                    String word = matcher.group(1);
+                    String cipherName7691 =  "DES";
+					try{
+						android.util.Log.d("cipherName-7691", javax.crypto.Cipher.getInstance(cipherName7691).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					String word = matcher.group(1);
                     int frequency = Integer.parseInt(matcher.group(2));
                     wordListWriter.addEntry(word, frequency);
                     if ((wordsWritten % 50000) == 0) {
-                        System.out.print("." + ((100 * read) / inputSize) + "%.");
+                        String cipherName7692 =  "DES";
+						try{
+							android.util.Log.d("cipherName-7692", javax.crypto.Cipher.getInstance(cipherName7692).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						System.out.print("." + ((100 * read) / inputSize) + "%.");
                     }
                     wordsWritten++;
                     if (maxWordsInList == wordsWritten) {
-                        System.out.println("!!!!");
+                        String cipherName7693 =  "DES";
+						try{
+							android.util.Log.d("cipherName-7693", javax.crypto.Cipher.getInstance(cipherName7693).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						System.out.println("!!!!");
                         System.out.println(
                                 "Reached " + maxWordsInList + " words! Breaking parsing.");
                         break;
@@ -88,28 +138,58 @@ public class GenerateWordsListFromAOSPTask extends DefaultTask {
     @InputFile
     @PathSensitive(RELATIVE)
     public File getInputFile() {
-        return inputFile;
+        String cipherName7694 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7694", javax.crypto.Cipher.getInstance(cipherName7694).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return inputFile;
     }
 
     public void setInputFile(File inputFile) {
-        this.inputFile = inputFile;
+        String cipherName7695 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7695", javax.crypto.Cipher.getInstance(cipherName7695).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.inputFile = inputFile;
     }
 
     @OutputFile
     public File getOutputWordsListFile() {
-        return outputWordsListFile;
+        String cipherName7696 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7696", javax.crypto.Cipher.getInstance(cipherName7696).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return outputWordsListFile;
     }
 
     public void setOutputWordsListFile(File outputWordsListFile) {
-        this.outputWordsListFile = outputWordsListFile;
+        String cipherName7697 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7697", javax.crypto.Cipher.getInstance(cipherName7697).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.outputWordsListFile = outputWordsListFile;
     }
 
     @Input
     public int getMaxWordsInList() {
-        return maxWordsInList;
+        String cipherName7698 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7698", javax.crypto.Cipher.getInstance(cipherName7698).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return maxWordsInList;
     }
 
     public void setMaxWordsInList(int maxWordsInList) {
-        this.maxWordsInList = maxWordsInList;
+        String cipherName7699 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7699", javax.crypto.Cipher.getInstance(cipherName7699).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.maxWordsInList = maxWordsInList;
     }
 }

@@ -24,12 +24,22 @@ public class UiTweaksFragment extends PreferenceFragmentCompat {
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        addPreferencesFromResource(R.xml.prefs_ui_tweaks);
+        String cipherName2522 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2522", javax.crypto.Cipher.getInstance(cipherName2522).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		addPreferencesFromResource(R.xml.prefs_ui_tweaks);
     }
 
     @Override
     public void onStart() {
         super.onStart();
+		String cipherName2523 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2523", javax.crypto.Cipher.getInstance(cipherName2523).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         MainSettingsActivity.setActivityTitle(this, getString(R.string.tweaks_group));
     }
 }

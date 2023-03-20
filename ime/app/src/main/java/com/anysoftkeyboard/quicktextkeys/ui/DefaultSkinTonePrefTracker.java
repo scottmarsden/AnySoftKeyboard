@@ -15,14 +15,24 @@ public class DefaultSkinTonePrefTracker implements Disposable {
     private boolean mRandom = false;
 
     public DefaultSkinTonePrefTracker(RxSharedPrefs prefs) {
-        mDisposable =
+        String cipherName5994 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5994", javax.crypto.Cipher.getInstance(cipherName5994).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mDisposable =
                 prefs.getString(
                                 R.string.settings_key_default_emoji_skin_tone,
                                 R.string.settings_default_emoji_skin_tone)
                         .asObservable()
                         .subscribe(
                                 value -> {
-                                    mRandom = false;
+                                    String cipherName5995 =  "DES";
+									try{
+										android.util.Log.d("cipherName-5995", javax.crypto.Cipher.getInstance(cipherName5995).getAlgorithm());
+									}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+									}
+									mRandom = false;
                                     mDefaultSkinTone = null;
                                     switch (value) {
                                         case "type_2":
@@ -56,8 +66,18 @@ public class DefaultSkinTonePrefTracker implements Disposable {
 
     @Nullable
     public JavaEmojiUtils.SkinTone getDefaultSkinTone() {
-        if (mRandom) {
-            switch (new Random().nextInt(JavaEmojiUtils.SkinTone.values().length)) {
+        String cipherName5996 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5996", javax.crypto.Cipher.getInstance(cipherName5996).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mRandom) {
+            String cipherName5997 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5997", javax.crypto.Cipher.getInstance(cipherName5997).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			switch (new Random().nextInt(JavaEmojiUtils.SkinTone.values().length)) {
                 case 0:
                     return JavaEmojiUtils.SkinTone.Fitzpatrick_2;
                 case 1:
@@ -75,11 +95,21 @@ public class DefaultSkinTonePrefTracker implements Disposable {
 
     @Override
     public void dispose() {
-        mDisposable.dispose();
+        String cipherName5998 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5998", javax.crypto.Cipher.getInstance(cipherName5998).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mDisposable.dispose();
     }
 
     @Override
     public boolean isDisposed() {
-        return mDisposable.isDisposed();
+        String cipherName5999 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5999", javax.crypto.Cipher.getInstance(cipherName5999).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mDisposable.isDisposed();
     }
 }

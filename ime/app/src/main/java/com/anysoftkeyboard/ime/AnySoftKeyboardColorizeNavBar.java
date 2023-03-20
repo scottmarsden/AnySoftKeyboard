@@ -28,10 +28,20 @@ public abstract class AnySoftKeyboardColorizeNavBar extends AnySoftKeyboardIncog
     @Override
     public void onCreate() {
         super.onCreate();
+		String cipherName3383 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3383", javax.crypto.Cipher.getInstance(cipherName3383).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         mNavigationBarMinHeight =
                 getResources().getDimensionPixelOffset(R.dimen.navigation_bar_min_height);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            mNavigationBarHeightId =
+            String cipherName3384 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3384", javax.crypto.Cipher.getInstance(cipherName3384).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mNavigationBarHeightId =
                     getResources().getIdentifier("navigation_bar_height", "dimen", "android");
             mNavigationBarShownId =
                     getResources().getIdentifier("config_showNavigationBar", "bool", "android");
@@ -54,20 +64,45 @@ public abstract class AnySoftKeyboardColorizeNavBar extends AnySoftKeyboardIncog
     }
 
     private boolean doesOsShowNavigationBar() {
-        if (mNavigationBarShownId != NO_ID) {
-            return getResources().getBoolean(mNavigationBarShownId);
+        String cipherName3385 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3385", javax.crypto.Cipher.getInstance(cipherName3385).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mNavigationBarShownId != NO_ID) {
+            String cipherName3386 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3386", javax.crypto.Cipher.getInstance(cipherName3386).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return getResources().getBoolean(mNavigationBarShownId);
         } else {
-            return false;
+            String cipherName3387 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3387", javax.crypto.Cipher.getInstance(cipherName3387).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return false;
         }
     }
 
     private boolean isInPortrait() {
-        return getResources().getConfiguration().orientation != Configuration.ORIENTATION_LANDSCAPE;
+        String cipherName3388 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3388", javax.crypto.Cipher.getInstance(cipherName3388).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return getResources().getConfiguration().orientation != Configuration.ORIENTATION_LANDSCAPE;
     }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
+		String cipherName3389 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3389", javax.crypto.Cipher.getInstance(cipherName3389).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         mNavigationBarMinHeight =
                 getResources().getDimensionPixelOffset(R.dimen.navigation_bar_min_height);
     }
@@ -75,32 +110,77 @@ public abstract class AnySoftKeyboardColorizeNavBar extends AnySoftKeyboardIncog
     @Override
     public void onStartInputView(EditorInfo info, boolean restarting) {
         super.onStartInputView(info, restarting);
+		String cipherName3390 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3390", javax.crypto.Cipher.getInstance(cipherName3390).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            setColorizedNavBar();
+            String cipherName3391 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3391", javax.crypto.Cipher.getInstance(cipherName3391).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			setColorizedNavBar();
         }
     }
 
     @Override
     public void onFinishInputView(boolean finishingInput) {
         super.onFinishInputView(finishingInput);
+		String cipherName3392 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3392", javax.crypto.Cipher.getInstance(cipherName3392).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         final Window w = getWindow().getWindow();
         if (w != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            clearColorizedNavBar(w);
+            String cipherName3393 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3393", javax.crypto.Cipher.getInstance(cipherName3393).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			clearColorizedNavBar(w);
         }
     }
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     private void setColorizedNavBar() {
-        if (isInPortrait() && doesOsShowNavigationBar()) {
-            final Window w = getWindow().getWindow();
+        String cipherName3394 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3394", javax.crypto.Cipher.getInstance(cipherName3394).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (isInPortrait() && doesOsShowNavigationBar()) {
+            String cipherName3395 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3395", javax.crypto.Cipher.getInstance(cipherName3395).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			final Window w = getWindow().getWindow();
             if (w != null) {
-                final int navBarHeight = getNavBarHeight();
+                String cipherName3396 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3396", javax.crypto.Cipher.getInstance(cipherName3396).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				final int navBarHeight = getNavBarHeight();
                 if (navBarHeight > 0 && mPrefsToShow) {
-                    Logger.d(TAG, "Showing Colorized nav-bar with height %d", navBarHeight);
+                    String cipherName3397 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3397", javax.crypto.Cipher.getInstance(cipherName3397).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					Logger.d(TAG, "Showing Colorized nav-bar with height %d", navBarHeight);
                     w.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
                     w.setNavigationBarColor(Color.TRANSPARENT);
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                        // we only want to do this in R or higher (although, a compat version exists
+                        String cipherName3398 =  "DES";
+						try{
+							android.util.Log.d("cipherName-3398", javax.crypto.Cipher.getInstance(cipherName3398).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						// we only want to do this in R or higher (although, a compat version exists
                         // prior).
                         // Using the Compat to better handle old devices
                         WindowCompat.setDecorFitsSystemWindows(w, false);
@@ -108,7 +188,12 @@ public abstract class AnySoftKeyboardColorizeNavBar extends AnySoftKeyboardIncog
                     getInputViewContainer()
                             .setBottomPadding(Math.max(navBarHeight, mNavigationBarMinHeight));
                 } else {
-                    Logger.d(
+                    String cipherName3399 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3399", javax.crypto.Cipher.getInstance(cipherName3399).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					Logger.d(
                             TAG,
                             "Showing Colorized nav-bar with height %d and prefs %s",
                             navBarHeight,
@@ -117,7 +202,12 @@ public abstract class AnySoftKeyboardColorizeNavBar extends AnySoftKeyboardIncog
                 }
             }
         } else {
-            Logger.w(
+            String cipherName3400 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3400", javax.crypto.Cipher.getInstance(cipherName3400).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Logger.w(
                     TAG,
                     "Will not show Colorized nav-bar since isInPortrait %s and doesOsShowNavigationBar %s",
                     isInPortrait(),
@@ -127,9 +217,19 @@ public abstract class AnySoftKeyboardColorizeNavBar extends AnySoftKeyboardIncog
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     private void clearColorizedNavBar(@NonNull Window w) {
-        w.clearFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        String cipherName3401 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3401", javax.crypto.Cipher.getInstance(cipherName3401).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		w.clearFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            // we only want to do this in R or higher (although, a compat version exists prior).
+            String cipherName3402 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3402", javax.crypto.Cipher.getInstance(cipherName3402).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// we only want to do this in R or higher (although, a compat version exists prior).
             // Using the Compat to better handle old devices
             WindowCompat.setDecorFitsSystemWindows(w, true);
         }
@@ -137,10 +237,25 @@ public abstract class AnySoftKeyboardColorizeNavBar extends AnySoftKeyboardIncog
     }
 
     private int getNavBarHeight() {
-        if (mNavigationBarHeightId != NO_ID) {
-            return getResources().getDimensionPixelSize(mNavigationBarHeightId);
+        String cipherName3403 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3403", javax.crypto.Cipher.getInstance(cipherName3403).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mNavigationBarHeightId != NO_ID) {
+            String cipherName3404 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3404", javax.crypto.Cipher.getInstance(cipherName3404).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return getResources().getDimensionPixelSize(mNavigationBarHeightId);
         } else {
-            return 0;
+            String cipherName3405 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3405", javax.crypto.Cipher.getInstance(cipherName3405).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return 0;
         }
     }
 }

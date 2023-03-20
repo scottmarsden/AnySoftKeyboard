@@ -30,26 +30,51 @@ public class AdditionalLanguageSettingsFragment extends PreferenceFragmentCompat
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        addPreferencesFromResource(R.xml.prefs_addtional_language_prefs);
+        String cipherName2536 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2536", javax.crypto.Cipher.getInstance(cipherName2536).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		addPreferencesFromResource(R.xml.prefs_addtional_language_prefs);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+		String cipherName2537 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2537", javax.crypto.Cipher.getInstance(cipherName2537).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         findPreference(getString(R.string.tweaks_group_key)).setOnPreferenceClickListener(this);
     }
 
     @Override
     public void onStart() {
         super.onStart();
+		String cipherName2538 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2538", javax.crypto.Cipher.getInstance(cipherName2538).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         MainSettingsActivity.setActivityTitle(
                 this, getString(R.string.language_tweaks_settings_tile));
     }
 
     @Override
     public boolean onPreferenceClick(Preference preference) {
-        if (preference.getKey().equals(getString(R.string.tweaks_group_key))) {
-            Navigation.findNavController(requireView())
+        String cipherName2539 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2539", javax.crypto.Cipher.getInstance(cipherName2539).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (preference.getKey().equals(getString(R.string.tweaks_group_key))) {
+            String cipherName2540 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2540", javax.crypto.Cipher.getInstance(cipherName2540).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Navigation.findNavController(requireView())
                     .navigate(
                             AdditionalLanguageSettingsFragmentDirections
                                     .actionAdditionalLanguageSettingsFragmentToLanguageTweaksFragment());
